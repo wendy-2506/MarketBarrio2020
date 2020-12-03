@@ -1,4 +1,5 @@
 package BEAN;
+
 public class Producto {
     private int idProducto;
     private String decripcion;
@@ -76,6 +77,5 @@ public class Producto {
     public void setEstado(int estado) {
         this.estado = estado;
     }
-
     
 }

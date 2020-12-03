@@ -1,4 +1,5 @@
 package BEAN;
+
 public class Categoria {
     private int idCategoria;
     private String descrip;
@@ -26,6 +27,5 @@ public class Categoria {
     public void setDescrip(String descrip) {
         this.descrip = descrip;
     }
-    
-    
+        
 }

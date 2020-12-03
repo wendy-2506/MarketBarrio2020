@@ -1,12 +1,11 @@
 package BEAN;
-//Gabriel Guzman here
-//Segundo cambio
+
 public class Boleta {
     private int idBoleta;
     private int idSerie;
     private String numBol;
     private int idVenta;
-//ojvnrehikl
+
     public Boleta() {
     }
 

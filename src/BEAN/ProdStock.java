@@ -1,4 +1,5 @@
 package BEAN;
+
 public class ProdStock {
     private int idTienda;
     private int idProducto;
@@ -35,9 +36,6 @@ public class ProdStock {
 
     public void setStock(int stock) {
         this.stock = stock;
-    }
-
-    
-    
+    }  
     
 }
