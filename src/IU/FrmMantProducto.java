@@ -129,7 +129,7 @@ public class FrmMantProducto extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setText("Stock:");
+        jLabel8.setText("Cantidad:");
 
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
