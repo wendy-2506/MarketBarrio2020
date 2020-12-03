@@ -1,9 +1,8 @@
-
 package BEAN;
 
-/**
- * @author Wendy
- */
 public class TipoEmpleado {
-
+    private int idTipoEmp;
+    private String descripcion;
+    
+    
 }
