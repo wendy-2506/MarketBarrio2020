@@ -4,6 +4,7 @@ public class Cliente {
     private int idCliente;
     private int idTipoCliente;
     private String telefono;
+    private String direccion;
     private int idEmpReg;
     private String fechReg;
     private int idEmpMod;    
@@ -13,10 +14,11 @@ public class Cliente {
     public Cliente() {
     }
 
-    public Cliente(int idCliente, int idTipoCliente, String telefono, int idEmpReg, String fechReg, int idEmpMod, String fechMod, int estado) {
+    public Cliente(int idCliente, int idTipoCliente, String telefono, String direccion, int idEmpReg, String fechReg, int idEmpMod, String fechMod, int estado) {
         this.idCliente = idCliente;
         this.idTipoCliente = idTipoCliente;
         this.telefono = telefono;
+        this.direccion = direccion;
         this.idEmpReg = idEmpReg;
         this.fechReg = fechReg;
         this.idEmpMod = idEmpMod;
@@ -46,6 +48,14 @@ public class Cliente {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
     public int getIdEmpReg() {
@@ -86,6 +96,6 @@ public class Cliente {
 
     public void setEstado(int estado) {
         this.estado = estado;
-    }    
+    }        
     
 }

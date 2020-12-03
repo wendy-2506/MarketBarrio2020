@@ -1,4 +1,5 @@
 package BEAN;
+
 public class Marca {
     private int idMarca;
     private String descMarc;
@@ -25,7 +26,6 @@ public class Marca {
 
     public void setDescMarc(String descMarc) {
         this.descMarc = descMarc;
-    }
-    
+    }    
     
 }
