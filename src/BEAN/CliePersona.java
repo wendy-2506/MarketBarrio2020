@@ -1,15 +1,15 @@
 package BEAN;
 
-public class Persona {
+public class CliePersona {
     private int idCliente;
     private String apellido;
     private String nombre;
     private String dni;
 
-    public Persona() {
+    public CliePersona() {
     }
 
-    public Persona(int idCliente, String apellido, String nombre, String dni) {
+    public CliePersona(int idCliente, String apellido, String nombre, String dni) {
         this.idCliente = idCliente;
         this.apellido = apellido;
         this.nombre = nombre;

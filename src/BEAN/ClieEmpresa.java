@@ -1,15 +1,15 @@
 package BEAN;
 
-public class Empresa {
+public class ClieEmpresa {
     private int idCliente;
     private String ruc;
     private String nombreEmpresa;
     private String representante;
 
-    public Empresa() {
+    public ClieEmpresa() {
     }
 
-    public Empresa(int idCliente, String ruc, String nombreEmpresa, String representante) {
+    public ClieEmpresa(int idCliente, String ruc, String nombreEmpresa, String representante) {
         this.idCliente = idCliente;
         this.ruc = ruc;
         this.nombreEmpresa = nombreEmpresa;
