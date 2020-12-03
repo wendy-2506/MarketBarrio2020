@@ -1,5 +1,5 @@
 package BEAN;
-//soy io
+//Gabriel Guzman here
 public class Boleta {
     private int idBoleta;
     private int idSerie;
