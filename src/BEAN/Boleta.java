@@ -1,5 +1,6 @@
 package BEAN;
 //Gabriel Guzman here
+//Segundo cambio
 public class Boleta {
     private int idBoleta;
     private int idSerie;
