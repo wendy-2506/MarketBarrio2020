@@ -5,7 +5,7 @@ public class Boleta {
     private int idSerie;
     private String numBol;
     private int idVenta;
-
+//ojvnrehikl
     public Boleta() {
     }
 
