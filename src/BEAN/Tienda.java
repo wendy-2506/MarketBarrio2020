@@ -1,4 +1,5 @@
 package BEAN;
+
 public class Tienda {
     private int idTienda;
     private String descTienda;
@@ -36,6 +37,5 @@ public class Tienda {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-    
-    
+        
 }
