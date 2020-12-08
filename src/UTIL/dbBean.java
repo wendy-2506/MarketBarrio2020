@@ -8,7 +8,7 @@ public class dbBean {
     private String Login="sa";
     private String password="123456789";
 
-  public dbBean(){
+    public dbBean(){
        connect();
        }
 
@@ -26,22 +26,22 @@ public class dbBean {
             return false;
         }
         return true;
-     }
+    }
 
-  public void close() throws SQLException{
+    public void close() throws SQLException{
         dbCon.close();
-       }
+        }
 
-   public ResultSet execSQL(String sql) throws SQLException{
+    public ResultSet execSQL(String sql) throws SQLException{
         Statement s = dbCon.createStatement();
         ResultSet r = s.executeQuery(sql);
         return (r == null) ? null : r;    
-  }
+    }
 
-  public int updateSQL(String sql) throws SQLException{
+    public int updateSQL(String sql) throws SQLException{
         Statement s = dbCon.createStatement();
         int r = s.executeUpdate(sql);
         return (r == 0) ? 0 : r;
-  }
+    }
 
 }
