@@ -69,9 +69,12 @@ CREATE TABLE Cliente(
 	idCliente int NOT NULL,
 	idTipoCli int FOREIGN KEY REFERENCES Tipo_CLiente(idTipoCli),
 	idEmpReg int FOREIGN KEY REFERENCES Empleado(idEmpleado),
+	fechReg date,
 	idEmpMod int FOREIGN KEY REFERENCES Empleado(idEmpleado),
-	correo_electr varchar(300),
 	fechMod date,
+	correo_electr varchar(300),
+	telefono varchar(255),
+	direccion varchar(255),
 	estado int,
 	PRIMARY KEY (idCliente)
 );
@@ -81,8 +84,6 @@ CREATE TABLE Cliente_Persona(
 	apell varchar(255),
 	nomb varchar (255),
 	dni float,
-	direccion varchar(255),
-	telefono varchar(255)
 );
 ---------------------
 CREATE TABLE Cliente_Empresa(
@@ -90,8 +91,6 @@ CREATE TABLE Cliente_Empresa(
 	razon_Social varchar (255),
 	representante varchar (255),
 	ruc varchar (255),
-	direccion varchar (255),
-	telefono varchar(255)
 );
 
 ---------------------
@@ -110,7 +109,7 @@ CREATE TABLE SerieDV (
 CREATE TABLE Cab_Entrada (
     idEntrada int NOT NULL,
 	idEmpReg int FOREIGN KEY REFERENCES Empleado(idEmpleado),
-    fechReg date,
+    	fechReg date,
 	idTienda int FOREIGN KEY REFERENCES Tienda(idTienda),
 	idProveedor int FOREIGN KEY REFERENCES Proveedor(idProveedor),
 	idEmpMod int FOREIGN KEY REFERENCES Empleado(idEmpleado),
