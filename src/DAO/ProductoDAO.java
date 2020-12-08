@@ -63,6 +63,6 @@ public class ProductoDAO {
         catch(SQLException e){
         }
           return resultado;
-      }
+    }
     
 }
