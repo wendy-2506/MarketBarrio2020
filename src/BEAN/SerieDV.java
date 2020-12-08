@@ -1,4 +1,5 @@
 package BEAN;
+//OK CON BD
 public class SerieDV {
     private int idSerie;
     private int idEmpReg;

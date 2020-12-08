@@ -1,26 +1,26 @@
 package BEAN;
-
+//OK CON BD
 public class Producto {
     private int idProducto;
-    private String decripcion;
+    private String descripcion;
     private int idCategoria;
     private int idMarca;
     private double precioUnit;
-    private double unidMed;
+    private String unidMed;
     private int estado;
 
     public Producto() {
     }
 
-    public Producto(int idProducto, String decripcion, int idCategoria, int idMarca, double precioUnit, double unidMed, int estado) {
+    public Producto(int idProducto, String descripcion, int idCategoria, int idMarca, double precioUnit, String unidMed, int estado) {
         this.idProducto = idProducto;
-        this.decripcion = decripcion;
+        this.descripcion = descripcion;
         this.idCategoria = idCategoria;
         this.idMarca = idMarca;
         this.precioUnit = precioUnit;
         this.unidMed = unidMed;
         this.estado = estado;
-    }
+    }    
 
     public int getIdProducto() {
         return idProducto;
@@ -30,12 +30,12 @@ public class Producto {
         this.idProducto = idProducto;
     }
 
-    public String getDecripcion() {
-        return decripcion;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setDecripcion(String decripcion) {
-        this.decripcion = decripcion;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public int getIdCategoria() {
@@ -62,12 +62,12 @@ public class Producto {
         this.precioUnit = precioUnit;
     }
 
-    public double getUnidadMed() {
+    public String getUnidMed() {
         return unidMed;
     }
 
-    public void setUnidadMed(double unidadMed) {
-        this.unidMed = unidadMed;
+    public void setUnidMed(String unidMed) {
+        this.unidMed = unidMed;
     }
 
     public int getEstado() {
@@ -76,6 +76,6 @@ public class Producto {
 
     public void setEstado(int estado) {
         this.estado = estado;
-    }
+    }    
     
 }

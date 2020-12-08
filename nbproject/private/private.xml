@@ -2,6 +2,7 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group>
 <<<<<<< Updated upstream
 <<<<<<< HEAD
@@ -26,5 +27,8 @@
             <file>file:/D:/1.-%20Universidad/Ciclo%204/Programación%20Orientada%20a%20Objetos/Semana%2014/MarketBarrioF/MarketBarrio2020/src/BEAN/Cliente.java</file>
 >>>>>>> Stashed changes
         </group>
+=======
+        <group/>
+>>>>>>> b017b81e0ee72b5d87e286428a4b8b7e8956833c
     </open-files>
 </project-private>
