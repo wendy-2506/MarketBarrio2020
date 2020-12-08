@@ -1,10 +1,9 @@
-create database [MARKETBARRIO] on primary
-(name = N'MARKETBARRIO', filename = N'D:\DATA\MARKETBARRIO.mdf', size = 6144KB, maxsize = unlimited, filegrowth = 1024kb)
-log on
-(name = N'MARKETBARRIO_log', filename = N'D:\DATA\MARKETBARRIO_log.ldf', size = 3072KB, maxsize = 2048GB, filegrowth = 10%)
-go
+USE [master]
+GO
+create database [MARKETBARRIO]
+GO
 -------------
-USE  [MARKETBARRIO]
+USE [MARKETBARRIO]
 GO
 
 CREATE TABLE Tipo_Empleado (
@@ -17,9 +16,9 @@ CREATE TABLE Empleado(
 	idEmpleado int NOT NULL,
 	apellidos varchar(255),
 	nombres varchar(255),
-	idEmpReg int,
+	idEmpReg int FOREIGN KEY REFERENCES Empleado(idEmpleado),
 	fechReg date,
-	idEmpMod int,
+	idEmpMod int FOREIGN KEY REFERENCES Empleado(idEmpleado),
 	fechMod date,
 	usr varchar(255),
 	pw varchar (255),
