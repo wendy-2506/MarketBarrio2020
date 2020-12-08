@@ -182,7 +182,11 @@ CREATE TABLE Det_DocVenta(
 	precio float,
 	cantidad int
 );
----------------------
-
+---------------------{
+CREATE TABLE ProdStock (
+	idTienda int FOREIGN KEY REFERENCES Tienda(idTienda),
+	idProducto int FOREIGN KEY REFERENCES Producto(idProducto),
+	stock int,
+);
 
 
