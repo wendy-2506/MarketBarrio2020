@@ -1,4 +1,5 @@
 package BEAN;
+//OK CON BD
 public class Factura {
     private int idFactura;
     private int idSerie;

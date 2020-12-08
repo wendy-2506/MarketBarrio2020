@@ -1,5 +1,5 @@
 package BEAN;
-
+//OK CON BD
 public class Marca {
     private int idMarca;
     private String descMarc;

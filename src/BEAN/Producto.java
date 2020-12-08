@@ -1,5 +1,5 @@
 package BEAN;
-
+//OK CON BD
 public class Producto {
     private int idProducto;
     private String descripcion;

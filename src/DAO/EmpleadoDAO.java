@@ -1,5 +1,5 @@
 package DAO;
-
+//CORREGIR
 import BEAN.Empleado;
 import UTIL.dbBean;
 import java.sql.ResultSet;

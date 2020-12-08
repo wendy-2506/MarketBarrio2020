@@ -1,32 +1,32 @@
 package BEAN;
-
+//OK CON BD
 public class Empleado {
     private int idEmpleado;
     private String apellidos;
     private String nombres;
-    private int idTipoEmp;
     private int idEmpReg;
     private String fechReg;
     private int idEmpMod;
     private String fechMod;
     private String usr;
     private String pw;
+    private int idTipoEmp;  
     private int estado;
 
     public Empleado() {
     }
 
-    public Empleado(int idEmpleado, String apellidos, String nombres, int idTipoEmp, int idEmpReg, String fechReg, int idEmpMod, String fechMod, String usr, String pw, int estado) {
+    public Empleado(int idEmpleado, String apellidos, String nombres, int idEmpReg, String fechReg, int idEmpMod, String fechMod, String usr, String pw, int idTipoEmp, int estado) {
         this.idEmpleado = idEmpleado;
         this.apellidos = apellidos;
         this.nombres = nombres;
-        this.idTipoEmp = idTipoEmp;
         this.idEmpReg = idEmpReg;
         this.fechReg = fechReg;
         this.idEmpMod = idEmpMod;
         this.fechMod = fechMod;
         this.usr = usr;
         this.pw = pw;
+        this.idTipoEmp = idTipoEmp;
         this.estado = estado;
     }
 
@@ -52,14 +52,6 @@ public class Empleado {
 
     public void setNombres(String nombres) {
         this.nombres = nombres;
-    }
-
-    public int getIdTipoEmp() {
-        return idTipoEmp;
-    }
-
-    public void setIdTipoEmp(int idTipoEmp) {
-        this.idTipoEmp = idTipoEmp;
     }
 
     public int getIdEmpReg() {
@@ -110,12 +102,20 @@ public class Empleado {
         this.pw = pw;
     }
 
+    public int getIdTipoEmp() {
+        return idTipoEmp;
+    }
+
+    public void setIdTipoEmp(int idTipoEmp) {
+        this.idTipoEmp = idTipoEmp;
+    }
+
     public int getEstado() {
         return estado;
     }
 
     public void setEstado(int estado) {
         this.estado = estado;
-    }       
+    }        
             
 }

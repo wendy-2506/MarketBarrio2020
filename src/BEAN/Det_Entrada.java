@@ -1,5 +1,5 @@
 package BEAN;
-
+//OK CON BD
 public class Det_Entrada {
     private int idEntrada;
     private int idProducto;

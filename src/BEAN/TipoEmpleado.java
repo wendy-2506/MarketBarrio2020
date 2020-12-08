@@ -1,5 +1,5 @@
 package BEAN;
-
+//OK CON BD
 public class TipoEmpleado {
     private int idTipoEmp;
     private String descripcion;

@@ -1,5 +1,5 @@
 package BEAN;
-
+//OK CON BD
 public class Cab_Entrada {
     private int idEntrada;
     private int idEmpReg;

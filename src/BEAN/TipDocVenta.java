@@ -1,4 +1,5 @@
 package BEAN;
+//OK CON BD
 public class TipDocVenta {
     private int idTipo;
     private String descrip;
@@ -26,6 +27,5 @@ public class TipDocVenta {
     public void setDescrip(String descrip) {
         this.descrip = descrip;
     }
-    
-    
+        
 }
