@@ -4,6 +4,7 @@ public class Empleado {
     private int idEmpleado;
     private String apellidos;
     private String nombres;
+    private int idTipoEmp;
     private int idEmpReg;
     private String fechReg;
     private int idEmpMod;
@@ -15,10 +16,11 @@ public class Empleado {
     public Empleado() {
     }
 
-    public Empleado(int idEmpleado, String apellidos, String nombres, int idEmpReg, String fechReg, int idEmpMod, String fechMod, String usr, String pw, int estado) {
+    public Empleado(int idEmpleado, String apellidos, String nombres, int idTipoEmp, int idEmpReg, String fechReg, int idEmpMod, String fechMod, String usr, String pw, int estado) {
         this.idEmpleado = idEmpleado;
         this.apellidos = apellidos;
         this.nombres = nombres;
+        this.idTipoEmp = idTipoEmp;
         this.idEmpReg = idEmpReg;
         this.fechReg = fechReg;
         this.idEmpMod = idEmpMod;
@@ -50,6 +52,14 @@ public class Empleado {
 
     public void setNombres(String nombres) {
         this.nombres = nombres;
+    }
+
+    public int getIdTipoEmp() {
+        return idTipoEmp;
+    }
+
+    public void setIdTipoEmp(int idTipoEmp) {
+        this.idTipoEmp = idTipoEmp;
     }
 
     public int getIdEmpReg() {
@@ -106,6 +116,6 @@ public class Empleado {
 
     public void setEstado(int estado) {
         this.estado = estado;
-    }            
+    }       
             
 }

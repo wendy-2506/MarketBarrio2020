@@ -8,7 +8,6 @@ public class dbBean {
     private String Login="sa";
     private String password="123456789";
 
-
   public dbBean(){
        connect();
        }
@@ -29,7 +28,6 @@ public class dbBean {
         return true;
      }
 
-
   public void close() throws SQLException{
         dbCon.close();
        }
@@ -39,7 +37,6 @@ public class dbBean {
         ResultSet r = s.executeQuery(sql);
         return (r == null) ? null : r;    
   }
-
 
   public int updateSQL(String sql) throws SQLException{
         Statement s = dbCon.createStatement();
