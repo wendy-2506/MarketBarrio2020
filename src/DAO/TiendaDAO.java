@@ -4,6 +4,6 @@ package DAO;
 /**
  * @author Wendy
  */
-public class daniel {
-//que foe
+public class TiendaDAO {
+
 }
