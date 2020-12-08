@@ -180,7 +180,7 @@ CREATE TABLE Det_DocVenta(
 	idVenta int FOREIGN KEY REFERENCES Cab_DocVenta(idVenta),
 	idProducto int FOREIGN KEY REFERENCES Producto(idProducto),
 	precio float,
-	cantidad float
+	cantidad int
 );
 ---------------------
 
