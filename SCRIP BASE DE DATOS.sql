@@ -97,7 +97,7 @@ CREATE TABLE Cliente_Empresa(
 CREATE TABLE SerieDV (
     idSerie int NOT NULL,
 	idEmpReg int FOREIGN KEY REFERENCES Empleado(idEmpleado),
-    fechReg date,
+    	fechReg date,
 	idTienda int FOREIGN KEY REFERENCES Tienda(idTienda),
 	numInicio int,
 	numFin int,
@@ -148,11 +148,12 @@ CREATE TABLE TipDocVenta(
 CREATE TABLE Cab_DocVenta(
 	idVenta int NOT NULL,
 	idCliente int FOREIGN KEY REFERENCES Cliente(idCliente),
-	fechVenta date,
 	idEmpReg int FOREIGN KEY REFERENCES Empleado(idEmpleado),
+	fechVenta date,
+	idEmpMod int FOREIGN KEY REFERENCES Empleado(idEmpleado),
+	fechMod date,
 	idTipo int FOREIGN KEY REFERENCES TipDocVenta(idTipo),
 	idTienda int FOREIGN KEY REFERENCES Tienda(idTienda),
-	idEmpMod int FOREIGN KEY REFERENCES Empleado(idEmpleado),
 	estado int,
 	PRIMARY KEY (idVenta)
 );
