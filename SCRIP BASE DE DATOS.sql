@@ -179,7 +179,8 @@ CREATE TABLE Boleta(
 CREATE TABLE Det_DocVenta(
 	idVenta int FOREIGN KEY REFERENCES Cab_DocVenta(idVenta),
 	idProducto int FOREIGN KEY REFERENCES Producto(idProducto),
-	stock int,
+	precio float,
+	cantidad float
 );
 ---------------------
 
