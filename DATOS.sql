@@ -53,3 +53,6 @@ insert into Tienda values (5,'Market Barrio- Sede Grau', 'Av. Emancipadores 356 
 
 insert into TipDocVenta values (1,'Boleta')
 insert into TipDocVenta values (2,'Factura')
+
+insert into Cab_DocVenta values(1,1,2,'2018-01-01',2,'2018-01-01',1,1,1)
+insert into Cab_DocVenta values(2,2,2,'2018-01-01',2,'2018-01-01',2,1,1)
