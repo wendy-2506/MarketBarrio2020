@@ -48,7 +48,7 @@ public class FrmBoleta extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Kristen ITC", 3, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Kristen ITC", 1, 18)); // NOI18N
         jLabel1.setText("BOLETA \"MARKET BARRIO\"");
 
         jLabel2.setText("IdBoleta");
