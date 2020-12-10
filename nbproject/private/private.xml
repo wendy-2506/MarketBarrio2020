@@ -2,33 +2,10 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
         <group>
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-            <file>file:/D:/Wendy/Documents/GIT%20POO/MarketBarrio2020/src/BEAN/Boleta.java</file>
-            <file>file:/D:/Wendy/Documents/GIT%20POO/MarketBarrio2020/src/BEAN/CliePersona.java</file>
-=======
-            <file>file:/D:/Users/Jimmy%20G/Desktop/POO/Proyecto%20Final/MarketBarrio2020/MarketBarrio2020/src/BEAN/Boleta.java</file>
-            <file>file:/D:/Users/Jimmy%20G/Desktop/POO/Proyecto%20Final/MarketBarrio2020/MarketBarrio2020/src/BEAN/SerieDV.java</file>
-            <file>file:/D:/Users/Jimmy%20G/Desktop/POO/Proyecto%20Final/MarketBarrio2020/MarketBarrio2020/src/BEAN/Producto.java</file>
-            <file>file:/D:/Users/Jimmy%20G/Desktop/POO/Proyecto%20Final/MarketBarrio2020/MarketBarrio2020/src/BEAN/Det_DocVenta.java</file>
-            <file>file:/D:/Users/Jimmy%20G/Desktop/POO/Proyecto%20Final/MarketBarrio2020/MarketBarrio2020/src/BEAN/Factura.java</file>
-            <file>file:/D:/Users/Jimmy%20G/Desktop/POO/Proyecto%20Final/MarketBarrio2020/MarketBarrio2020/src/BEAN/Cab_DocVenta.java</file>
-            <file>file:/D:/Users/Jimmy%20G/Desktop/POO/Proyecto%20Final/MarketBarrio2020/MarketBarrio2020/src/BEAN/Empleado.java</file>
-            <file>file:/D:/Users/Jimmy%20G/Desktop/POO/Proyecto%20Final/MarketBarrio2020/MarketBarrio2020/src/IU/FrmVenta.java</file>
-            <file>file:/D:/Users/Jimmy%20G/Desktop/POO/Proyecto%20Final/MarketBarrio2020/MarketBarrio2020/src/BEAN/TipDocVenta.java</file>
-            <file>file:/D:/Users/Jimmy%20G/Desktop/POO/Proyecto%20Final/MarketBarrio2020/MarketBarrio2020/src/BEAN/Det_Entrada.java</file>
->>>>>>> origin/main
-=======
-            <file>file:/D:/1.-%20Universidad/Ciclo%204/Programación%20Orientada%20a%20Objetos/Semana%2014/MarketBarrioF/MarketBarrio2020/src/BEAN/ClieEmpresa.java</file>
-            <file>file:/D:/1.-%20Universidad/Ciclo%204/Programación%20Orientada%20a%20Objetos/Semana%2014/MarketBarrioF/MarketBarrio2020/src/IU/FrmAgClieDe.java</file>
-            <file>file:/D:/1.-%20Universidad/Ciclo%204/Programación%20Orientada%20a%20Objetos/Semana%2014/MarketBarrioF/MarketBarrio2020/src/BEAN/CliePersona.java</file>
-            <file>file:/D:/1.-%20Universidad/Ciclo%204/Programación%20Orientada%20a%20Objetos/Semana%2014/MarketBarrioF/MarketBarrio2020/src/BEAN/Cliente.java</file>
->>>>>>> Stashed changes
+            <file>file:/D:/Wendy/Documents/GIT%20POO/MarketBarrio2020/src/DAO/EmpleadoDAO.java</file>
+            <file>file:/D:/Wendy/Documents/GIT%20POO/MarketBarrio2020/src/DAO/ProductoDAO.java</file>
+            <file>file:/D:/Wendy/Documents/GIT%20POO/MarketBarrio2020/src/DAO/TiendaDAO.java</file>
         </group>
-=======
-        <group/>
->>>>>>> b017b81e0ee72b5d87e286428a4b8b7e8956833c
     </open-files>
 </project-private>

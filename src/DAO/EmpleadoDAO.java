@@ -1,5 +1,5 @@
 package DAO;
-//CORREGIR
+
 import BEAN.Empleado;
 import UTIL.dbBean;
 import java.sql.ResultSet;
@@ -23,16 +23,16 @@ public class EmpleadoDAO {
                 emp.setIdEmpleado(resultado.getInt(1));
                 emp.setApellidos(resultado.getString(2));
                 emp.setNombres(resultado.getString(3));
-                emp.setIdTipoEmp(resultado.getInt(4));
-                emp.setIdEmpReg(resultado.getInt(5));
-                emp.setFechReg(resultado.getString(6));
-                emp.setIdEmpMod(resultado.getInt(7));
-                emp.setFechMod(resultado.getString(8));
-                emp.setUsr(resultado.getString(9));
-                emp.setPw(resultado.getString(10));
+                emp.setIdEmpReg(resultado.getInt(4));
+                emp.setFechReg(resultado.getString(5));
+                emp.setIdEmpMod(resultado.getInt(6));
+                emp.setFechMod(resultado.getString(7));
+                emp.setUsr(resultado.getString(8));
+                emp.setPw(resultado.getString(9));
+                emp.setIdTipoEmp(resultado.getInt(10));
                 emp.setEstado(resultado.getInt(11));
                 item.addElement(emp);
-            }
+            }    
         }catch(java.sql.SQLException e){
             e.printStackTrace();
         }
@@ -47,11 +47,11 @@ public class EmpleadoDAO {
        String sql= "";
        dbBean con=new dbBean();
        if(proc.equals("insert")){
-            sql="INSERT INTO personal VALUES ('"+ p.getIdEmpleado() +"', '"+ p.getApellidos() +"', '"+ p.getNombres() +"', '"+  p.getNombres() +"', '"+  p.getNombres() +"', '"+  p.getNombres() +"', '"+ p.getEstado() +"')";
+            sql="INSERT INTO Empleado VALUES ('"+ p.getIdEmpleado() +"', '"+ p.getApellidos() +"', '"+ p.getNombres() +"', '"+  p.getIdEmpReg() +"', '"+  p.getFechReg() +"', '"+  p.getIdEmpMod() +"', '"+ p.getEstado() +"')";
             System.out.println("uuuuuuu" + sql);
        }
        if(proc.equals("update")){
-            sql="UPDATE personal set apellidos = '"+ p.getApellidos() +"', nombres = '"+ p.getNombres() +"', estado = '"+ p.getEstado() +"' where id_personal = '"+ p.getIdEmpleado() +"'";
+            sql="UPDATE Empleado set apellidos = '"+ p.getApellidos() +"', nombres = '"+ p.getNombres() +"', estado = '"+ p.getEstado() +"' where id_personal = '"+ p.getIdEmpleado() +"'";
        }
        System.out.println("Observando el estado de la sentencia sql: "+sql);
 
