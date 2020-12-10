@@ -39,7 +39,7 @@ insert into Producto values(7,'Fanta 450ml',1,2,1.5,'Botella',1)
 insert into Producto values(8,'Sprite 500ml',1,2,1.5,'Botella',1)
 insert into Producto values(9,'Powerade 550ml',1,2,2.5,'Botella',1)
 insert into Producto values(10,'Aquarius 500ml',1,2,1,'Botella',1)
-insert into Producto values(11,'Alcohol en Gel Aval Ocean - Frasco 380ml',4,9,1,'Frasco',1)
+insert into Producto values(11,'Alcohol en Gel Aval Ocean - Frasco 380ml',4,9,10,'Frasco',1)
 
 insert into Proveedor values(1, 'Ucp Backus y Jonhston', '1798285937001', 'Alonso Fernandez', 'Alonso de Molina 543 - Santiago de Surco', '01-765678')
 insert into Proveedor values(2, 'Aje Group', '2698685737201', 'Maria Sanchez', 'Los Geranios 123 - San Miguel', '01-456783')
@@ -61,3 +61,4 @@ insert into Cab_DocVenta values(2,2,2,'2018-01-01',2,'2018-01-01',2,1,1)
 
 insert into Det_DocVenta values(1,1,10.5,2)
 insert into Det_DocVenta values(1,6,1.5,3)
+insert into Det_DocVenta values(2,11,10,5)
