@@ -49,9 +49,6 @@ insert into Proveedor values(5, 'Makro Supermayorista S.A.', '20492092313', 'Jos
 
 insert into Tienda values (1,'Market Barrio- Sede Colonial', 'Av.Los Santos 452 - San Borja')
 insert into Tienda values (2,'Market Barrio- Sede Bolichera', 'Av.Tupac Amaru 124 - San Juan de Miraflores')
-insert into Tienda values (3,'Market Barrio- Sede Callao', 'Av. Los Heroes 567 - Callao')
-insert into Tienda values (4,'Market Barrio- Sede La Cultura', 'Av. Franciso Pizarro 456 - San Isidro')
-insert into Tienda values (5,'Market Barrio- Sede Grau', 'Av. Emancipadores 356 - Centro de Lima')
 
 insert into TipDocVenta values (1,'Boleta')
 insert into TipDocVenta values (2,'Factura')
