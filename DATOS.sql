@@ -3,6 +3,8 @@ insert into Tipo_Empleado values (2,'Cajero')
 
 insert into Empleado values (1,'Mendoza', 'Wendy',1,'2020-12-10',1,'2020-12-10','wendym','ultrasecreto',1,1)
 insert into Empleado values (2,'Apaza', 'Jhoel',1,'2020-12-10',1,'2020-12-10','jhemapca','jhoelemir10',2,1)
+insert into Empleado values (3,'Castillo', 'Daniel',1,'2020-12-10',1,'2020-12-10','danielc','secreto234',2,1)
+insert into Empleado values (4,'Grados', 'Jimmy',1,'2020-12-10',1,'2020-12-10','jimmyg','987secret',2,1)
 
 insert into Tipo_Cliente values (1,'Cliente natural')
 insert into Tipo_Cliente values (2,'Empresa')
