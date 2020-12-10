@@ -62,3 +62,7 @@ insert into Cab_DocVenta values(2,2,2,'2018-01-01',2,'2018-01-01',2,1,1)
 insert into Det_DocVenta values(1,1,10.5,2)
 insert into Det_DocVenta values(1,6,1.5,3)
 insert into Det_DocVenta values(2,11,10,5)
+
+insert into SerieDV values(1,2,'2018-01-01',1,001,100,'2019-01-01',1)
+insert into Boleta values(1,1,1,1)
+insert into Factura values(1,1,1,2)
