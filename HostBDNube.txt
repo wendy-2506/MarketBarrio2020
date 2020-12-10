@@ -1,0 +1,16 @@
+Nombre de la BD: market_barrio_20
+Nombre de usuario: market_barrio
+Contraseña de usuario MySQL: BallonNosVaAPoner20
+
+Correo electronico: javierprado7@yopmail.com
+
+host:db4free.net
+puerto: 3306
+
+Puede usar phpMyAdmin en nuestro sitio web www.db4free.net
+para iniciar sesión en el servidor.
+
+Base de datos: market_barrio_20
+Nombre de usuario: market_barrio
+Correo electrónico: javierprado7@yopmail.com
+
