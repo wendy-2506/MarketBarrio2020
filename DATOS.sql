@@ -43,3 +43,8 @@ insert into Proveedor values(3, 'Coca Cola Peru', '459828123001', 'John Smith', 
 insert into Proveedor values(4, 'Alicorp', '123145123544', 'Juan Perez', 'Micaela Bastidas 546 - San Isidro', '01-123451')
 insert into Proveedor values(5, 'Makro Supermayorista S.A.', '20492092313', 'Jose Passano', 'Av. Jorge Chavez Nro. 1218 - Santiago de Surco', '01-6348000')
 
+insert into Tienda values (1,'Market Barrio- Sede Colonial', 'Av.Los Santos 452 - San Borja')
+insert into Tienda values (2,'Market Barrio- Sede Bolichera', 'Av.Tupac Amaru 124 - San Juan de Miraflores')
+insert into Tienda values (3,'Market Barrio- Sede Callao', 'Av. Los Heroes 567 - Callao')
+insert into Tienda values (4,'Market Barrio- Sede La Cultura', 'Av. Franciso Pizarro 456 - San Isidro')
+insert into Tienda values (5,'Market Barrio- Sede Grau', 'Av. Emancipadores 356 - Centro de Lima')
