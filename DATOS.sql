@@ -50,3 +50,6 @@ insert into Tienda values (2,'Market Barrio- Sede Bolichera', 'Av.Tupac Amaru 12
 insert into Tienda values (3,'Market Barrio- Sede Callao', 'Av. Los Heroes 567 - Callao')
 insert into Tienda values (4,'Market Barrio- Sede La Cultura', 'Av. Franciso Pizarro 456 - San Isidro')
 insert into Tienda values (5,'Market Barrio- Sede Grau', 'Av. Emancipadores 356 - Centro de Lima')
+
+insert into TipDocVenta values (1,'Boleta')
+insert into TipDocVenta values (2,'Factura')
