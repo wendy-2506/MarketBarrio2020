@@ -1,17 +1,17 @@
 insert into Tipo_Empleado values (1,'Gerente de tienda')
 insert into Tipo_Empleado values (2,'Cajero')
 
-insert into Empleado values (1,'Mendoza', 'Wendy',1,'2020-12-10',1,'2020-12-10','wendym','ultrasecreto',1,1)
-insert into Empleado values (2,'Apaza', 'Jhoel',1,'2020-12-10',1,'2020-12-10','jhemapca','jhoelemir10',2,1)
-insert into Empleado values (3,'Castillo', 'Daniel',1,'2020-12-10',1,'2020-12-10','danielc','secreto234',2,1)
-insert into Empleado values (4,'Grados', 'Jimmy',1,'2020-12-10',1,'2020-12-10','jimmyg','987secret',2,1)
+insert into Empleado values (1,'Mendoza', 'Wendy',1,'2018-01-01',1,'2018-01-01','wendym','ultrasecreto',1,1)
+insert into Empleado values (2,'Apaza', 'Jhoel',1,'2018-01-01',1,'2018-01-01','jhemapca','jhoelemir10',2,1)
+insert into Empleado values (3,'Castillo', 'Daniel',1,'2018-01-01',1,'2018-01-01','danielc','secreto234',2,1)
+insert into Empleado values (4,'Grados', 'Jimmy',1,'2018-01-01',1,'2018-01-01','jimmyg','987secret',2,1)
 
 insert into Tipo_Cliente values (1,'Cliente natural')
 insert into Tipo_Cliente values (2,'Empresa')
 
-insert into Cliente values (1,1,2,'2020-12-10',2,'2020-12-10','ejemplo123@hotmail.com','967301439','San Miguel',1)
+insert into Cliente values (1,1,2,'2018-01-01',2,'2018-01-01','ejemplo123@hotmail.com','967301439','San Miguel',1)
 insert into Cliente_Persona values (1,'Vega','Rodrigo',70812943)
-insert into Cliente values (2,2,2,'2020-12-10',2,'2020-12-10','empresa@gmail.com','962232158','La molina',1)
+insert into Cliente values (2,2,2,'2018-01-01',2,'2018-01-01','empresa@gmail.com','962232158','La molina',1)
 insert into Cliente_Empresa values(2,'Empresa El Ejemplo','Mariano Ramirez','10164090588')
 
 insert into Categoria values(1,'Alimentos y Bebidas')
