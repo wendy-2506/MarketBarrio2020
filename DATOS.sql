@@ -26,4 +26,8 @@ insert into Marca values(6,'Colgate')
 insert into Marca values(7,'Gillette')
 insert into Marca values(8,'Nivea')
 
-
+insert into Producto values(1,'Pringles Crema y Cebolla 137g.',1,1,10.5,'Latas',1)
+insert into Producto values(2,'Pringles Original 137g.',1,1,11,'Latas',1)
+insert into Producto values(3,'Pringles Queso 137g.',1,1,10.5,'Latas',1)
+insert into Producto values(4,'Pringles Barbacoa 137g.',1,1,10.5,'Latas',1)
+insert into Producto values(5,'Pringles Pizza 137g.',1,1,10,'Latas',1)
