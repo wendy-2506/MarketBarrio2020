@@ -16,3 +16,14 @@ insert into Categoria values(1,'Alimentos y Bebidas')
 insert into Categoria values(2,'Animales y Mascotas')
 insert into Categoria values(3,'Librería')
 insert into Categoria values(4,'Belleza y Cuidado Personal')
+
+insert into Marca values(1,'Kelloggs')
+insert into Marca values(2,'Coca-Cola Company')
+insert into Marca values(3,'PepsiCo')
+insert into Marca values(4,'Nestlé')
+insert into Marca values(5,'L’Oréal Paris')
+insert into Marca values(6,'Colgate')
+insert into Marca values(7,'Gillette')
+insert into Marca values(8,'Nivea')
+
+
