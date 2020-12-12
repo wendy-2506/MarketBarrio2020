@@ -74,6 +74,11 @@
         jLabel1.setText("MANTENIMIENTO TIENDA");
 
         jButton3.setText("SALIR");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Buscar:");
 
@@ -301,6 +306,12 @@
         this.txtDescripcion.setText("");
         this.txtDireccion.setText(""); 
     }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+
+
+   System.exit(0);            // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
     
     private void limpia(){
         this.txtIdTienda.setText("");
