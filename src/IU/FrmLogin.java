@@ -118,6 +118,7 @@ public class FrmLogin extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "BIEN XD");
         escP.setVisible(true);
         escP.setSize(1366, 768);
+        this.dispose();
         }else{
         JOptionPane.showMessageDialog(this, "Error: Usted no se encuentra Registrado en el sistema");
         }
