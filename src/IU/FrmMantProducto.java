@@ -1,8 +1,5 @@
 
 package IU;
-
-
-
 import BEAN.Producto;
 import DAO.ProductoDAO;
 import UTIL.util;
