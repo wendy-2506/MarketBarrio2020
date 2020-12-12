@@ -43,7 +43,7 @@ public class CategoriaDAO {
             System.out.println("uuuuuuu" + sql);
        }
        if(cate.equals("update")){
-            sql= "UPDATE categoria set descripcion = '"+ c.getDescrip();
+            sql= "UPDATE categoria set descripcion = '"+ c.getDescrip()+"' where idProducto = '"+ c.getIdCategoria() +"'";
        }
        System.out.println("Observando el estado de la sentencia sql: "+sql);
 
