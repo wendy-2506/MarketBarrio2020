@@ -4,7 +4,7 @@ import BEAN.Cliente_Empresa;
 import UTIL.dbBean;
 import java.sql.*;
 import java.util.Vector;
-
+//hace la busqueda por razon social o ruc
 public class CliEmpresaDAO {
 
     public Vector<Cliente_Empresa> ListaItem(boolean sw, String str){

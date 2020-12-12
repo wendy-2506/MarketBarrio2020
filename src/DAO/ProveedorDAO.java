@@ -4,7 +4,7 @@ import BEAN.Proveedor;
 import UTIL.dbBean;
 import java.sql.*;
 import java.util.Vector;
-
+//busca al proveedor por razon social o nombre de representante
 public class ProveedorDAO {
 
     public Vector<Proveedor> ListaItem(boolean sw, String str){

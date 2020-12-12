@@ -4,7 +4,7 @@ import BEAN.Cliente_Persona;
 import UTIL.dbBean;
 import java.sql.*;
 import java.util.Vector;
-
+//busca a la persona por nombre y apellido
 public class CliPersonaDAO {
 
     public Vector<Cliente_Persona> ListaItem(boolean sw, String str){
@@ -35,6 +35,7 @@ public class CliPersonaDAO {
 
         return item;
     }
+    
     public int procesaItem(Cliente_Persona c, String proc){
        int resultado=0;
        String sql= "";
