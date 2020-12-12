@@ -160,7 +160,7 @@ CREATE TABLE Cab_DocVenta(
 CREATE TABLE Factura(
 	idFactura int NOT NULL,
 	idSerie int FOREIGN KEY REFERENCES SerieDV(idSerie),
-	numFac int,
+	numFac varchar(50) ,
 	idVenta int FOREIGN KEY REFERENCES Cab_DocVenta(idVenta),
 	PRIMARY KEY (idFactura)
 );
@@ -169,7 +169,7 @@ CREATE TABLE Factura(
 CREATE TABLE Boleta(
 	idBoleta int NOT NULL,
 	idSerie int FOREIGN KEY REFERENCES SerieDV(idSerie),
-	numBol int,
+	numBol varchar(50) ,
 	idVenta int FOREIGN KEY REFERENCES Cab_DocVenta(idVenta),
 	PRIMARY KEY (idBoleta)
 );
