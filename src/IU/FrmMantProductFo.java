@@ -7,11 +7,11 @@ import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class FrmMantProducto extends javax.swing.JFrame {
+public class FrmMantProductFo extends javax.swing.JFrame {
     ProductoDAO prodDAO;
     DefaultTableModel dtm;
     int idPred;
-    public FrmMantProducto() {
+    public FrmMantProductFo() {
         prodDAO = new ProductoDAO();
         initComponents();
         dtm = (DefaultTableModel)this.tblBuscar.getModel();
@@ -350,7 +350,7 @@ private boolean valida(){
        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmMantProducto().setVisible(true);
+                new FrmMantProductFo().setVisible(true);
             }
         });
     }
