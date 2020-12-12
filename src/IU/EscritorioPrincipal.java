@@ -5,8 +5,12 @@ import javax.swing.JFrame;
 public class EscritorioPrincipal extends javax.swing.JFrame {
     
     public EscritorioPrincipal() {
+        
         initComponents();
+        
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.editMenu.setEnabled(false);
+        this.fileMenu.setEnabled(false);
     }
     
     @SuppressWarnings("unchecked")
