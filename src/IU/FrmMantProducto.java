@@ -37,6 +37,40 @@ private void llenaTblBuscar(boolean s, String c){
             dtm.addRow(vecPro);
         }
 }
+private boolean valida(){
+        boolean sw = false;
+        if(this.txtDescripcion.getText().isEmpty()){ 
+            JOptionPane.showMessageDialog(this, "Ingrese Descripcion");
+        }else{
+            if(this.txtAncho.getText().isEmpty()){
+                JOptionPane.showMessageDialog(this, "Ingrese Ancho");
+            }else{
+                if(this.txtLargo.getText().isEmpty()){
+                    JOptionPane.showMessageDialog(this, "Ingrese Largo");
+                }else{
+                    if(this.txtLargo.getText().isEmpty()){
+                        JOptionPane.showMessageDialog(this, "Ingrese Direccion");
+                    }else{
+                        if(this.txtLargo.getText().isEmpty()){
+                            JOptionPane.showMessageDialog(this, "Ingrese Departamento");
+                        }else{
+                            if(this.txtLargo.getText().isEmpty()){
+                                JOptionPane.showMessageDialog(this, "Ingrese Provincia");
+                            }else{
+                                if(this.txtLargo.getText().isEmpty()){
+                                    JOptionPane.showMessageDialog(this, "Ingrese Provincia");
+                                }else{
+                                sw = true;   
+                                }
+                            }
+                        }
+                }
+                }
+            }
+        }
+        return sw;
+    }
+
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -267,7 +301,32 @@ private void llenaTblBuscar(boolean s, String c){
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-   
+ if(valida()==true){
+            Predio c = new Predio();
+            util u = new util();
+            
+            if(this.btnGrabar.getText().equals("GRABAR")){
+                this.idPred = u.idNext("Predio", "IdPredio");
+            
+            }else{
+                 this.idPred = Integer.parseInt(this.txtIdPredio.getText());
+            }
+            c.setIdPredio(idPred);
+            c.setDescripcion(this.txtDescripcion.getText());
+            c.setAncho(Double.parseDouble(this.txtAncho.getText()));
+            c.setLargo(Double.parseDouble(this.txtLargo.getText()));
+            c.setDireccion(this.txtDireccion.getText());
+            c.setDepartamento(this.txtDepartamento.getText());
+            c.setProvincia(this.txtProvincia.getText());
+            c.setDistrito(this.txtDistrito.getText());
+            if(this.btnGrabar.getText().equals("GRABAR")){
+                predDAO.procesaPred(c, "insert");
+            }else{
+                predDAO.procesaPred(c, "update");
+            }
+            llenaTblBuscar(false, "");
+            limpia();
+        }   
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
