@@ -3,13 +3,13 @@ package BEAN;
 public class Factura {
     private int idFactura;
     private int idSerie;
-    private int numFac;
+    private String numFac;
     private int idVenta;
 
     public Factura() {
     }
 
-    public Factura(int idFactura, int idSerie, int numFac, int idVenta) {
+    public Factura(int idFactura, int idSerie, String numFac, int idVenta) {
         this.idFactura = idFactura;
         this.idSerie = idSerie;
         this.numFac = numFac;
@@ -32,11 +32,11 @@ public class Factura {
         this.idSerie = idSerie;
     }
 
-    public int getNumFac() {
+    public String getNumFac() {
         return numFac;
     }
 
-    public void setNumFac(int numFac) {
+    public void setNumFac(String numFac) {
         this.numFac = numFac;
     }
 

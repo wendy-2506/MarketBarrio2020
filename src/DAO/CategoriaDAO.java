@@ -1,16 +1,16 @@
 package DAO;
 
-import BEAN.Factura;
+import BEAN.Categoria;
 import UTIL.dbBean;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
 
-public class FacturaDAO {
-    public Vector<Factura> ListaItem(boolean sw, String str){
-        Vector<Factura> item = new Vector<Factura>();
+public class CategoriaDAO {
+    public Vector<Categoria> ListaItem(boolean sw, String str){
+        Vector<Categoria> item = new Vector<Categoria>();
         dbBean con = new dbBean();
-        String sql = "Select * from factura";
+        String sql = "Select * from categoria";
         if(sw == true){
             sql = sql + " WHERE descripcion LIKE '"+ str +"%'";
         }
@@ -20,12 +20,10 @@ public class FacturaDAO {
             ResultSet resultado = con.execSQL(sql);
             
             while(resultado.next()){
-                Factura factura = new Factura();
-                factura.setIdFactura(resultado.getInt(1));        
-                factura.setIdSerie(resultado.getInt(2));
-                factura.setNumFac(resultado.getString(3));
-                factura.setIdVenta(resultado.getInt(4));
-                item.addElement(factura);
+                Categoria categoria = new Categoria();
+                categoria.setIdCategoria(resultado.getInt(1));        
+                categoria.setDescrip(resultado.getString(2));
+                item.addElement(categoria);
             }
         }catch(java.sql.SQLException e){
             e.printStackTrace();
@@ -36,16 +34,16 @@ public class FacturaDAO {
 
         return item;
     }
-    public int procesaItem(Factura f, String bole){
+    public int procesaItem(Categoria c, String cate){
        int resultado=0;
        String sql= "";
        dbBean con=new dbBean();
-       if(bole.equals("insert")){
-            sql="INSERT INTO factura VALUES ('"+ f.getIdFactura()+"', '"+ f.getIdSerie() +"', '"+ f.getNumFac() +"', '"+ f.getIdVenta() +"')";
+       if(cate.equals("insert")){
+            sql="INSERT INTO categoria VALUES ('"+ c.getIdCategoria()+"', '"+ c.getDescrip();
             System.out.println("uuuuuuu" + sql);
        }
-       if(bole.equals("update")){
-            sql= "UPDATE boleta set idSerie = '"+ f.getIdSerie() +"', NumFac = '"+ f.getNumFac() +"', idVenta = '"+ f.getIdVenta() +"' where id_producto = '"+ f.getIdFactura() +"'";
+       if(cate.equals("update")){
+            sql= "UPDATE categoria set descripcion = '"+ c.getDescrip()+"' where idProducto = '"+ c.getIdCategoria() +"'";
        }
        System.out.println("Observando el estado de la sentencia sql: "+sql);
 

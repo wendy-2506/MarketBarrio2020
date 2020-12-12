@@ -1,5 +1,5 @@
 package DAO;
-
+//agrega y actualiza, busca segun apellidos y nombres
 import BEAN.Empleado;
 import UTIL.dbBean;
 import java.sql.ResultSet;
@@ -42,16 +42,17 @@ public class EmpleadoDAO {
 
         return item;
     }
+    
     public int procesaItem(Empleado p, String proc){
        int resultado=0;
        String sql= "";
        dbBean con=new dbBean();
        if(proc.equals("insert")){
-            sql="INSERT INTO Empleado VALUES ('"+ p.getIdEmpleado() +"', '"+ p.getApellidos() +"', '"+ p.getNombres() +"', '"+  p.getIdEmpReg() +"', '"+  p.getFechReg() +"', '"+  p.getIdEmpMod() +"', '"+ p.getEstado() +"')";
+            sql="INSERT INTO Empleado VALUES ('"+ p.getIdEmpleado() +"', '"+ p.getApellidos() +"', '"+ p.getNombres() +"', '"+  p.getIdEmpReg() +"', '"+  p.getFechReg() +"', '"+  p.getIdEmpMod() +"', '"+  p.getFechMod() +"', '"+  p.getUsr() +"', '"+  p.getPw() +"', '"+  p.getIdTipoEmp() +"', '"+ p.getEstado() +"')";
             System.out.println("uuuuuuu" + sql);
        }
        if(proc.equals("update")){
-            sql="UPDATE Empleado set apellidos = '"+ p.getApellidos() +"', nombres = '"+ p.getNombres() +"', estado = '"+ p.getEstado() +"' where id_personal = '"+ p.getIdEmpleado() +"'";
+            sql="UPDATE Empleado set apellidos = '"+ p.getApellidos() +"', nombres = '"+ p.getNombres() +"', idEmpReg= '"+ p.getIdEmpReg() +"', fechReg = '"+ p.getFechReg() +"', idEmpMod = '"+ p.getIdEmpMod() +"', fechMod = '"+ p.getFechMod() +"', usr = '"+ p.getUsr() +"', pw = '"+ p.getPw() +"', idTipoEmp = '"+ p.getIdTipoEmp() +"', estado = '"+ p.getEstado() +"' where this.idEmpleado = '"+ p.getIdEmpleado() +"'";
        }
        System.out.println("Observando el estado de la sentencia sql: "+sql);
 
@@ -67,5 +68,23 @@ public class EmpleadoDAO {
         }
           return resultado;
     }
+    
+    public boolean Validame(String usr, String psw){
+        boolean login= false;
 
+        try{
+            dbBean db=new dbBean();
+            ResultSet resultado = db.execSQL("select e.usr,e.pw from Empleado e");
+            while (resultado.next()){
+                if(usr.equals(resultado.getString(1))){
+                    if(psw.equals(resultado.getString(2))){
+                        login=true;
+                    }
+                }
+            }
+        }
+        catch(java.sql.SQLException e){e.printStackTrace();
+        }
+        return login;
+    }
 }

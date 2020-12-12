@@ -2,6 +2,7 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group>
             <file>file:/D:/Users/Jimmy%20G/Desktop/POO/Proyecto%20Final/MarketBarrio2020/MarketBarrio2020/src/BEAN/Boleta.java</file>
             <file>file:/D:/Users/Jimmy%20G/Desktop/POO/Proyecto%20Final/MarketBarrio2020/MarketBarrio2020/src/DAO/CliPersonaDAO.java</file>
@@ -21,5 +22,16 @@
             <file>file:/D:/Users/Jimmy%20G/Desktop/POO/Proyecto%20Final/MarketBarrio2020/MarketBarrio2020/src/BEAN/Empleado.java</file>
             <file>file:/D:/Users/Jimmy%20G/Desktop/POO/Proyecto%20Final/MarketBarrio2020/MarketBarrio2020/src/BEAN/TipDocVenta.java</file>
         </group>
+=======
+<<<<<<< Updated upstream
+        <group/>
+=======
+        <group>
+            <file>file:/D:/1.-%20Universidad/Ciclo%204/Programación%20Orientada%20a%20Objetos/Semana%2014/MarketBarrioF/MarketBarrio2020/src/IU/FrmLogin.java</file>
+            <file>file:/D:/1.-%20Universidad/Ciclo%204/Programación%20Orientada%20a%20Objetos/Semana%2014/MarketBarrioF/MarketBarrio2020/src/IU/EscritorioPrincipal.java</file>
+            <file>file:/D:/1.-%20Universidad/Ciclo%204/Programación%20Orientada%20a%20Objetos/Semana%2014/MarketBarrioF/MarketBarrio2020/src/DAO/EmpleadoDAO.java</file>
+        </group>
+>>>>>>> Stashed changes
+>>>>>>> b64526b6be70c952d0f2390f0fa5c3a3bf5e33d4
     </open-files>
 </project-private>
