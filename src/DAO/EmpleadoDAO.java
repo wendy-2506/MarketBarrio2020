@@ -67,5 +67,23 @@ public class EmpleadoDAO {
         }
           return resultado;
     }
+    
+    public boolean Validame(String usr, String psw){
+        boolean login= false;
 
+        try{
+            dbBean db=new dbBean();
+            ResultSet resultado = db.execSQL("select e.usr,e.pw from Empleado e");
+            while (resultado.next()){
+                if(usr.equals(resultado.getString(1))){
+                    if(psw.equals(resultado.getString(2))){
+                        login=true;
+                    }
+                }
+            }
+        }
+        catch(java.sql.SQLException e){e.printStackTrace();
+        }
+        return login;
+    }
 }
