@@ -3,10 +3,13 @@ package IU;
 import java.sql.Connection;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import DAO.*;
 
 public class FrmLogin extends javax.swing.JFrame {
+    EmpleadoDAO e;
     public FrmLogin() {
         initComponents();
+        e=new EmpleadoDAO();
     }
 
     @SuppressWarnings("unchecked")
@@ -22,6 +25,7 @@ public class FrmLogin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setText("SISTEMA PARA EMPLEADOS");
 
         jLabel2.setText("Usuario:");
@@ -106,27 +110,24 @@ public class FrmLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_txtContraseñaActionPerformed
 
     private void btnIngLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngLogActionPerformed
-       String usr =this.txtUsuario.getText();
+            String usr =this.txtUsuario.getText();
             String pw = this.txtContraseña.getText();
        
         if(valida(usr,pw) == true){
         EscritorioPrincipal escP = new EscritorioPrincipal();
-        
+        JOptionPane.showMessageDialog(this, "BIEN XD");
+        escP.setVisible(true);
+        escP.setSize(1366, 768);
         }else{
         JOptionPane.showMessageDialog(this, "Error: Usted no se encuentra Registrado en el sistema");
         }
-        
+           
     }//GEN-LAST:event_btnIngLogActionPerformed
     public boolean valida(String User,String Password){
         boolean dec=false;
-      //  try{
-           // Statement ejecutor = Connection.createStatement();
-        
-      //  }catch(){
-        
-        
-     //   }
-            
+            if(e.Validame(User, Password)==true){
+                dec=true;
+            }
         return dec;
     }
     /**
