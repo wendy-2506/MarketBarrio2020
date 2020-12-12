@@ -77,7 +77,6 @@
 
         jLabel2.setText("Buscar:");
 
-        txtBuscar.setEditable(false);
         txtBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtBuscarKeyReleased(evt);
@@ -207,7 +206,7 @@
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGrabar)
                     .addComponent(btnLimpiar))
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Mantenimiento", jPanel2);
@@ -255,7 +254,8 @@
             Tienda d = new Tienda();
             util u = new util();
             
-            if(this.btnGrabar.getText().equals("GRABAR")){
+            
+            if(this.btnGrabar.getText().equals("Grabar")){
                 this.idTiend = u.idNext("Tienda", "IdTienda");
             
             }else{
