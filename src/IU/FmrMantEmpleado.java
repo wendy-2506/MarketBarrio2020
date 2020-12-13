@@ -413,12 +413,21 @@ public class FmrMantEmpleado extends javax.swing.JFrame {
             e.setIdEmpleado(idEmp);
             e.setApellidos(this.txtApellidos.getText());
             e.setNombres(this.txtNombres.getText());
-            if(this)
-            e.setRol(this.txtRol.getText());
+            if(btnGerente.isSelected()){
+                e.setIdTipoEmp(0);
+            }else if(btnVendedor.isSelected()){
+                e.setIdTipoEmp(1);
+            }
+            e.setIdEmpReg(Integer.parseInt(this.txtIdEmpReg.getText()));
+            e.setIdEmpMod(Integer.parseInt(this.txtIdEmpMod.getText()));
+            e.setFechReg(this.txtFechReg.getText());
+            e.setFechMod(this.txtFechMod.getText());
+            e.setUsr(this.txtUsuario.getText());
+            e.setPw(this.txtPasword.getText());
             if(this.btnGrabar.getText().equals("Grabar")){
-                ciuDAO.procesaCiud(c, "insert");
+                empDAO.procesaItem(e, "insert");
             }else{
-                ciuDAO.procesaCiud(c, "update");
+                empDAO.procesaItem(e, "update");
             }
             llenaTblBuscar(false, "");
             limpia();
