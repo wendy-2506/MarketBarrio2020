@@ -44,7 +44,7 @@ public class ProdStockDAO {
             System.out.println("uuuuuuu" + sql);
        }
        if(proc.equals("update")){
-            sql= "UPDATE ProdStock set idTienda = '"+ p.getIdTienda() +"', stock = '"+ p.getStock() +"' where idProducto = '"+ p.getIdProducto() +"'";
+            sql= "UPDATE ProdStock set stock = '"+ p.getStock() +"' where idProducto = '"+ p.getIdProducto() +"' and idTienda="+p.getIdTienda();
        }
        System.out.println("Observando el estado de la sentencia sql: "+sql);
 
@@ -59,5 +59,22 @@ public class ProdStockDAO {
         catch(SQLException e){
         }
           return resultado;
+    }
+    
+    public int StockIni(int prod, int tienda){
+        int Stock=0;
+        dbBean con = new dbBean();
+        String sql = "select stock from ProdStock where idProducto="+prod+ " and idTienda="+tienda;
+        System.out.println(sql);
+        try{
+            Stock=con.updateSQL(sql);
+            System.out.println("******************************");
+        }catch(java.sql.SQLException e){e.printStackTrace();
+        }
+        try{
+            con.close();
+        }catch(SQLException e){}
+
+        return Stock;
     }
 }

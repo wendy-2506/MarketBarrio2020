@@ -7,7 +7,7 @@ import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class FrmSelProducto extends javax.swing.JInternalFrame {
+public class FrmSelProducto extends javax.swing.JDialog {
     ProductoDAO prodDAO;
     DefaultTableModel dtm;
     Producto prod;
@@ -19,7 +19,8 @@ public class FrmSelProducto extends javax.swing.JInternalFrame {
     
     
     int idPred;
-    public FrmSelProducto() {
+    public FrmSelProducto(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         prodDAO = new ProductoDAO();
         catDAO  = new CategoriaDAO();
         initComponents();
