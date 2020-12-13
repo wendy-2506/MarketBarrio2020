@@ -29,9 +29,11 @@ public class FrmMantCliente extends javax.swing.JFrame {
             vecClie.addElement(listClie.get(i).getIdEmpReg());
             vecClie.addElement(listClie.get(i).getFechReg());
             vecClie.addElement(listClie.get(i).getIdEmpMod());
+            vecClie.addElement(listClie.get(i).getFechMod());
             vecClie.addElement(listClie.get(i).getCorreo_elect());
             vecClie.addElement(listClie.get(i).getTelefono());
             vecClie.addElement(listClie.get(i).getDireccion());
+            vecClie.addElement(listClie.get(i).getEstado());
             dtm.addRow(vecClie);
         }
     }
@@ -166,7 +168,7 @@ public class FrmMantCliente extends javax.swing.JFrame {
                     .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addContainerGap())
         );
@@ -314,7 +316,7 @@ public class FrmMantCliente extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGrabar)
                     .addComponent(btnLimpiar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addGap(22, 22, 22))
         );
@@ -418,8 +420,8 @@ public class FrmMantCliente extends javax.swing.JFrame {
         this.txtIdEmpMod.setText(dtm.getValueAt(fil, 4).toString());
         this.txtFechMod.setText(dtm.getValueAt(fil, 5).toString());
         this.txtCorreo_Elect.setText(dtm.getValueAt(fil, 6).toString());
-        this.txtDireccion.setText(dtm.getValueAt(fil, 7).toString());
-        this.txtTelefono.setText(dtm.getValueAt(fil, 8).toString());
+        this.txtTelefono.setText(dtm.getValueAt(fil, 7).toString());
+        this.txtDireccion.setText(dtm.getValueAt(fil, 8).toString());
         this.txtEstado.setText(dtm.getValueAt(fil, 9).toString());
         this.btnGrabar.setText("Actualizar");
         this.jTabbedPane1.setSelectedIndex(1);
@@ -438,7 +440,7 @@ public class FrmMantCliente extends javax.swing.JFrame {
         this.txtDireccion.setText("");
         this.txtTelefono.setText("");
         this.txtEstado.setText(""); 
-        this.btnGrabar.setText("Grabar");
+
 // TODO add your handling code here:
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
