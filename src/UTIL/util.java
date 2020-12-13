@@ -10,7 +10,7 @@ public class util {
     }
 
     public int idNext(String nombTbl, String nombCamp){
-        dbBean con = new dbBean();
+        DbBean con = new DbBean();
         int countReg, IM = 0;
         try{
             String sql = "SELECT COUNT("+ nombCamp +") AS idMax FROM "+ nombTbl +"";
@@ -87,7 +87,7 @@ public class util {
     }
 
     public boolean repExp(String nombTbl, String nombCamp, String cad){
-        dbBean con = new dbBean();
+        DbBean con = new DbBean();
         int countReg;
         boolean sw = false;
         try{
@@ -114,7 +114,7 @@ public class util {
     }
     public String cadExp(String nombTbl, String campID, String nomCampBusq, String cad){
         String cade = "";
-        dbBean con = new dbBean();
+        DbBean con = new DbBean();
         try{
             String sql = "select "+ nomCampBusq +" from "+ nombTbl +" where "+ campID +" = '"+ cad +"'";
             ResultSet result = con.execSQL(sql);
@@ -133,7 +133,7 @@ public class util {
     }
     public int idExp(String nombTbl, String campID, String nomCampBusq, String cad){
         int id = 0;
-        dbBean con = new dbBean();
+        DbBean con = new DbBean();
         try{
             String sql = "select "+ campID +" from "+ nombTbl +" where "+ nomCampBusq +" = '"+ cad +"'";
             ResultSet result = con.execSQL(sql);
@@ -153,7 +153,7 @@ public class util {
 
     public String obtenerFecha(){
           String fecha = "";
-          dbBean con=new dbBean();
+          DbBean con=new DbBean();
           String sql="";
 
           sql = "select CONVERT(varchar,getDate(),103) as fecha";
@@ -178,7 +178,7 @@ public class util {
         public int numRows(String sql){
             String bigSQL= "";
             int nR = 0;
-            dbBean con = new dbBean();
+            DbBean con = new DbBean();
             bigSQL = "SELECT COUNT(*) AS NumReg FROM ("+ sql +") DERIVEDTBL";
 
             //System.out.println("bigSQL  "+bigSQL);
