@@ -428,7 +428,8 @@ public class FmrMantEmpleado extends javax.swing.JInternalFrame {
         this.txtUsuario.setText("");
         this.txtPasword.setText("");
         this.txtEstado.setText("");
-
+        
+        //Cambiooooooo
         // TODO add your handling code here:
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
