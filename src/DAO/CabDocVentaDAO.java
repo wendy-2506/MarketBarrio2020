@@ -1,7 +1,7 @@
    package DAO;
 
 import BEAN.*;
-import UTIL.DbBean;
+import UTIL.dbBean;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
@@ -10,7 +10,7 @@ import java.util.Vector;
 public class CabDocVentaDAO {
     public Vector<Cab_DocVenta> ListaDocV(boolean sw, String str){
         Vector<Cab_DocVenta> item = new Vector<Cab_DocVenta>();
-        DbBean con = new DbBean();
+        dbBean con = new dbBean();
         String sql = "Select * from cab_venta";
         if(sw == true){
             sql = sql + " WHERE (id_cliente = '"+ str +"')";
@@ -44,7 +44,7 @@ public class CabDocVentaDAO {
      public int agregaItem(Cab_DocVenta cv, String proc){
        int resultado=0;
        String sql= "";
-       DbBean con=new DbBean();
+       dbBean con=new dbBean();
        if(proc.equals("insert")){
             sql="INSERT INTO cab_docVenta VALUES ('"+ cv.getIdVenta() +"', '"+ cv.getIdCliente() +"', '"+ cv.getIdEmpReg()+"', '"+ cv.getFechVenta()+"',"
                     + " '"+ cv.getIdEmpMod()+"', '"+ cv.getFechMod()+"', '"+ cv.getIdTipo()+"', '"+ cv.getIdTienda()+"', '"+ cv.getEstado() +"')";

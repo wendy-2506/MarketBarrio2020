@@ -1,7 +1,7 @@
 package DAO;
 
 import BEAN.Cliente_Persona;
-import UTIL.DbBean;
+import UTIL.dbBean;
 import java.sql.*;
 import java.util.Vector;
 //busca a la persona por nombre y apellido
@@ -9,7 +9,7 @@ public class CliPersonaDAO {
 
     public Vector<Cliente_Persona> ListaItem(boolean sw, String str){
         Vector<Cliente_Persona> item = new Vector<Cliente_Persona>();
-        DbBean con = new DbBean();
+        dbBean con = new dbBean();
         String sql = "Select * from cliente_Persona";
         if(sw == true){
             sql = sql + " WHERE (apell LIKE '"+ str +"%') OR (nomb LIKE '" + str + "%')";
@@ -39,7 +39,7 @@ public class CliPersonaDAO {
     public int procesaItem(Cliente_Persona c, String proc){
        int resultado=0;
        String sql= "";
-       DbBean con=new DbBean();
+       dbBean con=new dbBean();
        if(proc.equals("insert")){
             sql="INSERT INTO cliente_Persona VALUES ('"+ c.getIdCliente() +"', '"+ c.getApell() +"', '"+ c.getNomb() +"', '"+ c.getDni() +"')";
             System.out.println("EntroCleitenPersonaDAO:" + sql);

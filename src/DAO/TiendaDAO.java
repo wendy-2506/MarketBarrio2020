@@ -1,7 +1,7 @@
 package DAO;
 
 import BEAN.Tienda;
-import UTIL.DbBean;
+import UTIL.dbBean;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
@@ -9,7 +9,7 @@ import java.util.Vector;
 public class TiendaDAO {
     public Vector<Tienda> ListaItem(boolean sw, String str){
         Vector<Tienda> item = new Vector<Tienda>();
-        DbBean con = new DbBean();
+        dbBean con = new dbBean();
         String sql = "Select * from tienda";
         if(sw == true){
             sql = sql + " WHERE (descTienda LIKE '"+ str +"%') OR (direccion LIKE '" + str + "%')";
@@ -38,7 +38,7 @@ public class TiendaDAO {
     public int procesaItem(Tienda p, String proc){
        int resultado=0;
        String sql= "";
-       DbBean con=new DbBean();
+       dbBean con=new dbBean();
        if(proc.equals("insert")){
             sql="INSERT INTO Tienda VALUES ('"+ p.getIdTienda() +"', '"+ p.getDescTienda() +"', '"+ p.getDireccion() +"')";
             System.out.println("uuuuuuu" + sql);

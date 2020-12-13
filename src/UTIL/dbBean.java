@@ -8,7 +8,7 @@ import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.view.JasperViewer;
 
-public class DbBean {
+public class dbBean {
   //Conexión: a través del ODBC
     String dbURL = "jdbc:sqlserver://localhost:1433;databaseName=MARKETBARRIO";
     String dbDriver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
@@ -16,7 +16,7 @@ public class DbBean {
     private String Login="sa";
     private String password="123456789";
 
-    public DbBean(){
+    public dbBean(){
        connect();
        }
 
