@@ -19,7 +19,7 @@ public class FrmMantProduct extends javax.swing.JFrame {
         dtm = (DefaultTableModel)this.tblBuscar.getModel();
         llenaTblBuscar(false, "");
     }  
-private void llenaTblBuscar(boolean s, String c){
+    private void llenaTblBuscar(boolean s, String c){
         Vector<Producto> listProd = prodDAO.ListaItem(s, c);
         if(dtm.getRowCount()>0){
             dtm.setRowCount(0);
@@ -35,7 +35,7 @@ private void llenaTblBuscar(boolean s, String c){
             vecPro.addElement(listProd.get(i).getEstado());
             dtm.addRow(vecPro);
         }
-}
+    }
 private boolean valida(){
         boolean sw = false;
         if(this.txtEstado.getText().isEmpty()){
