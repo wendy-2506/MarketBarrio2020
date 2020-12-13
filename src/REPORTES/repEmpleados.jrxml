@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cdae902c-ccec-4a8f-aaf2-04c66af8678c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
 	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
 	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
 	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
@@ -38,25 +41,21 @@ FROM
 	</background>
 	<title>
 		<band height="132" splitType="Stretch">
-			<image>
-				<reportElement x="456" y="0" width="99" height="132" uuid="46a9ace0-da0a-47f9-be94-7c76a6f9b2aa"/>
-				<imageExpression><![CDATA["cherry.jpg"]]></imageExpression>
-			</image>
 			<frame>
 				<reportElement mode="Opaque" x="0" y="0" width="451" height="95" backcolor="#000000" uuid="3567d7c4-8f7b-42d2-9172-68a2cd9d9aa7"/>
 				<staticText>
-					<reportElement style="Title" x="0" y="0" width="370" height="66" uuid="13f1c893-aaaa-4021-9786-0e1187c55aae"/>
+					<reportElement style="Title" x="0" y="0" width="433" height="66" uuid="13f1c893-aaaa-4021-9786-0e1187c55aae"/>
 					<textElement>
-						<font isBold="false"/>
+						<font fontName="Kristen ITC" size="28" isBold="false"/>
 					</textElement>
-					<text><![CDATA[Cherry Title]]></text>
+					<text><![CDATA[Empleados Market Barrio]]></text>
 				</staticText>
 				<staticText>
 					<reportElement style="SubTitle" x="157" y="66" width="249" height="29" uuid="df9764b5-9a62-4c64-918f-cba4ff1380e5"/>
 					<textElement>
-						<font size="22" isBold="false"/>
+						<font fontName="Kristen ITC" size="16" isBold="false"/>
 					</textElement>
-					<text><![CDATA[Cherry SubTitle]]></text>
+					<text><![CDATA[Los discípulos de Ballón]]></text>
 				</staticText>
 			</frame>
 			<frame>
@@ -81,49 +80,49 @@ FROM
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
-				<text><![CDATA[Empleado_idEmpleado]]></text>
+				<text><![CDATA[ID Empleado]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="79" y="7" width="79" height="18" forecolor="#000000" uuid="14121e3f-34cf-4924-b9cc-5cafc5f07e68"/>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
-				<text><![CDATA[Empleado_apellidos]]></text>
+				<text><![CDATA[Apellido]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="158" y="7" width="79" height="18" forecolor="#000000" uuid="22e04aab-6625-492b-bb5b-a7276c0248a7"/>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
-				<text><![CDATA[Empleado_nombres]]></text>
+				<text><![CDATA[Nombre]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="237" y="7" width="79" height="18" forecolor="#000000" uuid="0e3f31be-40e7-4995-b4b5-f7a3aa4440aa"/>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
-				<text><![CDATA[Empleado_usr]]></text>
+				<text><![CDATA[User]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="316" y="7" width="79" height="18" forecolor="#000000" uuid="2be412df-c1ee-4f29-a8de-9b1b3c78277f"/>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
-				<text><![CDATA[Empleado_pw]]></text>
+				<text><![CDATA[Password]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="395" y="7" width="79" height="18" forecolor="#000000" uuid="80f4e4d9-2dc2-4a4e-9d14-0345cde35efa"/>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
-				<text><![CDATA[Empleado_idTipoEmp]]></text>
+				<text><![CDATA[ID Tipo]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="474" y="7" width="79" height="18" forecolor="#000000" uuid="d1752b11-ca72-4534-bf1a-866d96f8645c"/>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
-				<text><![CDATA[Empleado_estado]]></text>
+				<text><![CDATA[Estado]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
