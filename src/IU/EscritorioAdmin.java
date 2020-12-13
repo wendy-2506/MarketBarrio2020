@@ -38,7 +38,7 @@ public class EscritorioAdmin extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         reporteemp = new javax.swing.JMenuItem();
         repempresa = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
+        repclieper = new javax.swing.JMenuItem();
         cerrar = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -125,8 +125,13 @@ public class EscritorioAdmin extends javax.swing.JFrame {
         });
         jMenu2.add(repempresa);
 
-        jMenuItem7.setText("Reporte de Cliente Persona");
-        jMenu2.add(jMenuItem7);
+        repclieper.setText("Reporte de Cliente Persona");
+        repclieper.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                repclieperActionPerformed(evt);
+            }
+        });
+        jMenu2.add(repclieper);
 
         menuBar.add(jMenu2);
 
@@ -217,6 +222,18 @@ public class EscritorioAdmin extends javax.swing.JFrame {
             ex.printStackTrace();
         }
     }//GEN-LAST:event_repempresaActionPerformed
+
+    private void repclieperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_repclieperActionPerformed
+        try{
+            String r="src/REPORTES/repPersonas.jasper";
+            dbBean db = new dbBean();
+            db.connectRep(r, null, false);
+        }catch(SQLException ex){
+            ex.printStackTrace();        
+        }catch(JRException ex){
+            ex.printStackTrace();
+        }
+    }//GEN-LAST:event_repclieperActionPerformed
         
     /**
      * @param args the command line arguments
@@ -268,8 +285,8 @@ public class EscritorioAdmin extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuBar menuBar;
+    private javax.swing.JMenuItem repclieper;
     private javax.swing.JMenuItem repempresa;
     private javax.swing.JMenuItem reporteemp;
     // End of variables declaration//GEN-END:variables

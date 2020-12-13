@@ -84,10 +84,13 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="repempresaActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem7">
+            <MenuItem class="javax.swing.JMenuItem" name="repclieper">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Reporte de Cliente Persona"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="repclieperActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>

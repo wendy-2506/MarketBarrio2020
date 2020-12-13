@@ -42,10 +42,10 @@ FROM
 	<title>
 		<band height="132" splitType="Stretch">
 			<frame>
-				<reportElement mode="Opaque" x="0" y="0" width="451" height="95" backcolor="#000000" uuid="3567d7c4-8f7b-42d2-9172-68a2cd9d9aa7"/>
+				<reportElement mode="Opaque" x="0" y="0" width="553" height="95" backcolor="#000000" uuid="3567d7c4-8f7b-42d2-9172-68a2cd9d9aa7"/>
 				<staticText>
-					<reportElement style="Title" x="0" y="0" width="433" height="66" uuid="13f1c893-aaaa-4021-9786-0e1187c55aae"/>
-					<textElement>
+					<reportElement style="Title" x="0" y="0" width="553" height="66" uuid="13f1c893-aaaa-4021-9786-0e1187c55aae"/>
+					<textElement textAlignment="Center" verticalAlignment="Top">
 						<font fontName="Kristen ITC" size="28" isBold="false"/>
 					</textElement>
 					<text><![CDATA[Empleados Market Barrio]]></text>
@@ -59,7 +59,7 @@ FROM
 				</staticText>
 			</frame>
 			<frame>
-				<reportElement mode="Opaque" x="0" y="100" width="451" height="32" forecolor="#000000" backcolor="#CC0000" uuid="5f5e3b2b-dcb8-4b93-8e7a-e96996b9ce70"/>
+				<reportElement mode="Opaque" x="0" y="100" width="553" height="32" forecolor="#000000" backcolor="#CC0000" uuid="5f5e3b2b-dcb8-4b93-8e7a-e96996b9ce70"/>
 				<textField pattern="EEEEE dd MMMMM yyyy">
 					<reportElement x="307" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="ebac2be0-8294-4221-9051-0dc71aabd8a4"/>
 					<textElement textAlignment="Right">
