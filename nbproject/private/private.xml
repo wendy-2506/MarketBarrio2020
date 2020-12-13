@@ -3,10 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/A)%20Jhoel/A)%20JHOEL%20ESAN%202020/POO/FINAL/MarketBarrio2020/src/IU/FrmLogin.java</file>
-            <file>file:/D:/A)%20Jhoel/A)%20JHOEL%20ESAN%202020/POO/FINAL/MarketBarrio2020/src/UTIL/dbBean.java</file>
-            <file>file:/D:/A)%20Jhoel/A)%20JHOEL%20ESAN%202020/POO/FINAL/MarketBarrio2020/src/DAO/CategoriaDAO.java</file>
-            <file>file:/D:/A)%20Jhoel/A)%20JHOEL%20ESAN%202020/POO/FINAL/MarketBarrio2020/src/IU/FrmVenta.java</file>
+            <file>file:/D:/1.-%20Universidad/Ciclo%204/Programación%20Orientada%20a%20Objetos/Semana%2014/MarketBarrioF/MarketBarrio2020/src/DAO/CliEmpresaDAO.java</file>
+            <file>file:/D:/1.-%20Universidad/Ciclo%204/Programación%20Orientada%20a%20Objetos/Semana%2014/MarketBarrioF/MarketBarrio2020/src/DAO/CliPersonaDAO.java</file>
+            <file>file:/D:/1.-%20Universidad/Ciclo%204/Programación%20Orientada%20a%20Objetos/Semana%2014/MarketBarrioF/MarketBarrio2020/src/IU/FrmRegistrar.java</file>
+            <file>file:/D:/1.-%20Universidad/Ciclo%204/Programación%20Orientada%20a%20Objetos/Semana%2014/MarketBarrioF/MarketBarrio2020/src/IU/FrmVenta.java</file>
+            <file>file:/D:/1.-%20Universidad/Ciclo%204/Programación%20Orientada%20a%20Objetos/Semana%2014/MarketBarrioF/MarketBarrio2020/src/DAO/ClienteDAO.java</file>
         </group>
     </open-files>
 </project-private>

@@ -10,6 +10,7 @@ import BEAN.Cliente_Empresa;
 import BEAN.Cliente_Persona;
 import DAO.CliEmpresaDAO;
 import DAO.CliPersonaDAO;
+import DAO.ClienteDAO;
 import UTIL.util;
 
 /**
@@ -20,6 +21,7 @@ public class FrmRegistrar extends javax.swing.JFrame {
     int idCliente;
     CliEmpresaDAO cliEDAO;
     CliPersonaDAO cliPDAO;
+    ClienteDAO clie;
     
     public FrmRegistrar() {
         initComponents();
@@ -65,7 +67,7 @@ public class FrmRegistrar extends javax.swing.JFrame {
         btnRegistrar = new javax.swing.JButton();
         btnBorrar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Registrar Cliente");
 
@@ -322,16 +324,17 @@ public class FrmRegistrar extends javax.swing.JFrame {
         this.txtDirecR.setText("");
         this.rbEmpresa.setSelected(false);
         this.rbNatural.setSelected(false);
-        
+        this.btnRegistrar.setText("Registrar");
         lokeo();
     }//GEN-LAST:event_btnBorrarActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-       String fech;
+        String fech;
         util u = new util();
         
         //natural = 1; Empresa = 2
         if(this.rbEmpresa.isSelected()){
+            
             Cliente c= new Cliente ();
             this.idCliente = u.idNext("Cliente", "idCliente");
             fech = u.obtenerFecha();
@@ -343,11 +346,13 @@ public class FrmRegistrar extends javax.swing.JFrame {
             c.setTelefono(this.txtTLFR.getText());
             c.setDireccion(this.txtDirecR.getText());
             c.setEstado(1);
+            this.clie.procesaItem(c,"insert");
             
             Cliente_Empresa ce = new Cliente_Empresa();           
             ce.setIdCliente(idCliente);
             ce.setRazon_Social(this.txtRazSocR.getText());
             ce.setRepresentante(this.txtRepreR.getText());
+            ce.setRuc(this.txtRUCR.getText());
             this.cliEDAO.procesaItem(ce, "insert");
         
         }else if(this.rbNatural.isSelected()){
@@ -362,8 +367,10 @@ public class FrmRegistrar extends javax.swing.JFrame {
             c.setTelefono(this.txtTLFR.getText());
             c.setDireccion(this.txtDirecR.getText());
             c.setEstado(1);
-            Cliente_Persona cp = new Cliente_Persona();
             
+            this.clie.procesaItem(c,"insert");
+            
+            Cliente_Persona cp = new Cliente_Persona();            
             cp.setIdCliente(idCliente);
             cp.setApell(this.txtApelR.getText());
             cp.setNomb(this.txtNombreR.getText());

@@ -42,7 +42,7 @@ public class CliPersonaDAO {
        dbBean con=new dbBean();
        if(proc.equals("insert")){
             sql="INSERT INTO cliente_Persona VALUES ('"+ c.getIdCliente() +"', '"+ c.getApell() +"', '"+ c.getNomb() +"', '"+ c.getDni() +"')";
-            System.out.println("uuuuuuu" + sql);
+            System.out.println("EntroCleitenPersonaDAO:" + sql);
        }
        if(proc.equals("update")){
             sql="UPDATE cliente_Persona set apell = '"+ c.getApell() +"', nomb = '"+ c.getNomb() +"', dni = '"+ c.getDni() +"' where idCliente = '"+ c.getIdCliente() +"'";
