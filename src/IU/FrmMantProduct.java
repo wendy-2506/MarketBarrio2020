@@ -329,8 +329,8 @@ private boolean valida(){
             p.setIdProducto(idProd);
             p.setDescripcion(this.txtDescripcion.getText());
             p.setIdCategoria(Integer.parseInt(this.txtIdCategoria.getText()));
-            p.setIdCategoria(Integer.parseInt(this.txtIdMarca.getText()));
-            p.setPrecioUnit(Integer.parseInt(this.txtPrecioUnitario.getText()));
+            p.setIdMarca(Integer.parseInt(this.txtIdMarca.getText()));
+            p.setPrecioUnit(Double.parseDouble(this.txtPrecioUnitario.getText()));
             p.setUnidMed(this.txtUnidadMedida.getText());
             p.setEstado(Integer.parseInt(this.txtEstado.getText()));
 
@@ -374,6 +374,7 @@ private boolean valida(){
         this.txtEstado.setText(dtm.getValueAt(fil, 6).toString());
         this.btnGrabar.setText("Actualizar");
         this.jTabbedPane1.setSelectedIndex(1);
+        
     }//GEN-LAST:event_tblBuscarMouseClicked
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed

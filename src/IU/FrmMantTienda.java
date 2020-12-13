@@ -93,7 +93,7 @@
 
             },
             new String [] {
-                "ID Tienda", "Dirección", "Descripción"
+                "ID Tienda", "Descripción", "Dirección"
             }
         ) {
             boolean[] canEdit = new boolean [] {
