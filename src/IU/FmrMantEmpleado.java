@@ -222,6 +222,11 @@ public class FmrMantEmpleado extends javax.swing.JFrame {
         });
 
         btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(btnGerente);
         btnGerente.setText("Gerente de tienda");
@@ -368,6 +373,11 @@ public class FmrMantEmpleado extends javax.swing.JFrame {
         jTabbedPane1.addTab("Mantenimiento", jPanel2);
 
         btnSalir.setText("SALIR");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -375,12 +385,13 @@ public class FmrMantEmpleado extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(btnSalir)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(127, 127, 127)
-                            .addComponent(jLabel1)
-                            .addGap(168, 168, 168)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(127, 127, 127)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnSalir)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(168, 168, 168))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -424,6 +435,7 @@ public class FmrMantEmpleado extends javax.swing.JFrame {
             e.setFechMod(this.txtFechMod.getText());
             e.setUsr(this.txtUsuario.getText());
             e.setPw(this.txtPasword.getText());
+            e.setEstado(Integer.parseInt(this.txtEstado.getText()));
             if(this.btnGrabar.getText().equals("Grabar")){
                 empDAO.procesaItem(e, "insert");
             }else{
@@ -448,9 +460,10 @@ public class FmrMantEmpleado extends javax.swing.JFrame {
          this.txtApellidos.setText(dtm.getValueAt(fil, 1).toString());
          this.txtNombres.setText(dtm.getValueAt(fil, 2).toString());
          this.txtFechReg.setText(dtm.getValueAt(fil, 3).toString());
-         this.txtFechMod.setText(dtm.getValueAt(fil, 4).toString());
-         this.txt.setText(dtm.getValueAt(fil, 5).toString());
-         this.txtFechFin.setText(dtm.getValueAt(fil, 5).toString());
+         this.txtFechMod.setText(dtm.getValueAt(fil, 5).toString());
+         this.txtUsuario.setText(dtm.getValueAt(fil, 6).toString());
+         this.txtPasword.setText(dtm.getValueAt(fil, 7).toString());
+         this.txtEstado.setText(dtm.getValueAt(fil, 8).toString());
          this.btnGrabar.setText("Actualizar");
          this.jTabbedPane1.setSelectedIndex(1);
          
@@ -463,15 +476,36 @@ public class FmrMantEmpleado extends javax.swing.JFrame {
     private void btnGerenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerenteActionPerformed
         
     }//GEN-LAST:event_btnGerenteActionPerformed
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        this.txtIdEmpleado.setText("");
+        this.txtApellidos.setText("");
+        this.txtNombres.setText("");
+        this.txtFechReg.setText("");
+        this.txtFechMod.setText("");
+        this.txtUsuario.setText("");
+        this.txtPasword.setText("");
+        this.txtEstado.setText("");
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+
+
+  System.exit(0);         // TODO add your handling code here:
+    }//GEN-LAST:event_btnSalirActionPerformed
     
     private void limpia(){
         this.txtIdEmpleado.setText("");
         this.txtApellidos.setText("");
         this.txtNombres.setText("");
-        this.txtRol.setText("");
-        this.txtFechIni.setText("");
-        this.txtFechFin.setText("");
-        this.btnGrabar.setText("");
+        this.txtFechReg.setText("");
+        this.txtFechMod.setText("");
+        this.txtUsuario.setText("");
+        this.txtPasword.setText("");
+        this.txtEstado.setText("");
+        this.btnGrabar.setText("Grabar");
     }
     
     
