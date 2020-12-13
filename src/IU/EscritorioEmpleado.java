@@ -85,6 +85,7 @@ public class EscritorioEmpleado extends javax.swing.JFrame {
     }//GEN-LAST:event_cerrarMouseClicked
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+<<<<<<< HEAD
 
     FrmVenta fven = new FrmVenta();
     
@@ -94,6 +95,10 @@ public class EscritorioEmpleado extends javax.swing.JFrame {
         
         fven.setVisible(true);
 
+=======
+    FrmVenta ven = new FrmVenta();
+        ven.setVisible(true);
+>>>>>>> parent of 2badbdf... Script
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void cerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarActionPerformed

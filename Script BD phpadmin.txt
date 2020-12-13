@@ -17,9 +17,7 @@ CREATE TABLE Empleado(
 	idTipoEmp int,
 	estado int,
 	PRIMARY KEY (idEmpleado),
-	FOREIGN KEY (idTipoEmp) REFERENCES Tipo_Empleado (idTipoEmp),
-	FOREIGN KEY (idEmpMod ) REFERENCES Empleado(idEmpleado),
-	FOREIGN KEY (idEmpReg ) REFERENCES Empleado(idEmpleado)
+	FOREIGN KEY (idTipoEmp) REFERENCES Tipo_Empleado (idTipoEmp)
 );
 CREATE TABLE Proveedor (
 	idProveedor int NOT NULL,
@@ -30,6 +28,8 @@ CREATE TABLE Proveedor (
 	telefono varchar(255),
 	PRIMARY KEY (idProveedor)
 );
+
+
 CREATE TABLE Tienda(
 	idTienda int NOT NULL,
 	descTienda varchar(255),
@@ -59,23 +59,24 @@ CREATE TABLE Tipo_Cliente(
 
 CREATE TABLE Cliente(
 	idCliente int NOT NULL,
-	idTipoCli int,
-	idEmpReg int ,
+	idTipoCli int ,
+	idEmpReg int  ,
 	fechReg date,
-	idEmpMod int ,
+	idEmpMod int  ,
 	fechMod date,
 	correo_electr varchar(300),
 	telefono varchar(255),
 	direccion varchar(255),
 	estado int,
 	PRIMARY KEY (idCliente),
-	FOREIGN KEY (idTipoCli ) REFERENCES Tipo_Cliente(idTipoCli),
-	FOREIGN KEY (idEmpReg ) REFERENCES Empleado(idEmpleado),
-	FOREIGN KEY (idEmpMod ) REFERENCES Empleado(idEmpleado)
+	FOREIGN KEY (idTipoCli) REFERENCES Tipo_Cliente(idTipoCli),
+	FOREIGN KEY (idEmpReg) REFERENCES Empleado(idEmpleado),
+	FOREIGN KEY (idEmpMod) REFERENCES Empleado(idEmpleado)
+
 );
 
 CREATE TABLE Cliente_Persona(
-	idCliente int,
+	idCliente int ,
 	apell varchar(255),
 	nomb varchar (255),
 	dni float,
@@ -92,16 +93,16 @@ CREATE TABLE Cliente_Empresa(
 
 CREATE TABLE SerieDV (
     idSerie int NOT NULL,
-	idEmpReg int ,
+	idEmpReg int  ,
     	fechReg date,
 	idTienda int ,
 	numInicio int,
 	numFin int,
 	fechCierre date,
-   	estado int,
-	PRIMARY KEY (idSerie),
-	FOREIGN KEY (idEmpReg ) REFERENCES Empleado(idEmpleado),
-	FOREIGN KEY (idTienda ) REFERENCES Tienda(idTienda)
+    estado int,
+    PRIMARY KEY (idSerie),
+	FOREIGN KEY(idEmpReg ) REFERENCES Empleado(idEmpleado),
+	FOREIGN KEY(idTienda ) REFERENCES Tienda(idTienda)
 );
 
 CREATE TABLE Cab_Entrada (
@@ -110,37 +111,37 @@ CREATE TABLE Cab_Entrada (
     	fechReg date,
 	idTienda int ,
 	idProveedor int ,
-	idEmpMod int ,
+	idEmpMod int,
 	fechMod date,
 	estado int,
-	PRIMARY KEY (idEntrada),
-	FOREIGN KEY (idEmpReg ) REFERENCES Empleado(idEmpleado),
-	FOREIGN KEY (idTienda ) REFERENCES Tienda(idTienda),
-	FOREIGN KEY (idProveedor ) REFERENCES Proveedor(idProveedor),
-	FOREIGN KEY (idEmpMod ) REFERENCES Empleado(idEmpleado)
+    PRIMARY KEY (idEntrada),
+	FOREIGN KEY (idEmpReg)REFERENCES Empleado(idEmpleado),
+	FOREIGN KEY (idTienda)REFERENCES Tienda(idTienda),
+	FOREIGN KEY (idProveedor)REFERENCES Proveedor(idProveedor),
+	FOREIGN KEY (idEmpMod)REFERENCES Empleado(idEmpleado)
 );
 
 CREATE TABLE Producto(
 	idProducto int NOT NULL,
 	descripcion varchar(255),
-	idCategoria int ,
+	idCategoria int,
 	idMarca int ,
 	precioUnit float,
 	unidMed varchar(255),
 	estado int,
 	PRIMARY KEY(idProducto),
-	FOREIGN KEY (idCategoria ) REFERENCES Categoria(idCategoria),
-	FOREIGN KEY (idMarca )REFERENCES Marca(idMarca)
+	FOREIGN KEY (idCategoria)REFERENCES Categoria(idCategoria),
+	FOREIGN KEY (idMarca)REFERENCES Marca(idMarca)
 );
 
 
 CREATE TABLE Det_Entrada(
-	idEntrada int ,
+	idEntrada int  ,
 	idProducto int ,
 	precio float,
 	cantidad int,
-	FOREIGN KEY (idEntrada) REFERENCES Cab_Entrada(idEntrada),
-	FOREIGN KEY (idProducto) REFERENCES Producto(idProducto)
+	FOREIGN KEY(idEntrada)REFERENCES Cab_Entrada(idEntrada),
+	FOREIGN KEY(idProducto) REFERENCES Producto(idProducto)
 );
 
 
@@ -153,7 +154,7 @@ CREATE TABLE TipDocVenta(
 
 CREATE TABLE Cab_DocVenta(
 	idVenta int NOT NULL,
-	idCliente int ,
+	idCliente int  ,
 	idEmpReg int ,
 	fechVenta date,
 	idEmpMod int ,
@@ -162,41 +163,42 @@ CREATE TABLE Cab_DocVenta(
 	idTienda int ,
 	estado int,
 	PRIMARY KEY (idVenta),
-	FOREIGN KEY(idEmpReg ) REFERENCES Empleado(idEmpleado),
-	FOREIGN KEY(idCliente ) REFERENCES Cliente(idCliente),
-	FOREIGN KEY (idEmpMod )REFERENCES Empleado(idEmpleado),
-	FOREIGN KEY (idTipo )REFERENCES TipDocVenta(idTipo),
-	FOREIGN KEY (idTienda )REFERENCES Tienda(idTienda)
+	FOREIGN KEY(idCliente) REFERENCES Cliente(idCliente),
+	FOREIGN KEY (idEmpReg) REFERENCES Empleado(idEmpleado),
+	FOREIGN KEY (idEmpMod) REFERENCES Empleado(idEmpleado),
+	FOREIGN KEY (idTipo) REFERENCES TipDocVenta(idTipo),
+	FOREIGN KEY(idTienda)REFERENCES Tienda(idTienda)
 );
 
 CREATE TABLE Factura(
 	idFactura int NOT NULL,
 	idSerie int ,
-	numFac varchar(50) ,
+	numFac int,
 	idVenta int ,
 	PRIMARY KEY (idFactura),
-	FOREIGN KEY (idSerie ) REFERENCES SerieDV(idSerie),
-	FOREIGN KEY (idVenta ) REFERENCES Cab_DocVenta(idVenta)
+	FOREIGN KEY (idSerie) REFERENCES SerieDV(idSerie),
+	FOREIGN KEY (idVenta) REFERENCES Cab_DocVenta(idVenta)
 );
+
 
 CREATE TABLE Boleta(
 	idBoleta int NOT NULL,
 	idSerie int ,
-	numBol varchar(50) ,
+	numBol int,
 	idVenta int ,
 	PRIMARY KEY (idBoleta),
-	FOREIGN KEY (idSerie ) REFERENCES SerieDV(idSerie),
-	FOREIGN KEY (idVenta )REFERENCES Cab_DocVenta(idVenta)
+	FOREIGN KEY (idSerie) REFERENCES SerieDV(idSerie),
+	FOREIGN KEY (idVenta) REFERENCES Cab_DocVenta(idVenta)
 );
 
 
 CREATE TABLE Det_DocVenta(
 	idVenta int ,
-	idProducto int ,
+	idProducto int,
 	precio float,
 	cantidad int,
-	FOREIGN KEY (idVenta)REFERENCES Cab_DocVenta(idVenta),
-	FOREIGN KEY (idProducto)REFERENCES Producto(idProducto)
+	FOREIGN KEY (idVenta) REFERENCES Cab_DocVenta(idVenta),
+	FOREIGN KEY (idProducto) REFERENCES Producto(idProducto)	
 );
 
 CREATE TABLE ProdStock (
@@ -204,5 +206,5 @@ CREATE TABLE ProdStock (
 	idProducto int ,
 	stock int,
 	FOREIGN KEY (idTienda) REFERENCES Tienda(idTienda),
-	FOREIGN KEY (idProducto) REFERENCES Producto(idProducto)
+	FOREIGN KEY (idProducto) REFERENCES Producto(idProducto)	
 );

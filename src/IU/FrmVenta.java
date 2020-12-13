@@ -3,7 +3,6 @@ package IU;
 import BEAN.*;
 //import REPORTES.Mailer;
 import DAO.*;
-import REPORTES.Mailer;
 import UTIL.util;
 import java.util.Vector;
 import javax.swing.JOptionPane;
@@ -801,8 +800,8 @@ public class FrmVenta extends javax.swing.JInternalFrame {
 
     private void btnPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagarActionPerformed
 
-        Mailer m = new Mailer();
-
+       // Mailer m = new Mailer();
+       // m.sendEmail();
         
         String fech;
         util u = new util();
@@ -852,12 +851,6 @@ public class FrmVenta extends javax.swing.JInternalFrame {
                 dv.setIdProducto(Integer.parseInt(dtm1.getValueAt(i, 0).toString()));
                 dv.setPrecio(Double.parseDouble(dtm1.getValueAt(i, 3).toString()));
                 dv.setCantidad(Integer.parseInt(dtm1.getValueAt(i, 4).toString()));
-                if(this.rbEmpresa.isSelected()){
-                    m.senFac(dv);
-                }else if(this.rbNatural.isSelected()){
-                    m.sendbol(dv);
-                }
-                
                 this.detVDAO.agregaItem(dv, "insert");
                 
                 int ini=(prodStockDAO.StockIni(Integer.parseInt(dtm1.getValueAt(i, 0).toString()), idT));
