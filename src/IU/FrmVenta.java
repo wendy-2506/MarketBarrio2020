@@ -776,7 +776,7 @@ public class FrmVenta extends javax.swing.JFrame {
     private void btnPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagarActionPerformed
 
         Mailer m = new Mailer();
-        m.sendEmail();
+       // m.sendEmail();
         
         String fech;
         util u = new util();
