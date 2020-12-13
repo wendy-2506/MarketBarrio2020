@@ -413,6 +413,7 @@ public class FmrMantEmpleado extends javax.swing.JFrame {
             e.setIdEmpleado(idEmp);
             e.setApellidos(this.txtApellidos.getText());
             e.setNombres(this.txtNombres.getText());
+            if(this)
             e.setRol(this.txtRol.getText());
             if(this.btnGrabar.getText().equals("Grabar")){
                 ciuDAO.procesaCiud(c, "insert");
