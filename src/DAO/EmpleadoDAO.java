@@ -88,24 +88,24 @@ public class EmpleadoDAO {
         return login;
     }
     
-    public int tipoEmp(String usr, String psw){
-        int id=0;
-        try{
-            dbBean db=new dbBean();
-            String buscar= "Select e.idTipoEmp from Empleado where e.usr="+usr+"and e.pw="+psw; 
-            ResultSet resultado = db.execSQL(buscar);
-            while (resultado.next()){
-                if(usr.equals(resultado.getString(1))){
-                    if(psw.equals(resultado.getString(2))){
-                        //q falta aqui o q cambio????
-                    }
-                }
-            }
-        }
-        catch(java.sql.SQLException e){e.printStackTrace();
-        }
-        return id;
-    }
+//    public int tipoEmp(String usr, String psw){
+//        int id=0;
+//        try{
+//            dbBean db=new dbBean();
+//            String buscar= "Select e.idTipoEmp from Empleado where e.usr="+usr+"and e.pw="+psw; 
+//            ResultSet resultado = db.execSQL(buscar);
+//            while (resultado.next()){
+//                if(usr.equals(resultado.getString(1))){
+//                    if(psw.equals(resultado.getString(2))){
+//                        //q falta aqui o q cambio????
+//                    }
+//                }
+//            }
+//        }
+//        catch(java.sql.SQLException e){e.printStackTrace();
+//        }
+//        return id;
+//    }
     
     public Empleado UserLogeado(String usr, String psw){
         Empleado emp=new Empleado();

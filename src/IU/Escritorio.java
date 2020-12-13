@@ -1,5 +1,6 @@
 package IU;
 
+import BEAN.Empleado;
 import DAO.EmpleadoDAO;
 import java.sql.Connection;
 import java.sql.Statement;
@@ -8,6 +9,8 @@ import javax.swing.JOptionPane;
 
 public class Escritorio extends javax.swing.JFrame {
     EmpleadoDAO e;
+    Empleado emp;
+    int idTipoEmpleado;
     public Escritorio() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -133,13 +136,24 @@ public class Escritorio extends javax.swing.JFrame {
         String pw = this.txtcontra.getText();
 
         if(valida(usr,pw) == true){
-            EscritorioPrincipal escP = new EscritorioPrincipal();
-            JOptionPane.showMessageDialog(this, "Ingreso correcto.");
-            escP.setVisible(true);
-            escP.setSize(1366, 768);
+            //emp = new Empleado();
+            emp = e.UserLogeado(usr,pw);
+            idTipoEmpleado= emp.getIdTipoEmp();            
+            //
+            if(idTipoEmpleado==1){
+                EscritorioAdmin escr = new EscritorioAdmin();
+                JOptionPane.showMessageDialog(this, "Ingreso correcto administrador.");
+                escr.setVisible(true);
+                //this.dispose();
+            }else if(idTipoEmpleado==2){
+                EscritorioEmpleado escremp = new EscritorioEmpleado();
+                JOptionPane.showMessageDialog(this, "Ingreso correcto empleado.");
+                escremp.setVisible(true);
+                //this.dispose();
+            }     
             this.dispose();
         }else{
-            JOptionPane.showMessageDialog(this, "Error F: Usted no se encuentra registrado en el sistema.");
+            JOptionPane.showMessageDialog(this, "GGWP: Usted no se encuentra registrado en el sistema.");
         }
 
     }//GEN-LAST:event_btnIngLogActionPerformed
