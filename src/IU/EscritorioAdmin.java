@@ -37,7 +37,7 @@ public class EscritorioAdmin extends javax.swing.JFrame {
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         reporteemp = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        repempresa = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         cerrar = new javax.swing.JMenu();
 
@@ -117,13 +117,13 @@ public class EscritorioAdmin extends javax.swing.JFrame {
         });
         jMenu2.add(reporteemp);
 
-        jMenuItem6.setText("Reporte de Cliente Empresa");
-        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+        repempresa.setText("Reporte de Cliente Empresa");
+        repempresa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem6ActionPerformed(evt);
+                repempresaActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem6);
+        jMenu2.add(repempresa);
 
         jMenuItem7.setText("Reporte de Cliente Persona");
         jMenu2.add(jMenuItem7);
@@ -206,7 +206,7 @@ public class EscritorioAdmin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_reporteempActionPerformed
 
-    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+    private void repempresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_repempresaActionPerformed
         try{
             String r="src/REPORTES/repEmpresas.jasper";
             dbBean db = new dbBean();
@@ -216,7 +216,7 @@ public class EscritorioAdmin extends javax.swing.JFrame {
         }catch(JRException ex){
             ex.printStackTrace();
         }
-    }//GEN-LAST:event_jMenuItem6ActionPerformed
+    }//GEN-LAST:event_repempresaActionPerformed
         
     /**
      * @param args the command line arguments
@@ -268,9 +268,9 @@ public class EscritorioAdmin extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuBar menuBar;
+    private javax.swing.JMenuItem repempresa;
     private javax.swing.JMenuItem reporteemp;
     // End of variables declaration//GEN-END:variables
 
