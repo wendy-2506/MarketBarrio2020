@@ -842,6 +842,8 @@ public class FrmVenta extends javax.swing.JFrame {
     private void limpiaGen(){
         limpiaProd();
         limpia();
+        dtm1.setRowCount(0);
+        this.txtTOTTOTAL.setText("");
     }
     
     
