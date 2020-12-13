@@ -24,6 +24,9 @@ public class FrmRegistrar extends javax.swing.JFrame {
     ClienteDAO clie;
     
     public FrmRegistrar() {
+        clie = new ClienteDAO();
+        cliPDAO=new CliPersonaDAO();
+        cliEDAO=new CliEmpresaDAO();
         initComponents();
         lokeo();
     }
