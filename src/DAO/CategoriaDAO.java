@@ -12,7 +12,7 @@ public class CategoriaDAO {
         dbBean con = new dbBean();
         String sql = "Select * from categoria";
         if(sw == true){
-            sql = sql + " WHERE descripcion LIKE '"+ str +"%'";
+            sql = sql + " WHERE descrip LIKE '"+ str +"%'";
         }
 
         
@@ -43,7 +43,7 @@ public class CategoriaDAO {
             System.out.println("uuuuuuu" + sql);
        }
        if(cate.equals("update")){
-            sql= "UPDATE categoria set descripcion = '"+ c.getDescrip()+"' where idProducto = '"+ c.getIdCategoria() +"'";
+            sql= "UPDATE categoria set descrip = '"+ c.getDescrip()+"' where idProducto = '"+ c.getIdCategoria() +"'";
        }
        System.out.println("Observando el estado de la sentencia sql: "+sql);
 

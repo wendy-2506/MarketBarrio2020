@@ -10,10 +10,10 @@ public class ProductoDAO {
     public Vector<Producto> ListaItem(boolean sw, String str){
         Vector<Producto> item = new Vector<Producto>();
         dbBean con = new dbBean();
-        String sql = "Select * from producto";
+        String sql = "Select * from Producto";
         //busca productos segun su descripcion
         if(sw == true){
-            sql = sql + " WHERE descripcion LIKE '"+ str +"%'";
+            sql = sql + " WHERE idCategoria="+ str+" or descripcion like("+str+")";
         }
         
         try{
@@ -25,8 +25,8 @@ public class ProductoDAO {
                 producto.setIdCategoria(resultado.getInt(3));
                 producto.setIdMarca(resultado.getInt(4));
                 producto.setPrecioUnit(resultado.getDouble(5));
-                producto.setUnidMed(resultado.getString(5));
-                producto.setEstado(resultado.getInt(5));
+                producto.setUnidMed(resultado.getString(6));
+                producto.setEstado(resultado.getInt(7));
                 item.addElement(producto);
             }
         }catch(java.sql.SQLException e){
@@ -64,5 +64,6 @@ public class ProductoDAO {
         }
           return resultado;
     }
+    
     
 }
