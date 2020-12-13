@@ -15,7 +15,7 @@ import UTIL.util;
 
 /**
  *
- * @author DANIEL
+ * @author JHOEL XD
  */
 public class FrmRegistrar extends javax.swing.JFrame {
     int idCliente;
@@ -24,6 +24,9 @@ public class FrmRegistrar extends javax.swing.JFrame {
     ClienteDAO clie;
     
     public FrmRegistrar() {
+        clie = new ClienteDAO();
+        cliPDAO=new CliPersonaDAO();
+        cliEDAO=new CliEmpresaDAO();
         initComponents();
         lokeo();
     }
@@ -341,7 +344,9 @@ public class FrmRegistrar extends javax.swing.JFrame {
             c.setFechReg(fech);
             c.setIdCliente(idCliente);
             c.setIdTipoCli(2);
-            c.setIdEmpMod(0);
+            c.setIdEmpMod(1);
+            c.setIdEmpReg(1);
+            c.setFechMod(fech);
             c.setCorreo_elect(this.txtCorreoR.getText());
             c.setTelefono(this.txtTLFR.getText());
             c.setDireccion(this.txtDirecR.getText());
@@ -356,13 +361,16 @@ public class FrmRegistrar extends javax.swing.JFrame {
             this.cliEDAO.procesaItem(ce, "insert");
         
         }else if(this.rbNatural.isSelected()){
+            
             Cliente c= new Cliente ();
             this.idCliente = u.idNext("Cliente", "idCliente");
             fech = u.obtenerFecha();
             c.setFechReg(fech);
             c.setIdCliente(idCliente);
             c.setIdTipoCli(1);
-            c.setIdEmpMod(0);
+            c.setIdEmpMod(1);
+            c.setIdEmpReg(1);
+            c.setFechMod(fech);
             c.setCorreo_elect(this.txtCorreoR.getText());
             c.setTelefono(this.txtTLFR.getText());
             c.setDireccion(this.txtDirecR.getText());
