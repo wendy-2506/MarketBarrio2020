@@ -1,10 +1,13 @@
 package IU;
 
 import DAO.EmpleadoDAO;
+import UTIL.dbBean;
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import net.sf.jasperreports.engine.JRException;
 
 public class EscritorioAdmin extends javax.swing.JFrame {
     EmpleadoDAO e;
@@ -33,6 +36,7 @@ public class EscritorioAdmin extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        reporteemp = new javax.swing.JMenuItem();
         cerrar = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -102,6 +106,15 @@ public class EscritorioAdmin extends javax.swing.JFrame {
         menuBar.add(jMenu1);
 
         jMenu2.setText("Reportes");
+
+        reporteemp.setText("Reporte de Empleados");
+        reporteemp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reporteempActionPerformed(evt);
+            }
+        });
+        jMenu2.add(reporteemp);
+
         menuBar.add(jMenu2);
 
         cerrar.setText("Cerrar Sesión");
@@ -167,6 +180,18 @@ public class EscritorioAdmin extends javax.swing.JFrame {
     FrmMantTienda tien = new FrmMantTienda();
         tien.setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void reporteempActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reporteempActionPerformed
+        try{
+            String r="src/REPORTES/repEmpleados.jasper";
+            dbBean db = new dbBean();
+            db.connectRep(r, null, false);
+        }catch(SQLException ex){
+            ex.printStackTrace();        
+        }catch(JRException ex){
+            ex.printStackTrace();
+        }
+    }//GEN-LAST:event_reporteempActionPerformed
         
     /**
      * @param args the command line arguments
@@ -219,6 +244,7 @@ public class EscritorioAdmin extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuBar menuBar;
+    private javax.swing.JMenuItem reporteemp;
     // End of variables declaration//GEN-END:variables
 
 }
