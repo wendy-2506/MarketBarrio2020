@@ -55,13 +55,13 @@ public class FmrMantEmpleado extends javax.swing.JInternalFrame {
                     JOptionPane.showMessageDialog(this, "Seleccione el rol");
                 }else{
                     if(this.txtUsuario.getText().isEmpty()){
-                        JOptionPane.showMessageDialog(this, "Ingrese el Id del empleado registrado");
+                        JOptionPane.showMessageDialog(this, "Ingrese el Usuario");
                     }else{
                         if(this.txtPasword.getText().isEmpty()){
-                            JOptionPane.showMessageDialog(this, "Ingrese Ingrese el Id del empleado modificado");
+                            JOptionPane.showMessageDialog(this, "Ingrese Ingrese la contraseña");
                         }else{
                             if(this.txtEstado.getText().isEmpty()){
-                                JOptionPane.showMessageDialog(this, "Ingrese la Fecha de de registro");
+                                JOptionPane.showMessageDialog(this, "Ingrese el estado");
                             }else{
                                 sw = true;
                             }
@@ -371,9 +371,8 @@ public class FmrMantEmpleado extends javax.swing.JInternalFrame {
             if(this.btnGrabar.getText().equals("Grabar")){
             e.setFechReg(u.obtenerFecha());
             e.setFechMod(u.obtenerFecha());
-            }else{
+            }else{             
                 e.setFechMod(u.obtenerFecha());
-                e.setFechReg(e.getFechReg());
             }
             e.setUsr(this.txtUsuario.getText());
             e.setPw(this.txtPasword.getText());
