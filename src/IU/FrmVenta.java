@@ -1,14 +1,30 @@
 package IU;
 
 import BEAN.*;
+import java.util.Vector;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class FrmVenta extends javax.swing.JFrame {
-
+    DefaultTableModel dtm1;
     public FrmVenta() {
         initComponents();
+        dtm1 = (DefaultTableModel)this.tblProdSel.getModel();
         lock();
     }
-
+    private boolean validProd(){
+        boolean sw = false;
+        if (this.txtIDProd.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Debe seleccionar un producto");
+        }else{
+            if(this.txtCantidad.getText().isEmpty()){
+                JOptionPane.showMessageDialog(this, "Debe registrar cantidad");
+            }else{
+                sw = true;
+            }
+        }
+        return sw;
+    }
    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -48,13 +64,13 @@ public class FrmVenta extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
+        tblProdSel = new javax.swing.JTable();
+        txtIDProd = new javax.swing.JTextField();
+        txtDesc = new javax.swing.JTextField();
+        txtCat = new javax.swing.JTextField();
+        txtMarca = new javax.swing.JTextField();
+        txtPrecio = new javax.swing.JTextField();
+        txtCantidad = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         txtTOTTOTAL = new javax.swing.JTextField();
@@ -270,19 +286,50 @@ public class FrmVenta extends javax.swing.JFrame {
 
         jLabel14.setText("Cantidad");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblProdSel.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Id_Producto", "Descripcion", "Categoria", "Tipo", "Total"
+                "Id_Producto", "Descripcion", "Categoria", "Precio unitario", "Cantidad"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        tblProdSel.setToolTipText("");
+        jScrollPane1.setViewportView(tblProdSel);
+
+        txtIDProd.setEditable(false);
+        txtIDProd.setEnabled(false);
+        txtIDProd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIDProdActionPerformed(evt);
+            }
+        });
+
+        txtDesc.setEditable(false);
+        txtDesc.setEnabled(false);
+
+        txtCat.setEditable(false);
+        txtCat.setEnabled(false);
+
+        txtMarca.setEditable(false);
+        txtMarca.setEnabled(false);
+
+        txtPrecio.setEditable(false);
+        txtPrecio.setEnabled(false);
 
         jButton3.setText("Seleccionar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Agregar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -303,12 +350,12 @@ public class FrmVenta extends javax.swing.JFrame {
                                     .addComponent(jLabel14))
                                 .addGap(40, 40, 40)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField9, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
-                                    .addComponent(jTextField8)
-                                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField12, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
-                                    .addComponent(jTextField11)
-                                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtDesc, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                                    .addComponent(txtIDProd)
+                                    .addComponent(txtCat, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtPrecio, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                                    .addComponent(txtMarca)
+                                    .addComponent(txtCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGap(57, 57, 57)
                                 .addComponent(jButton3)
@@ -326,27 +373,27 @@ public class FrmVenta extends javax.swing.JFrame {
                 .addGap(13, 13, 13)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtIDProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDesc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
-                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
@@ -531,9 +578,9 @@ public class FrmVenta extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(jLabel1)
-                .addGap(60, 60, 60)
+                .addGap(30, 30, 30)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         pack();
@@ -621,6 +668,68 @@ public class FrmVenta extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        Producto p;
+        FrmSelProducto dialogP=new FrmSelProducto(new javax.swing.JFrame(), true);
+        dialogP.setVisible(true);
+        p=dialogP.devProd();
+        
+        if(p==null){
+            this.txtIDProd.setText("");
+            this.txtDesc.setText("");
+            this.txtCat.setText("");
+            this.txtMarca.setText("");
+            this.txtPrecio.setText("");
+
+        }else{
+            this.txtIDProd.setText(String.valueOf(p.getIdProducto()));
+            this.txtDesc.setText(String.valueOf(p.getDescripcion()));
+            this.txtCat.setText(String.valueOf(p.getIdCategoria()));
+            this.txtMarca.setText(String.valueOf(p.getIdMarca()));
+            this.txtPrecio.setText(String.valueOf(p.getPrecioUnit()));
+
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void txtIDProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDProdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIDProdActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+            if (validProd() == true){
+            verifPreReg(Integer.parseInt(this.txtIDProd.getText()));
+            Vector vecP = new Vector();
+            vecP.addElement(this.txtIDProd.getText());
+            vecP.addElement(this.txtDesc.getText());
+            vecP.addElement(this.txtCat.getText());
+            vecP.addElement(this.txtPrecio.getText());
+            vecP.addElement(this.txtCantidad.getText());
+
+            this.dtm1.addRow(vecP);
+            limpiaProd();
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+    private void verifPreReg(int idP){
+        if(this.tblProdSel.getRowCount()>0){
+            for(int i=0;i<this.tblProdSel.getRowCount();i++){
+                if(idP == Integer.parseInt(dtm1.getValueAt(i, 0).toString())){
+                    dtm1.removeRow(i);
+                    break;
+                }
+            }
+        }
+    }
+    
+    private void limpiaProd(){
+        this.txtIDProd.setText("");
+        this.txtDesc.setText("");
+        this.txtCat.setText("");
+        this.txtMarca.setText("");
+        this.txtPrecio.setText("");
+        this.txtCantidad.setText("");
+    
+    
+    }
     /**
      * @param args the command line arguments
      */
@@ -695,23 +804,23 @@ public class FrmVenta extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JRadioButton rbEmpresa;
     private javax.swing.JRadioButton rbNatural;
+    private javax.swing.JTable tblProdSel;
     private javax.swing.JTabbedPane tpTipo;
     private javax.swing.JTextField txtApellidos;
+    private javax.swing.JTextField txtCantidad;
+    private javax.swing.JTextField txtCat;
     private javax.swing.JTextField txtDNI;
+    private javax.swing.JTextField txtDesc;
+    private javax.swing.JTextField txtIDProd;
     private javax.swing.JTextField txtIdCliente;
+    private javax.swing.JTextField txtMarca;
     private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtPrecio;
     private javax.swing.JTextField txtRUC;
     private javax.swing.JTextField txtRazSoc;
     private javax.swing.JTextField txtRepresentante;
