@@ -7,7 +7,9 @@ import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
+
 public class FrmMantProduct extends javax.swing.JFrame {
+    
     ProductoDAO prodDAO;
     DefaultTableModel dtm;
     int idProd;
@@ -37,6 +39,7 @@ private void llenaTblBuscar(boolean s, String c){
 private boolean valida(){
         boolean sw = false;
         if(this.txtEstado.getText().isEmpty()){
+            
             JOptionPane.showMessageDialog(this, "Ingrese Estado");
         }else{
             if(this.txtIdCategoria.getText().isEmpty()){
@@ -374,7 +377,7 @@ private boolean valida(){
     }//GEN-LAST:event_tblBuscarMouseClicked
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-
+         
 
         this.txtIdProducto.setText("");
         this.txtDescripcion.setText("");
