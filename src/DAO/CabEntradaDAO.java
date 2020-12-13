@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.util.Vector;
 
 public class CabEntradaDAO {
-    public Vector<CabEntradaDAO> ListaItem(boolean sw, String str){
-        Vector<CabEntradaDAO> item = new Vector<CabEntradaDAO>();
+    public Vector<Cab_Entrada> ListaItem(boolean sw, String str){
+        Vector<Cab_Entrada> item = new Vector<Cab_Entrada>();
         dbBean con = new dbBean();
         String sql = "Select * from Cab_Entrada";
         if(sw == true){

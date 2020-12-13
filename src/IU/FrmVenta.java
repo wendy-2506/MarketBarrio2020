@@ -1,6 +1,9 @@
 package IU;
 
 import BEAN.*;
+import REPORTES.Mailer;
+import DAO.*;
+import UTIL.util;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -8,10 +11,16 @@ import javax.swing.table.DefaultTableModel;
 public class FrmVenta extends javax.swing.JFrame {
     DefaultTableModel dtm1;
     int idFilProd;
+    CabDocVentaDAO cabVDAO;
+    Det_DocVentaDAO detVDAO;
+    int idVen;
+    double TOTAL;
     public FrmVenta() {
         initComponents();
         dtm1 = (DefaultTableModel)this.tblProdSel.getModel();
         lock();
+        cabVDAO=new CabDocVentaDAO();
+        detVDAO=new Det_DocVentaDAO();
         idFilProd = -1;
     }
     private boolean validProd(){
@@ -79,7 +88,7 @@ public class FrmVenta extends javax.swing.JFrame {
         txtTOTTOTAL = new javax.swing.JTextField();
         btnPagar = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        BuscarClienteComprador = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jTextField14 = new javax.swing.JTextField();
@@ -92,7 +101,7 @@ public class FrmVenta extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Kristen ITC", 3, 18)); // NOI18N
         jLabel1.setText("CAJERO \"MARKET BARRIO\"");
@@ -421,7 +430,20 @@ public class FrmVenta extends javax.swing.JFrame {
                 .addGap(14, 14, 14))
         );
 
-        btnPagar.setText("Pagar");
+        txtTOTTOTAL.setEditable(false);
+        txtTOTTOTAL.setBackground(new java.awt.Color(255, 255, 51));
+        txtTOTTOTAL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTOTTOTALActionPerformed(evt);
+            }
+        });
+
+        btnPagar.setText("Grabar");
+        btnPagar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPagarActionPerformed(evt);
+            }
+        });
 
         jLabel16.setFont(new java.awt.Font("Gill Sans Ultra Bold", 3, 14)); // NOI18N
         jLabel16.setText("TOTAL A PAGAR:");
@@ -554,28 +576,28 @@ public class FrmVenta extends javax.swing.JFrame {
                 .addContainerGap(39, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout BuscarClienteCompradorLayout = new javax.swing.GroupLayout(BuscarClienteComprador);
+        BuscarClienteComprador.setLayout(BuscarClienteCompradorLayout);
+        BuscarClienteCompradorLayout.setHorizontalGroup(
+            BuscarClienteCompradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BuscarClienteCompradorLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(16, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        BuscarClienteCompradorLayout.setVerticalGroup(
+            BuscarClienteCompradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BuscarClienteCompradorLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(BuscarClienteCompradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Buscar", jPanel2);
+        jTabbedPane1.addTab("Buscar", BuscarClienteComprador);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -645,7 +667,8 @@ public class FrmVenta extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSeleccionarActionPerformed
 
     private void rbEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbEmpresaActionPerformed
-    this.tpTipo.setSelectedIndex(1);    // TODO add your handling code here:
+    this.tpTipo.setSelectedIndex(1);  
+    limpia();
     }//GEN-LAST:event_rbEmpresaActionPerformed
     
     
@@ -681,7 +704,8 @@ public class FrmVenta extends javax.swing.JFrame {
     
     }
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-    FrmRegistrar reg = new FrmRegistrar();
+    limpia();
+        FrmRegistrar reg = new FrmRegistrar();
     reg.setVisible(true);
         
     }//GEN-LAST:event_btnRegistrarActionPerformed
@@ -725,6 +749,7 @@ public class FrmVenta extends javax.swing.JFrame {
 
             this.dtm1.addRow(vecP);
             limpiaProd();
+            sacaTotal();
         }        // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -732,6 +757,7 @@ public class FrmVenta extends javax.swing.JFrame {
         if(this.idFilProd>-1){
             dtm1.removeRow(this.idFilProd);
             idFilProd = -1;
+            sacaTotal();
         }else{
             JOptionPane.showMessageDialog(this,"SELECCIONE UN PRODUCTO PARA ELIMINARLO");
         }
@@ -742,6 +768,52 @@ public class FrmVenta extends javax.swing.JFrame {
             this.idFilProd = this.tblProdSel.getSelectedRow();
         }
     }//GEN-LAST:event_tblProdSelMouseClicked
+
+    private void txtTOTTOTALActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTOTTOTALActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTOTTOTALActionPerformed
+
+    private void btnPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagarActionPerformed
+
+        Mailer m = new Mailer();
+       // m.sendEmail();
+        
+        String fech;
+        util u = new util();
+        if(validaGen()==true){
+            
+            if(this.btnPagar.getText().equals("Grabar")){
+                Cab_DocVenta cv = new Cab_DocVenta();          
+                this.idVen = u.idNext("Cab_DocVenta", "idVenta");
+                fech = u.obtenerFecha();
+                cv.setIdVenta(idVen);
+                cv.setIdCliente(Integer.parseInt(this.txtIdCliente.getText()));
+                cv.setFechVenta(fech);
+                cv.setEstado(1);
+                cv.setFechMod(fech);
+                cv.setTotal(Double.parseDouble(this.txtTOTTOTAL.getText()));
+                cv.setIdEmpReg(2);
+                cv.setIdEmpMod(2);
+                if(this.rbEmpresa.isSelected()){
+                    cv.setIdTipo(2);
+                }else if(this.rbNatural.isSelected()){
+                    cv.setIdTipo(1);
+                }
+                cv.setIdTienda(1);
+                this.cabVDAO.agregaItem(cv, "insert");
+            }
+            
+            for(int i=0;i<this.tblProdSel.getRowCount();i++){
+                Det_DocVenta dv = new Det_DocVenta();
+                dv.setIdVenta(idVen);
+                dv.setIdProducto(Integer.parseInt(dtm1.getValueAt(i, 0).toString()));
+                dv.setPrecio(Double.parseDouble(dtm1.getValueAt(i, 3).toString()));
+                dv.setCantidad(Integer.parseInt(dtm1.getValueAt(i, 4).toString()));
+                this.detVDAO.agregaItem(dv, "insert");
+            }
+            limpiaGen();
+        }        
+    }//GEN-LAST:event_btnPagarActionPerformed
     private void verifPreReg(int idP){
         if(this.tblProdSel.getRowCount()>0){
             for(int i=0;i<this.tblProdSel.getRowCount();i++){
@@ -753,6 +825,28 @@ public class FrmVenta extends javax.swing.JFrame {
         }
     }
     
+    private boolean validaGen(){
+        boolean sw = false;
+        if(this.txtIdCliente.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Debe seleccionar cliente");
+        }else{
+            if(this.tblProdSel.getRowCount()==0){
+                JOptionPane.showMessageDialog(this, "Debe seleccionar por lo menos 1 producto");
+            }else{
+                sw = true;
+            }
+        }
+        return sw;
+    }
+    
+    private void limpiaGen(){
+        limpiaProd();
+        limpia();
+        dtm1.setRowCount(0);
+        this.txtTOTTOTAL.setText("");
+    }
+    
+    
     private void limpiaProd(){
         this.txtIDProd.setText("");
         this.txtDesc.setText("");
@@ -760,9 +854,22 @@ public class FrmVenta extends javax.swing.JFrame {
         this.txtMarca.setText("");
         this.txtPrecio.setText("");
         this.txtCantidad.setText("");
-    
-    
     }
+    private void sacaTotal(){
+        if(this.tblProdSel.getRowCount()>0){
+            Double acum=0.0;
+            for(int i=0;i<this.tblProdSel.getRowCount();i++){
+                double p;
+                double c;
+                p=Double.parseDouble(this.dtm1.getValueAt(i, 3).toString());
+                c=Double.parseDouble(this.dtm1.getValueAt(i, 4).toString());
+                acum=acum+(p*c);
+            }
+            TOTAL=acum;
+            this.txtTOTTOTAL.setText(String.valueOf(TOTAL));
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -799,6 +906,7 @@ public class FrmVenta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel BuscarClienteComprador;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnPagar;
     private javax.swing.JButton btnRegistrar;
@@ -824,7 +932,6 @@ public class FrmVenta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;

@@ -41,7 +41,7 @@ public class CliEmpresaDAO {
        dbBean con=new dbBean();
        if(proc.equals("insert")){
             sql="INSERT INTO cliente_Empresa VALUES ('"+ c.getIdCliente() +"', '"+ c.getRazon_Social() +"', '"+ c.getRepresentante() +"', '"+ c.getRuc() +"')";
-            System.out.println("uuuuuuu" + sql);
+            System.out.println("EntroClienteEmpresaDAO:" + sql);
        }
        if(proc.equals("update")){
             sql="UPDATE cliente_Empresa set razon_Social = '"+ c.getRazon_Social() +"', representante = '"+ c.getRepresentante() +"', ruc = '"+ c.getRuc() +"' where idCliente = '"+ c.getIdCliente() +"'";

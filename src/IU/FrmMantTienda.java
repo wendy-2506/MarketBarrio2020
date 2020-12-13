@@ -68,7 +68,7 @@
         btnLimpiar = new javax.swing.JButton();
         txtDescripcion = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Kristen ITC", 1, 18)); // NOI18N
         jLabel1.setText("MANTENIMIENTO TIENDA");
