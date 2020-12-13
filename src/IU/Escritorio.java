@@ -22,6 +22,7 @@ public class Escritorio extends javax.swing.JFrame {
         this.loginpanel.setLocation(580, 200);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         e=new EmpleadoDAO();
+        emp=new Empleado();
     }
     
     @SuppressWarnings("unchecked")
