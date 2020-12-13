@@ -1,5 +1,13 @@
 package UTIL;
 import java.sql.*;
+import java.util.HashMap;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
+
 public class dbBean {
   //Conexión: a través del ODBC
     String dbURL = "jdbc:sqlserver://localhost:1433;databaseName=MARKETBARRIO";
@@ -26,6 +34,21 @@ public class dbBean {
             return false;
         }
         return true;
+    }
+    
+    public void connectRep(String ruta, HashMap m, boolean sw)throws SQLException, JRException{
+        connect();
+        JasperReport reporte = null;
+        JasperPrint imp;
+        reporte = (JasperReport) JRLoader.loadObjectFromFile(ruta);
+        if(sw == false){
+            imp = JasperFillManager.fillReport(reporte, null, dbCon);
+        }else{
+            imp = JasperFillManager.fillReport(reporte, m, dbCon);
+        }
+        JasperViewer ver = new JasperViewer(imp);
+        ver.setTitle("Reporte");
+        ver.setVisible(true);                
     }
 
     public void close() throws SQLException{
