@@ -55,22 +55,42 @@ public class FmrMantEmpleado extends javax.swing.JFrame {
             if(this.txtNombres.getText().isEmpty()){
                 JOptionPane.showMessageDialog(this, "Ingrese nombres"); 
             }else{
-                if(this.txtRol.getText().isEmpty()){
-                    JOptionPane.showMessageDialog(this, "Ingrese rol");
+                if(!this.btnGerente.isSelected()||!this.btnVendedor.isSelected()){
+                    JOptionPane.showMessageDialog(this, "Seleccione el rol");
                 }else{
-                    if(this.txtFechIni.getText().isEmpty()){
-                    JOptionPane.showMessageDialog(this, "Ingrese Fecha de inicio");
+                    if(this.txtIdEmpReg.getText().isEmpty()){
+                        JOptionPane.showMessageDialog(this, "Ingrese el Id del empleado registrado");
                     }else{
-                        if(this.txtFechFin.getText().isEmpty()){
-                        JOptionPane.showMessageDialog(this, "Ingrese Fecha de Fin");
+                        if(this.txtIdEmpMod.getText().isEmpty()){
+                            JOptionPane.showMessageDialog(this, "Ingrese Ingrese el Id del empleado modificado");
                         }else{
-                            sw = true;
-                        {
-                    {
-                }
+                            if(this.txtFechReg.getText().isEmpty()){
+                                JOptionPane.showMessageDialog(this, "Ingrese la Fecha de de registro");
+                            }else{
+                                if(this.txtFechMod.getText().isEmpty()){
+                                    JOptionPane.showMessageDialog(this, "Ingrese la fecha de modificación");
+                                }else{
+                                    if(this.txtUsuario.getText().isEmpty()){
+                                        JOptionPane.showMessageDialog(this, "Ingrese el usuario");
+                                    }else{
+                                        if(this.txtPasword.getText().isEmpty()){
+                                            JOptionPane.showMessageDialog(this, "Ingrese la contraseña");
+                                        }else{
+                                            if(this.txtEstado.getText().isEmpty()){
+                                                JOptionPane.showMessageDialog(this, "Ingrese el estado");
+                                            }else{
+                                                sw=true;
+                                            } 
+                                        } 
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }  
             }
         }
-        return sw;
+            return sw;
     }
     
     
