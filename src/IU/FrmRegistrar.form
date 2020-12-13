@@ -240,6 +240,9 @@
             <Component class="javax.swing.JTextField" name="txtNombreR">
             </Component>
             <Component class="javax.swing.JTextField" name="txtDNIR">
+              <Events>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtDNIRKeyReleased"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -316,6 +319,9 @@
             <Component class="javax.swing.JTextField" name="txtRepreR">
             </Component>
             <Component class="javax.swing.JTextField" name="txtRUCR">
+              <Events>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtRUCRKeyReleased"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -328,6 +334,9 @@
     <Component class="javax.swing.JTextField" name="txtTLFR">
     </Component>
     <Component class="javax.swing.JTextField" name="txtDirecR">
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtDirecRKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnRegistrar">
       <Properties>
