@@ -7,7 +7,7 @@ import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class FrmSelProducto extends javax.swing.JDialog {
+public class FrmSelProducto extends javax.swing.JInternalFrame {
     ProductoDAO prodDAO;
     DefaultTableModel dtm;
     Producto prod;
@@ -19,8 +19,7 @@ public class FrmSelProducto extends javax.swing.JDialog {
     
     
     int idPred;
-    public FrmSelProducto(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public FrmSelProducto() {
         prodDAO = new ProductoDAO();
         catDAO  = new CategoriaDAO();
         initComponents();
@@ -319,21 +318,7 @@ public Producto devProd(){
     }//GEN-LAST:event_tblBuscarProdMouseClicked
 
    
-    public static void main(String args[]) {
-       
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                FrmSelProducto dialog = new FrmSelProducto(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton3;

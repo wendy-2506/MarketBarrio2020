@@ -647,7 +647,7 @@ public class FrmVenta extends javax.swing.JInternalFrame {
     private void btnSeleccionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarActionPerformed
     if(this.rbEmpresa.isSelected()){
         Cliente_Empresa ce;
-        SelClienteVE dialog = new SelClienteVE(new javax.swing.JFrame(), true);//Si es empresa
+        SelClienteVE dialog = new SelClienteVE();//Si es empresa
         dialog.setVisible(true);
         ce= dialog.devCliente();
         if(ce==null){
@@ -664,7 +664,7 @@ public class FrmVenta extends javax.swing.JInternalFrame {
         }
     }else if (this.rbNatural.isSelected()){
         Cliente_Persona cp;
-        SelClienteVN dialog = new SelClienteVN(new javax.swing.JFrame(), true);//Si es persona
+        SelClienteVN dialog = new SelClienteVN();//Si es persona
         dialog.setVisible(true);
         cp= dialog.devCliente();
         if(cp==null){
@@ -730,7 +730,7 @@ public class FrmVenta extends javax.swing.JInternalFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         Producto p;
-        FrmSelProducto dialogP=new FrmSelProducto(new javax.swing.JFrame(), true);
+        FrmSelProducto dialogP=new FrmSelProducto();
         dialogP.setVisible(true);
         p=dialogP.devProd();
         

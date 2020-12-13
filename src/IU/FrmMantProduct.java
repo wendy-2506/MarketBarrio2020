@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
-public class FrmMantProduct extends javax.swing.JFrame {
+public class FrmMantProduct extends javax.swing.JInternalFrame {
     
     ProductoDAO prodDAO;
     DefaultTableModel dtm;
@@ -406,14 +406,6 @@ private boolean valida(){
         this.btnGrabar.setText("Grabar");
         }
    
-    public static void main(String args[]) {
-       
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FrmMantProduct().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGrabar;
