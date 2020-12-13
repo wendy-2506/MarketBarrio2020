@@ -8,8 +8,8 @@ import java.sql.SQLException;
 import java.util.Vector;
 
 public class DetEntradaDAO {
-    public Vector<DetEntradaDAO> ListaItem(boolean sw, String str){
-        Vector<DetEntradaDAO> item = new Vector<DetEntradaDAO>();
+    public Vector<Det_Entrada> ListaItem(boolean sw, String str){
+        Vector<Det_Entrada> item = new Vector<Det_Entrada>();
         dbBean con = new dbBean();
         String sql = "Select * from Det_Entrada";
         if(sw == true){
