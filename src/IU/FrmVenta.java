@@ -654,7 +654,8 @@ public class FrmVenta extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSeleccionarActionPerformed
 
     private void rbEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbEmpresaActionPerformed
-    this.tpTipo.setSelectedIndex(1);    // TODO add your handling code here:
+    this.tpTipo.setSelectedIndex(1);  
+    limpia();
     }//GEN-LAST:event_rbEmpresaActionPerformed
     
     
@@ -690,7 +691,8 @@ public class FrmVenta extends javax.swing.JFrame {
     
     }
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-    FrmRegistrar reg = new FrmRegistrar();
+    limpia();
+        FrmRegistrar reg = new FrmRegistrar();
     reg.setVisible(true);
         
     }//GEN-LAST:event_btnRegistrarActionPerformed
