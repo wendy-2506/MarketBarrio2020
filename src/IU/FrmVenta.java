@@ -12,7 +12,12 @@ public class FrmVenta extends javax.swing.JFrame {
     DefaultTableModel dtm1;
     int idFilProd;
     CabDocVentaDAO cabVDAO;
+    SerieDVDAO sdvDAO;
+    FacturaDAO fDAO;
+    BoletaDAO bDAO;
+    int idT=1;
     Det_DocVentaDAO detVDAO;
+    ProdStockDAO prodStockDAO;
     int idVen;
     double TOTAL;
     public FrmVenta() {
@@ -21,6 +26,10 @@ public class FrmVenta extends javax.swing.JFrame {
         lock();
         cabVDAO=new CabDocVentaDAO();
         detVDAO=new Det_DocVentaDAO();
+        prodStockDAO=new ProdStockDAO();
+        sdvDAO=new SerieDVDAO();
+        fDAO=new FacturaDAO();
+        bDAO=new BoletaDAO();
         idFilProd = -1;
     }
     private boolean validProd(){
@@ -799,7 +808,7 @@ public class FrmVenta extends javax.swing.JFrame {
                 }else if(this.rbNatural.isSelected()){
                     cv.setIdTipo(1);
                 }
-                cv.setIdTienda(1);
+                cv.setIdTienda(idT);
                 this.cabVDAO.agregaItem(cv, "insert");
             }
             
@@ -811,6 +820,9 @@ public class FrmVenta extends javax.swing.JFrame {
                 dv.setCantidad(Integer.parseInt(dtm1.getValueAt(i, 4).toString()));
                 this.detVDAO.agregaItem(dv, "insert");
             }
+            
+            int idDV = u.id2Exp("SerieDV", "idSerie", "idTienda", idT,"estado","1");
+            
             limpiaGen();
         }        
     }//GEN-LAST:event_btnPagarActionPerformed
