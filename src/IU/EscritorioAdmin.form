@@ -68,10 +68,13 @@
             <Property name="text" type="java.lang.String" value="Reportes"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem6">
+            <MenuItem class="javax.swing.JMenuItem" name="reporteemp">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Reporte de Empleados"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="reporteempActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
