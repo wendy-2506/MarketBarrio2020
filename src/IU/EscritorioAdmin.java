@@ -175,8 +175,10 @@ public class EscritorioAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_cerrarMouseClicked
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        FrmVenta ven = new FrmVenta();
-        ven.setVisible(true);
+        FrmVenta fven = new FrmVenta();
+        this.Escritorio.add(fven);
+        Escritorio.moveToFront(fven);
+        fven.setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
