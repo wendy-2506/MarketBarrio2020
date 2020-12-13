@@ -28,6 +28,8 @@ public class EscritorioAdmin extends javax.swing.JFrame {
         fileMenu = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         cerrar = new javax.swing.JMenu();
@@ -53,16 +55,47 @@ public class EscritorioAdmin extends javax.swing.JFrame {
                 jMenuItem1MouseClicked(evt);
             }
         });
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         fileMenu.add(jMenuItem1);
 
         jMenuItem2.setText("Mantenimiento Clientes");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         fileMenu.add(jMenuItem2);
+
+        jMenuItem4.setText("Mantenimiento Producto");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        fileMenu.add(jMenuItem4);
+
+        jMenuItem5.setText("Mantenimiento Tienda");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        fileMenu.add(jMenuItem5);
 
         menuBar.add(fileMenu);
 
         jMenu1.setText("Ventas");
 
         jMenuItem3.setText("Form Ventas");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem3);
 
         menuBar.add(jMenu1);
@@ -105,6 +138,31 @@ public class EscritorioAdmin extends javax.swing.JFrame {
         //esc.setSize(1366, 768);
         this.dispose();
     }//GEN-LAST:event_cerrarMouseClicked
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        FrmVenta ven = new FrmVenta();
+        ven.setVisible(true);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        FmrMantEmpleado emp = new FmrMantEmpleado();
+        emp.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+          FrmMantCliente clie = new FrmMantCliente();
+        clie.setVisible(true);  // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        FrmMantProduct pro = new FrmMantProduct();
+        pro.setVisible(true); 
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+    FrmMantTienda tien = new FrmMantTienda();
+        tien.setVisible(true);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
         
     /**
      * @param args the command line arguments
@@ -153,6 +211,8 @@ public class EscritorioAdmin extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuBar menuBar;
     // End of variables declaration//GEN-END:variables
 

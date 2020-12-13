@@ -39,6 +39,11 @@ public class EscritorioEmpleado extends javax.swing.JFrame {
         jMenu1.setText("Ventas");
 
         jMenuItem3.setText("Form Ventas");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem3);
 
         menuBar.add(jMenu1);
@@ -47,6 +52,11 @@ public class EscritorioEmpleado extends javax.swing.JFrame {
         cerrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cerrarMouseClicked(evt);
+            }
+        });
+        cerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cerrarActionPerformed(evt);
             }
         });
         menuBar.add(cerrar);
@@ -73,6 +83,18 @@ public class EscritorioEmpleado extends javax.swing.JFrame {
         //esc.setSize(1366, 768);
         this.dispose();
     }//GEN-LAST:event_cerrarMouseClicked
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    FrmVenta ven = new FrmVenta();
+        ven.setVisible(true);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void cerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarActionPerformed
+    Escritorio esc = new Escritorio();
+        esc.setVisible(true);
+        //esc.setSize(1366, 768);
+        this.dispose();     // TODO add your handling code here:
+    }//GEN-LAST:event_cerrarActionPerformed
         
     /**
      * @param args the command line arguments
