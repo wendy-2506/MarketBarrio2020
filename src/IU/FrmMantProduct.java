@@ -374,6 +374,7 @@ private boolean valida(){
         this.txtEstado.setText(dtm.getValueAt(fil, 6).toString());
         this.btnGrabar.setText("Actualizar");
         this.jTabbedPane1.setSelectedIndex(1);
+        
     }//GEN-LAST:event_tblBuscarMouseClicked
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
