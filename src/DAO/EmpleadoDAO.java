@@ -88,22 +88,47 @@ public class EmpleadoDAO {
         return login;
     }
     
-    public int tipoEmp(String usr, String psw){
-        int id=0;
+//    public int tipoEmp(String usr, String psw){
+//        int id=0;
+//        try{
+//            dbBean db=new dbBean();
+//            String buscar= "Select e.idTipoEmp from Empleado where e.usr="+usr+"and e.pw="+psw; 
+//            ResultSet resultado = db.execSQL(buscar);
+//            while (resultado.next()){
+//                if(usr.equals(resultado.getString(1))){
+//                    if(psw.equals(resultado.getString(2))){
+//                        //q falta aqui o q cambio????
+//                    }
+//                }
+//            }
+//        }
+//        catch(java.sql.SQLException e){e.printStackTrace();
+//        }
+//        return id;
+//    }
+    
+    public Empleado UserLogeado(String usr, String psw){
+        Empleado emp=new Empleado();
+
+        String sql = "Select * from empleado where usr='"+usr+"' and pw='"+psw +"'";
         try{
-            dbBean db=new dbBean();
-            String buscar= "Select e.idTipoEmp from Empleado where e.usr="+usr+"and e.pw="+psw; 
-            ResultSet resultado = db.execSQL(buscar);
-            while (resultado.next()){
-                if(usr.equals(resultado.getString(1))){
-                    if(psw.equals(resultado.getString(2))){
-                        //q falta aqui o q cambio????
-                    }
-                }
+            dbBean con = new dbBean();
+            ResultSet resultado = con.execSQL(sql);
+            emp.setIdEmpleado(resultado.getInt(1));
+            emp.setApellidos(resultado.getString(2));
+            emp.setNombres(resultado.getString(3));
+            emp.setIdEmpReg(resultado.getInt(4));
+            emp.setFechReg(resultado.getString(5));
+            emp.setIdEmpMod(resultado.getInt(6));
+            emp.setFechMod(resultado.getString(7));
+            emp.setUsr(resultado.getString(8));
+            emp.setPw(resultado.getString(9));
+            emp.setIdTipoEmp(resultado.getInt(10));
+            emp.setEstado(resultado.getInt(11));
+            
+        }catch(java.sql.SQLException e){
+            e.printStackTrace();
             }
-        }
-        catch(java.sql.SQLException e){e.printStackTrace();
-        }
-        return id;
+        return emp;
     }
 }

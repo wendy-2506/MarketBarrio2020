@@ -1,5 +1,6 @@
 package IU;
 
+import BEAN.Empleado;
 import DAO.EmpleadoDAO;
 import java.sql.Connection;
 import java.sql.Statement;
@@ -8,6 +9,8 @@ import javax.swing.JOptionPane;
 
 public class Escritorio extends javax.swing.JFrame {
     EmpleadoDAO e;
+    Empleado emp;
+    int idTipoEmpleado;
     public Escritorio() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -35,7 +38,7 @@ public class Escritorio extends javax.swing.JFrame {
         txtcontra = new javax.swing.JPasswordField();
         btnIngLog = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
-        fileMenu = new javax.swing.JMenu();
+        cerrar = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -103,14 +106,14 @@ public class Escritorio extends javax.swing.JFrame {
         Escritorio.add(loginpanel);
         loginpanel.setBounds(210, 90, 250, 260);
 
-        fileMenu.setMnemonic('f');
-        fileMenu.setText("Cerrar");
-        fileMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+        cerrar.setMnemonic('f');
+        cerrar.setText("Cerrar");
+        cerrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                fileMenuMouseClicked(evt);
+                cerrarMouseClicked(evt);
             }
         });
-        menuBar.add(fileMenu);
+        menuBar.add(cerrar);
 
         setJMenuBar(menuBar);
 
@@ -133,20 +136,32 @@ public class Escritorio extends javax.swing.JFrame {
         String pw = this.txtcontra.getText();
 
         if(valida(usr,pw) == true){
-            EscritorioPrincipal escP = new EscritorioPrincipal();
-            JOptionPane.showMessageDialog(this, "BIEN XD");
-            escP.setVisible(true);
-            escP.setSize(1366, 768);
+            //emp = new Empleado();
+            emp = e.UserLogeado(usr,pw);
+            idTipoEmpleado= emp.getIdTipoEmp();        
+            System.out.print("gdfh");
+            System.out.print("gdfh");
+            if(this.idTipoEmpleado==1){
+                EscritorioAdmin escr = new EscritorioAdmin();
+                //JOptionPane.showMessageDialog(this, "Ingreso correcto administrador.");
+                escr.setVisible(true);
+                System.out.print("Probar");
+                //this.dispose();
+            }else if(this.idTipoEmpleado==2){
+                EscritorioEmpleado escremp = new EscritorioEmpleado();
+                //JOptionPane.showMessageDialog(this, "Ingreso correcto empleado.");
+                escremp.setVisible(true);
+                //this.dispose();
+            }     
             this.dispose();
         }else{
-            JOptionPane.showMessageDialog(this, "Error F: Usted no se encuentra registrado en el sistema.");
+            JOptionPane.showMessageDialog(this, "GGWP: Usted no se encuentra registrado en el sistema.");
         }
-
     }//GEN-LAST:event_btnIngLogActionPerformed
 
-    private void fileMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fileMenuMouseClicked
+    private void cerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cerrarMouseClicked
         this.dispose();
-    }//GEN-LAST:event_fileMenuMouseClicked
+    }//GEN-LAST:event_cerrarMouseClicked
 
     public boolean valida(String User,String Password){
         boolean dec=false;
@@ -195,7 +210,7 @@ public class Escritorio extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane Escritorio;
     private javax.swing.JButton btnIngLog;
-    private javax.swing.JMenu fileMenu;
+    private javax.swing.JMenu cerrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
