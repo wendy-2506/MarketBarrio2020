@@ -51,44 +51,28 @@ public class FmrMantEmpleado extends javax.swing.JInternalFrame {
             if(this.txtNombres.getText().isEmpty()){
                 JOptionPane.showMessageDialog(this, "Ingrese nombres"); 
             }else{
-                if(!this.btnGerente.isSelected()||!this.btnVendedor.isSelected()){
+                if(!this.btnGerente.isSelected()&&!this.btnVendedor.isSelected()){
                     JOptionPane.showMessageDialog(this, "Seleccione el rol");
                 }else{
-                    if(this.txtIdEmpReg.getText().isEmpty()){
+                    if(this.txtUsuario.getText().isEmpty()){
                         JOptionPane.showMessageDialog(this, "Ingrese el Id del empleado registrado");
                     }else{
-                        if(this.txtIdEmpMod.getText().isEmpty()){
+                        if(this.txtPasword.getText().isEmpty()){
                             JOptionPane.showMessageDialog(this, "Ingrese Ingrese el Id del empleado modificado");
                         }else{
-                            if(this.txtFechReg.getText().isEmpty()){
+                            if(this.txtEstado.getText().isEmpty()){
                                 JOptionPane.showMessageDialog(this, "Ingrese la Fecha de de registro");
                             }else{
-                                if(this.txtFechMod.getText().isEmpty()){
-                                    JOptionPane.showMessageDialog(this, "Ingrese la fecha de modificación");
-                                }else{
-                                    if(this.txtUsuario.getText().isEmpty()){
-                                        JOptionPane.showMessageDialog(this, "Ingrese el usuario");
-                                    }else{
-                                        if(this.txtPasword.getText().isEmpty()){
-                                            JOptionPane.showMessageDialog(this, "Ingrese la contraseña");
-                                        }else{
-                                            if(this.txtEstado.getText().isEmpty()){
-                                                JOptionPane.showMessageDialog(this, "Ingrese el estado");
-                                            }else{
-                                                sw=true;
-                                            } 
-                                        } 
-                                    }
-                                }
+                                sw = true;
                             }
-                        }
+                        
                     }
                 }  
             }
         }
-            return sw;
-    }
-    
+      }
+        return sw;
+    } 
     
     
     @SuppressWarnings("unchecked")
@@ -115,14 +99,6 @@ public class FmrMantEmpleado extends javax.swing.JInternalFrame {
         btnLimpiar = new javax.swing.JButton();
         btnGerente = new javax.swing.JRadioButton();
         btnVendedor = new javax.swing.JRadioButton();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        txtIdEmpMod = new javax.swing.JTextField();
-        txtIdEmpReg = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        txtFechReg = new javax.swing.JTextField();
-        txtFechMod = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -240,14 +216,6 @@ public class FmrMantEmpleado extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel7.setText("ID Empleado Registrado:");
-
-        jLabel8.setText("ID Empleado Modificado:");
-
-        jLabel9.setText("Fecha de registro: ");
-
-        jLabel10.setText("Fecha de modificación: ");
-
         jLabel11.setText("USR:");
 
         jLabel12.setText("PWD:");
@@ -264,42 +232,22 @@ public class FmrMantEmpleado extends javax.swing.JInternalFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
-                            .addComponent(jLabel4)
                             .addComponent(jLabel5)
-                            .addComponent(jLabel6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtNombres, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtApellidos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtIdEmpleado, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(btnGerente)
-                                .addGap(63, 63, 63)
-                                .addComponent(btnVendedor)))
-                        .addGap(36, 36, 36))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(43, 43, 43)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel11)
-                                .addGap(11, 11, 11))
+                            .addComponent(txtIdEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNombres, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel9)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel14)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(btnGerente)
+                                .addGap(93, 93, 93)
+                                .addComponent(btnVendedor))
+                            .addComponent(txtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(231, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addGap(11, 11, 11)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtFechReg, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
-                                    .addComponent(txtIdEmpReg))
-                                .addGap(87, 87, 87)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel10)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -307,49 +255,43 @@ public class FmrMantEmpleado extends javax.swing.JInternalFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(txtPasword, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(btnGrabar)
                                 .addGap(124, 124, 124)
                                 .addComponent(btnLimpiar)
                                 .addGap(65, 65, 65)))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtIdEmpMod)
-                            .addComponent(txtFechMod, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE))))
-                .addContainerGap(20, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(160, 160, 160)
+                        .addComponent(jLabel14)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(22, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtIdEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(txtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txtNombres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(btnGerente)
-                    .addComponent(btnVendedor))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8)
-                    .addComponent(txtIdEmpMod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtIdEmpReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel10)
-                    .addComponent(txtFechReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFechMod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
+                    .addComponent(txtNombres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addGap(27, 27, 27)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnGerente)
+                    .addComponent(btnVendedor)
+                    .addComponent(jLabel6))
+                .addGap(48, 48, 48)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(jLabel12)
@@ -359,7 +301,7 @@ public class FmrMantEmpleado extends javax.swing.JInternalFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGrabar)
                     .addComponent(btnLimpiar))
@@ -420,14 +362,18 @@ public class FmrMantEmpleado extends javax.swing.JInternalFrame {
             e.setApellidos(this.txtApellidos.getText());
             e.setNombres(this.txtNombres.getText());
             if(btnGerente.isSelected()){
-                e.setIdTipoEmp(0);
-            }else if(btnVendedor.isSelected()){
                 e.setIdTipoEmp(1);
+            }else if(btnVendedor.isSelected()){
+                e.setIdTipoEmp(2);
             }
-            e.setIdEmpReg(Integer.parseInt(this.txtIdEmpReg.getText()));
-            e.setIdEmpMod(Integer.parseInt(this.txtIdEmpMod.getText()));
-            e.setFechReg(this.txtFechReg.getText());
-            e.setFechMod(this.txtFechMod.getText());
+            e.setIdEmpReg(1);
+            e.setIdEmpMod(1);
+            if(this.btnGrabar.getText().equals("Grabar")){
+            e.setFechReg(u.obtenerFecha());
+            e.setFechMod(u.obtenerFecha());
+            }else{
+                e.setFechMod(u.obtenerFecha());
+            }
             e.setUsr(this.txtUsuario.getText());
             e.setPw(this.txtPasword.getText());
             e.setEstado(Integer.parseInt(this.txtEstado.getText()));
@@ -479,8 +425,6 @@ public class FmrMantEmpleado extends javax.swing.JInternalFrame {
         this.txtIdEmpleado.setText("");
         this.txtApellidos.setText("");
         this.txtNombres.setText("");
-        this.txtFechReg.setText("");
-        this.txtFechMod.setText("");
         this.txtUsuario.setText("");
         this.txtPasword.setText("");
         this.txtEstado.setText("");
@@ -498,8 +442,6 @@ public class FmrMantEmpleado extends javax.swing.JInternalFrame {
         this.txtIdEmpleado.setText("");
         this.txtApellidos.setText("");
         this.txtNombres.setText("");
-        this.txtFechReg.setText("");
-        this.txtFechMod.setText("");
         this.txtUsuario.setText("");
         this.txtPasword.setText("");
         this.txtEstado.setText("");
@@ -551,7 +493,6 @@ public class FmrMantEmpleado extends javax.swing.JInternalFrame {
     private javax.swing.JRadioButton btnVendedor;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
@@ -560,9 +501,6 @@ public class FmrMantEmpleado extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -571,10 +509,6 @@ public class FmrMantEmpleado extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtApellidos;
     private javax.swing.JTextField txtBuscar;
     private javax.swing.JTextField txtEstado;
-    private javax.swing.JTextField txtFechMod;
-    private javax.swing.JTextField txtFechReg;
-    private javax.swing.JTextField txtIdEmpMod;
-    private javax.swing.JTextField txtIdEmpReg;
     private javax.swing.JTextField txtIdEmpleado;
     private javax.swing.JTextField txtNombres;
     private javax.swing.JTextField txtPasword;

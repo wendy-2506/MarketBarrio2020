@@ -86,8 +86,11 @@ public class EscritorioEmpleado extends javax.swing.JFrame {
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
     FrmVenta fven = new FrmVenta();
+    
         this.Escritorio.add(fven);
+        
         Escritorio.moveToFront(fven);
+        
         fven.setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
