@@ -49,7 +49,7 @@ public class TiendaDAO {
        System.out.println("Observando el estado de la sentencia sql: "+sql);
 
        try{
-          resultado=con.updateSQL(sql);
+          resultado=con.updateSQL(sql);     //FALLA
         }
         catch(java.sql.SQLException e){e.printStackTrace();
         }
