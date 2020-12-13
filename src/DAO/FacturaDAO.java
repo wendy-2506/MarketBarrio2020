@@ -12,9 +12,8 @@ public class FacturaDAO {
         dbBean con = new dbBean();
         String sql = "Select * from factura";
         if(sw == true){
-            sql = sql + " WHERE descripcion LIKE '"+ str +"%'";
+            sql = sql + " WHERE numFac LIKE '"+ str +"%'";
         }
-
         
         try{
             ResultSet resultado = con.execSQL(sql);
@@ -45,7 +44,7 @@ public class FacturaDAO {
             System.out.println("uuuuuuu" + sql);
        }
        if(bole.equals("update")){
-            sql= "UPDATE boleta set idSerie = '"+ f.getIdSerie() +"', NumFac = '"+ f.getNumFac() +"', idVenta = '"+ f.getIdVenta() +"' where id_producto = '"+ f.getIdFactura() +"'";
+            sql= "UPDATE boleta set idSerie = '"+ f.getIdSerie() +"', numFac = '"+ f.getNumFac() +"', idVenta = '"+ f.getIdVenta() +"' where idFactura = '"+ f.getIdFactura() +"'";
        }
        System.out.println("Observando el estado de la sentencia sql: "+sql);
 
