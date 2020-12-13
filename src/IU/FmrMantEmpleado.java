@@ -373,7 +373,6 @@ public class FmrMantEmpleado extends javax.swing.JInternalFrame {
             e.setFechMod(u.obtenerFecha());
             }else{
                 e.setFechMod(u.obtenerFecha());
-                e.setFechReg(e.getFechReg());
             }
             e.setUsr(this.txtUsuario.getText());
             e.setPw(this.txtPasword.getText());
