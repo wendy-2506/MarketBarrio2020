@@ -7,10 +7,12 @@ import javax.swing.table.DefaultTableModel;
 
 public class FrmVenta extends javax.swing.JFrame {
     DefaultTableModel dtm1;
+    int idFilProd;
     public FrmVenta() {
         initComponents();
         dtm1 = (DefaultTableModel)this.tblProdSel.getModel();
         lock();
+        idFilProd = -1;
     }
     private boolean validProd(){
         boolean sw = false;
@@ -73,6 +75,7 @@ public class FrmVenta extends javax.swing.JFrame {
         txtCantidad = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
         txtTOTTOTAL = new javax.swing.JTextField();
         btnPagar = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
@@ -295,6 +298,11 @@ public class FrmVenta extends javax.swing.JFrame {
             }
         ));
         tblProdSel.setToolTipText("");
+        tblProdSel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblProdSelMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblProdSel);
 
         txtIDProd.setEditable(false);
@@ -331,12 +339,22 @@ public class FrmVenta extends javax.swing.JFrame {
             }
         });
 
+        btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
@@ -359,12 +377,11 @@ public class FrmVenta extends javax.swing.JFrame {
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGap(57, 57, 57)
                                 .addComponent(jButton3)
-                                .addGap(73, 73, 73)
-                                .addComponent(jButton4)))
-                        .addGap(0, 22, Short.MAX_VALUE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton4)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnEliminar)))
+                        .addGap(0, 22, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -397,7 +414,8 @@ public class FrmVenta extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(jButton4)
+                    .addComponent(btnEliminar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14))
@@ -709,6 +727,21 @@ public class FrmVenta extends javax.swing.JFrame {
             limpiaProd();
         }        // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        if(this.idFilProd>-1){
+            dtm1.removeRow(this.idFilProd);
+            idFilProd = -1;
+        }else{
+            JOptionPane.showMessageDialog(this,"SELECCIONE UN PRODUCTO PARA ELIMINARLO");
+        }
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void tblProdSelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblProdSelMouseClicked
+        if(dtm1.getRowCount()>-1){
+            this.idFilProd = this.tblProdSel.getSelectedRow();
+        }
+    }//GEN-LAST:event_tblProdSelMouseClicked
     private void verifPreReg(int idP){
         if(this.tblProdSel.getRowCount()>0){
             for(int i=0;i<this.tblProdSel.getRowCount();i++){
@@ -766,6 +799,7 @@ public class FrmVenta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnPagar;
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnSeleccionar;
