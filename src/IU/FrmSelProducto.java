@@ -3,12 +3,11 @@ package IU;
 
 import BEAN.*;
 import DAO.*;
-import UTIL.*;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class FrmSelProducto extends javax.swing.JFrame {
+public class FrmSelProducto extends javax.swing.JDialog {
     ProductoDAO prodDAO;
     DefaultTableModel dtm;
     Producto prod;
@@ -20,11 +19,12 @@ public class FrmSelProducto extends javax.swing.JFrame {
     
     
     int idPred;
-    public FrmSelProducto() {
-
-        initComponents();
+    public FrmSelProducto(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         prodDAO = new ProductoDAO();
         catDAO  = new CategoriaDAO();
+        initComponents();
+        prod=new Producto();
         dtm = (DefaultTableModel)this.tblBuscarCat.getModel();
         dtm2= (DefaultTableModel)this.tblBuscarProd.getModel();
         llenaTblBuscarCate(false,"");
@@ -44,6 +44,10 @@ private void llenaTblBuscarCate(boolean s, String c){
     }
     
 }
+
+public Producto devProd(){
+    return prod;
+} 
 
 
     @SuppressWarnings("unchecked")
@@ -305,6 +309,13 @@ private void llenaTblBuscarCate(boolean s, String c){
         int i;
         i=this.tblBuscarProd.getSelectedRow();
         prod.setIdProducto(Integer.parseInt(dtm2.getValueAt(i, 0).toString()));
+        prod.setDescripcion(dtm2.getValueAt(i, 1).toString());
+        prod.setIdCategoria(Integer.parseInt(dtm2.getValueAt(i, 2).toString()));
+        prod.setIdMarca(Integer.parseInt(dtm2.getValueAt(i, 3).toString()));
+        prod.setPrecioUnit(Double.parseDouble(dtm2.getValueAt(i, 4).toString()));
+        prod.setUnidMed(dtm2.getValueAt(i, 5).toString());
+        prod.setEstado(Integer.parseInt(dtm2.getValueAt(i, 6).toString()));
+        this.dispose();
     }//GEN-LAST:event_tblBuscarProdMouseClicked
 
    
@@ -312,7 +323,14 @@ private void llenaTblBuscarCate(boolean s, String c){
        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmSelProducto().setVisible(true);
+                FrmSelProducto dialog = new FrmSelProducto(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
             }
         });
     }
