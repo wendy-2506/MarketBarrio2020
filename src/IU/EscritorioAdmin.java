@@ -33,6 +33,7 @@ public class EscritorioAdmin extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenuItem6 = new javax.swing.JMenuItem();
         cerrar = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -102,6 +103,10 @@ public class EscritorioAdmin extends javax.swing.JFrame {
         menuBar.add(jMenu1);
 
         jMenu2.setText("Reportes");
+
+        jMenuItem6.setText("Reporte de Empleados");
+        jMenu2.add(jMenuItem6);
+
         menuBar.add(jMenu2);
 
         cerrar.setText("Cerrar Sesión");
@@ -218,6 +223,7 @@ public class EscritorioAdmin extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuBar menuBar;
     // End of variables declaration//GEN-END:variables
 
