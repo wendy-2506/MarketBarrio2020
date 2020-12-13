@@ -153,6 +153,11 @@ private void llenaTblBuscarCate(boolean s, String c){
             }
         });
         tblBuscarProd.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        tblBuscarProd.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblBuscarProdMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(tblBuscarProd);
         if (tblBuscarProd.getColumnModel().getColumnCount() > 0) {
             tblBuscarProd.getColumnModel().getColumn(0).setMinWidth(50);
@@ -295,6 +300,12 @@ private void llenaTblBuscarCate(boolean s, String c){
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void tblBuscarProdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblBuscarProdMouseClicked
+        int i;
+        i=this.tblBuscarProd.getSelectedRow();
+        prod.setIdProducto(Integer.parseInt(dtm2.getValueAt(i, 0).toString()));
+    }//GEN-LAST:event_tblBuscarProdMouseClicked
 
    
     public static void main(String args[]) {
