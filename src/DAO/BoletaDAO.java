@@ -1,7 +1,7 @@
 package DAO;
 
 import BEAN.Boleta;
-import UTIL.dbBean;
+import UTIL.DbBean;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
@@ -9,7 +9,7 @@ import java.util.Vector;
 public class BoletaDAO {
     public Vector<Boleta> ListaItem(boolean sw, String str){
         Vector<Boleta> item = new Vector<Boleta>();
-        dbBean con = new dbBean();
+        DbBean con = new DbBean();
         String sql = "Select * from boleta";
         if(sw == true){
             sql = sql + " WHERE numBol LIKE '"+ str +"%'";
@@ -38,7 +38,7 @@ public class BoletaDAO {
     public int procesaItem(Boleta b, String bole){
        int resultado=0;
        String sql= "";
-       dbBean con=new dbBean();
+       DbBean con=new DbBean();
        if(bole.equals("insert")){
             sql="INSERT INTO boleta VALUES ('"+ b.getIdBoleta()+"', '"+ b.getIdSerie() +"', '"+ b.getNumBol() +"', '"+ b.getIdVenta() +"')";
             System.out.println("uuuuuuu" + sql);

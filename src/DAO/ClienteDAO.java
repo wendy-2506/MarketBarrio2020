@@ -1,7 +1,7 @@
 package DAO;
 
 import BEAN.Cliente;
-import UTIL.dbBean;
+import UTIL.DbBean;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
@@ -9,7 +9,7 @@ import java.util.Vector;
 public class ClienteDAO {
     public Vector<Cliente> ListaItem(boolean sw, String str){
         Vector<Cliente> item = new Vector<Cliente>();
-        dbBean con = new dbBean();
+        DbBean con = new DbBean();
         String sql = "Select * from Cliente";
         if(sw == true){
             sql = sql + " WHERE (correo_elect LIKE '"+ str +"%') OR (direccion LIKE '"+ str +"%') OR (telefono LIKE '" + str + "%')";
@@ -44,7 +44,7 @@ public class ClienteDAO {
     public int procesaItem(Cliente c, String proc){
        int resultado=0;
        String sql= "";
-       dbBean con=new dbBean();
+       DbBean con=new DbBean();
        if(proc.equals("insert")){
             sql="INSERT INTO cliente VALUES ('"+ c.getIdCliente() +"', '"+ c.getIdTipoCli() +"', '"+ c.getIdEmpReg() +"', '"+ c.getFechReg() +"', '"+ c.getIdEmpMod() +"', '"+ c.getFechMod() +"', '"+ c.getCorreo_elect() +"', '"+ c.getTelefono() +"', '"+ c.getDireccion() +"', '"+ c.getEstado() +"')";
             System.out.println("Entro ClienteDAO:" + sql);

@@ -1,7 +1,7 @@
 package DAO;
 //agrega y actualiza, busca segun apellidos y nombres
 import BEAN.Empleado;
-import UTIL.dbBean;
+import UTIL.DbBean;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
@@ -9,7 +9,7 @@ import java.util.Vector;
 public class EmpleadoDAO {
     public Vector<Empleado> ListaItem(boolean sw, String str){
         Vector<Empleado> item = new Vector<Empleado>();
-        dbBean con = new dbBean();
+        DbBean con = new DbBean();
         String sql = "Select * from empleado";
         if(sw == true){
             sql = sql + " WHERE (apellidos LIKE '"+ str +"%') OR (nombres LIKE '" + str + "%')";
@@ -46,7 +46,7 @@ public class EmpleadoDAO {
     public int procesaItem(Empleado p, String proc){
        int resultado=0;
        String sql= "";
-       dbBean con=new dbBean();
+       DbBean con=new DbBean();
        if(proc.equals("insert")){
             sql="INSERT INTO Empleado VALUES ('"+ p.getIdEmpleado() +"', '"+ p.getApellidos() +"', '"+ p.getNombres() +"', '"+  p.getIdEmpReg() +"', '"+  p.getFechReg() +"', '"+  p.getIdEmpMod() +"', '"+  p.getFechMod() +"', '"+  p.getUsr() +"', '"+  p.getPw() +"', '"+  p.getIdTipoEmp() +"', '"+ p.getEstado() +"')";
             System.out.println("uuuuuuu" + sql);
@@ -73,7 +73,7 @@ public class EmpleadoDAO {
         boolean login= false;
 
         try{
-            dbBean db=new dbBean();
+            DbBean db=new DbBean();
             ResultSet resultado = db.execSQL("select e.usr,e.pw from Empleado e");
             while (resultado.next()){
                 if(usr.equals(resultado.getString(1))){
@@ -91,7 +91,7 @@ public class EmpleadoDAO {
 //    public int tipoEmp(String usr, String psw){
 //        int id=0;
 //        try{
-//            dbBean db=new dbBean();
+//            DbBean db=new DbBean();
 //            String buscar= "Select e.idTipoEmp from Empleado where e.usr="+usr+"and e.pw="+psw; 
 //            ResultSet resultado = db.execSQL(buscar);
 //            while (resultado.next()){
@@ -113,7 +113,7 @@ public class EmpleadoDAO {
 
         String sql = "Select * from empleado where usr='"+usr+"' and pw='"+psw +"'";
         try{
-            dbBean con = new dbBean();
+            DbBean con = new DbBean();
             
             ResultSet resultado = con.execSQL(sql);
             while(resultado.next()){

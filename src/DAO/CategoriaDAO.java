@@ -1,7 +1,7 @@
 package DAO;
 
 import BEAN.Categoria;
-import UTIL.dbBean;
+import UTIL.DbBean;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
@@ -9,7 +9,7 @@ import java.util.Vector;
 public class CategoriaDAO {
     public Vector<Categoria> ListaItem(boolean sw, String str){
         Vector<Categoria> item = new Vector<Categoria>();
-        dbBean con = new dbBean();
+        DbBean con = new DbBean();
         String sql = "Select * from categoria";
         if(sw == true){
             sql = sql + " WHERE descrip LIKE '"+ str +"%'";
@@ -37,7 +37,7 @@ public class CategoriaDAO {
     public int procesaItem(Categoria c, String cate){
        int resultado=0;
        String sql= "";
-       dbBean con=new dbBean();
+       DbBean con=new DbBean();
        if(cate.equals("insert")){
             sql="INSERT INTO categoria VALUES ('"+ c.getIdCategoria()+"', '"+ c.getDescrip();
             System.out.println("uuuuuuu" + sql);

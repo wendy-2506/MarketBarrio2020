@@ -1,7 +1,7 @@
 package DAO;
 
 import BEAN.Proveedor;
-import UTIL.dbBean;
+import UTIL.DbBean;
 import java.sql.*;
 import java.util.Vector;
 //busca al proveedor por razon social o nombre de representante
@@ -9,7 +9,7 @@ public class ProveedorDAO {
 
     public Vector<Proveedor> ListaItem(boolean sw, String str){
         Vector<Proveedor> item = new Vector<Proveedor>();
-        dbBean con = new dbBean();
+        DbBean con = new DbBean();
         String sql = "Select * from Proveedor";
         if(sw == true){
             sql = sql + " WHERE (razon_Soc LIKE '"+ str +"%') OR (nomb_repre LIKE '" + str + "%')";
@@ -40,7 +40,7 @@ public class ProveedorDAO {
     public int procesaItem(Proveedor p, String proc){
        int resultado=0;
        String sql= "";
-       dbBean con=new dbBean();
+       DbBean con=new DbBean();
        if(proc.equals("insert")){
             sql="INSERT INTO proveedor VALUES ('"+ p.getIdProveedor() +"', '"+ p.getRazon_Soc() +"', '"+ p.getRuc() +"', '"+ p.getNomb_repre() + "', '"+ p.getDireccion() + "', '"+ p.getTelefono() +"')";
             System.out.println("uuuuuuu" + sql);
