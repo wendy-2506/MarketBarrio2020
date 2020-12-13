@@ -781,7 +781,10 @@ public class FrmVenta extends javax.swing.JFrame {
 
         Mailer m = new Mailer();
         m.sendEmail();
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         String fech;
         util u = new util();
         if(validaGen()==true){
@@ -817,7 +820,10 @@ public class FrmVenta extends javax.swing.JFrame {
             }
             limpiaGen();
         }        
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     }//GEN-LAST:event_btnPagarActionPerformed
     private void verifPreReg(int idP){
         if(this.tblProdSel.getRowCount()>0){

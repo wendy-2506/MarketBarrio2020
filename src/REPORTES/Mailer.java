@@ -24,12 +24,9 @@ public class Mailer{
         propiedad.setProperty("mail.smtp.auth","true");
        
         Session sesion = Session.getDefaultInstance(propiedad);
-        
-        
         String correoEnviar = "marketbarrio2020@gmail.com";
         String contraseña = "Minecraft!";
         String destinatario = "danitocastillo7@gmail.com";
-        
         String asunto = "Boleta MarketBarrio2020";
         String mensaje = "Esto esta funcionando";
         
