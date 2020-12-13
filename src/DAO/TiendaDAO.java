@@ -44,7 +44,7 @@ public class TiendaDAO {
             System.out.println("uuuuuuu" + sql);
        }
        if(proc.equals("update")){
-            sql="UPDATE Tienda set descTienda = '"+ p.getDescTienda() +"', direccion = '"+ p.getDireccion() +"' where this.idTienda = '"+ p.getIdTienda() +"'";
+            sql="UPDATE Tienda set descTienda = '"+ p.getDescTienda() +"', direccion = '"+ p.getDireccion() +"' where idTienda = '"+ p.getIdTienda() +"'";
        }
        System.out.println("Observando el estado de la sentencia sql: "+sql);
 
