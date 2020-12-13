@@ -6,11 +6,12 @@ import DAO.*;
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
 
-public class SelClienteVN extends javax.swing.JInternalFrame {
+public class SelClienteVN extends javax.swing.JDialog {
     CliPersonaDAO clieDao;
     DefaultTableModel dtm;
     Cliente_Persona clie;
-    public SelClienteVN(){
+    public SelClienteVN(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         clieDao = new CliPersonaDAO();
         initComponents();
         clie = new Cliente_Persona();

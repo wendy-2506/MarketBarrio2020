@@ -8,6 +8,7 @@ import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.view.JasperViewer;
 
+
 public class dbBean {
   //Conexión: a través del ODBC
     String dbURL = "jdbc:sqlserver://localhost:1433;databaseName=MARKETBARRIO";
@@ -50,6 +51,7 @@ public class dbBean {
         ver.setTitle("Reporte");
         ver.setVisible(true);                
     }
+
 
     public void close() throws SQLException{
         dbCon.close();
