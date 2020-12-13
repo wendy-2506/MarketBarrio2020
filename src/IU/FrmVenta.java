@@ -1,6 +1,7 @@
 package IU;
 
 import BEAN.*;
+import REPORTES.Mailer;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -431,6 +432,11 @@ public class FrmVenta extends javax.swing.JFrame {
         });
 
         btnPagar.setText("Pagar");
+        btnPagar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPagarActionPerformed(evt);
+            }
+        });
 
         jLabel16.setFont(new java.awt.Font("Gill Sans Ultra Bold", 3, 14)); // NOI18N
         jLabel16.setText("TOTAL A PAGAR:");
@@ -759,6 +765,11 @@ public class FrmVenta extends javax.swing.JFrame {
     private void txtTOTTOTALActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTOTTOTALActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTOTTOTALActionPerformed
+
+    private void btnPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagarActionPerformed
+        Mailer m = new Mailer();
+        m.sendEmail();
+    }//GEN-LAST:event_btnPagarActionPerformed
     private void verifPreReg(int idP){
         if(this.tblProdSel.getRowCount()>0){
             for(int i=0;i<this.tblProdSel.getRowCount();i++){

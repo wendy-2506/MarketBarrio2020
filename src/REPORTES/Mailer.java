@@ -16,21 +16,22 @@ import javax.swing.JOptionPane;
 
 public class Mailer{
     Cliente c = new Cliente();
-    public void Mailerr(){
+    public void sendEmail(){
         Properties propiedad = new Properties(); 
         propiedad.setProperty("mail.smtp.host","smtp.gmail.com");
         propiedad.setProperty("mail.smtp.starttls.enable","true");
         propiedad.setProperty("mail.smtp.port","587");
         propiedad.setProperty("mail.smtp.auth","true");
-     /*   
+       
         Session sesion = Session.getDefaultInstance(propiedad);
-        String fech = 
+        
+        
         String correoEnviar = "marketbarrio2020@gmail.com";
         String contraseña = "Minecraft!";
-        String destinatario = txtRecibe.getText();
+        String destinatario = "danitocastillo7@gmail.com";
         
         String asunto = "Boleta MarketBarrio2020";
-        String mensaje = txtMensaje.getText();
+        String mensaje = "Esto esta funcionando";
         
         MimeMessage mail = new MimeMessage(sesion);
         
@@ -46,15 +47,9 @@ public class Mailer{
             transporte.close();
             
             JOptionPane.showMessageDialog(null,"Correo Enviado");
-            
-            Limpia();
                     
-        } catch (MessagingException ex) {
-            Logger.getLogger(Panel1.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        */
-        
-       
+        } catch(MessagingException ex) {
+            System.out.println("Existe un Error en el mailer:"+ex);
+        }    
     }
 }
