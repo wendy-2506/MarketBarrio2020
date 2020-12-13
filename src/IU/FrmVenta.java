@@ -809,10 +809,21 @@ public class FrmVenta extends javax.swing.JFrame {
                 }
                 cv.setIdTienda(idT);
                 this.cabVDAO.agregaItem(cv, "insert");
-                int idDV = u.id2Exp("SerieDV", "idSerie", "idTienda", idT,"estado","1");
+                int idSDV = u.id2Exp("SerieDV", "idSerie", "idTienda", idT,"estado","1");
                 if(cv.getIdTipo()==1){
                     Boleta bole=new Boleta();
-                    bole.setIdBoleta(u.idNext(fech, fech));
+                    bole.setIdBoleta(u.idNext("Boleta", "idBoleta"));
+                    bole.setIdSerie(idSDV);
+                    bole.setNumBol(bole.getIdSerie()+" - "+bole.getIdBoleta());
+                    bole.setIdVenta(idVen);
+                    this.bDAO.procesaItem(bole, "insert");
+                }else{
+                    Factura fact = new Factura();
+                    fact.setIdFactura(u.idNext("Factura", "idFactura"));
+                    fact.setIdSerie(idSDV);
+                    fact.setNumFac(fact.getIdSerie()+" - "+fact.getIdFactura());
+                    fact.setIdVenta(idVen);
+                    this.fDAO.procesaItem(fact, "insert");
                 }
             }
             
