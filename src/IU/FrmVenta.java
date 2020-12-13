@@ -216,12 +216,6 @@ public class FrmVenta extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(rbEmpresa)
-                        .addGap(97, 97, 97)
-                        .addComponent(rbNatural)
-                        .addGap(44, 44, 44))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(46, 46, 46)
                         .addComponent(txtIdCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -235,6 +229,12 @@ public class FrmVenta extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnSeleccionar)
                 .addGap(130, 130, 130))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addComponent(rbNatural)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(rbEmpresa)
+                .addGap(78, 78, 78))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -580,7 +580,7 @@ public class FrmVenta extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSeleccionarActionPerformed
 
     private void rbEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbEmpresaActionPerformed
-    // TODO add your handling code here:
+    this.tpTipo.setSelectedIndex(1);    // TODO add your handling code here:
     }//GEN-LAST:event_rbEmpresaActionPerformed
     
     
@@ -591,7 +591,7 @@ public class FrmVenta extends javax.swing.JFrame {
 
         this.txtNombre.setEnabled(false);
         this.txtApellidos.setEnabled(false);
-
+        this.txtRepresentante.setEnabled(false);
         this.txtRUC.setEnabled(false);
 
         this.txtRazSoc.setEnabled(false);
@@ -600,9 +600,21 @@ public class FrmVenta extends javax.swing.JFrame {
 
     
     private void rbNaturalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbNaturalActionPerformed
-
+        this.tpTipo.setSelectedIndex(0);
+        limpia();
     }//GEN-LAST:event_rbNaturalActionPerformed
+    public void limpia(){
+        this.txtIdCliente.setText("");
 
+        this.txtNombre.setText("");
+        this.txtApellidos.setText("");
+        this.txtRepresentante.setText("");
+        this.txtRUC.setText("");
+
+        this.txtRazSoc.setText("");
+        this.txtDNI.setText("");
+    
+    }
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
     FrmRegistrar reg = new FrmRegistrar();
     reg.setVisible(true);

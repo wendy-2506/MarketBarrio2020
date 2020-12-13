@@ -5,6 +5,7 @@
  */
 package IU;
 
+import BEAN.Cliente;
 import BEAN.Cliente_Empresa;
 import BEAN.Cliente_Persona;
 import DAO.CliEmpresaDAO;
@@ -98,6 +99,12 @@ public class FrmRegistrar extends javax.swing.JFrame {
 
         jLabel8.setText("DNI");
 
+        txtDNIR.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtDNIRKeyReleased(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -141,6 +148,12 @@ public class FrmRegistrar extends javax.swing.JFrame {
 
         jLabel11.setText("RUC");
 
+        txtRUCR.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtRUCRKeyReleased(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -177,6 +190,12 @@ public class FrmRegistrar extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Empresa", jPanel2);
+
+        txtDirecR.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtDirecRKeyReleased(evt);
+            }
+        });
 
         btnRegistrar.setText("Registrar");
         btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
@@ -276,6 +295,7 @@ public class FrmRegistrar extends javax.swing.JFrame {
         this.txtRepreR.setText("");
         this.txtRUCR.setText("");
         this.rbEmpresa.setSelected(false);
+        this.jTabbedPane1.setSelectedIndex(0);
     }//GEN-LAST:event_rbNaturalActionPerformed
 
     private void rbEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbEmpresaActionPerformed
@@ -286,6 +306,7 @@ public class FrmRegistrar extends javax.swing.JFrame {
     this.txtNombreR.setText("");
     this.txtApelR.setText("");
     this.rbNatural.setSelected(false);
+    this.jTabbedPane1.setSelectedIndex(1);
     }//GEN-LAST:event_rbEmpresaActionPerformed
 
     private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
@@ -301,27 +322,48 @@ public class FrmRegistrar extends javax.swing.JFrame {
         this.txtDirecR.setText("");
         this.rbEmpresa.setSelected(false);
         this.rbNatural.setSelected(false);
+        
         lokeo();
     }//GEN-LAST:event_btnBorrarActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
        String fech;
         util u = new util();
+        
+        //natural = 1; Empresa = 2
         if(this.rbEmpresa.isSelected()){
-            Cliente_Empresa ce = new Cliente_Empresa();
-            this.idCliente = u.idNext("Cliente_Empresa", "idCliente");
-            //fech = u.obtenerFecha();
-            //ce.setFecha(fech);
+            Cliente c= new Cliente ();
+            this.idCliente = u.idNext("Cliente", "idCliente");
+            fech = u.obtenerFecha();
+            c.setFechReg(fech);
+            c.setIdCliente(idCliente);
+            c.setIdTipoCli(2);
+            c.setIdEmpMod(0);
+            c.setCorreo_elect(this.txtCorreoR.getText());
+            c.setTelefono(this.txtTLFR.getText());
+            c.setDireccion(this.txtDirecR.getText());
+            c.setEstado(1);
+            
+            Cliente_Empresa ce = new Cliente_Empresa();           
             ce.setIdCliente(idCliente);
             ce.setRazon_Social(this.txtRazSocR.getText());
             ce.setRepresentante(this.txtRepreR.getText());
             this.cliEDAO.procesaItem(ce, "insert");
         
         }else if(this.rbNatural.isSelected()){
+            Cliente c= new Cliente ();
+            this.idCliente = u.idNext("Cliente", "idCliente");
+            fech = u.obtenerFecha();
+            c.setFechReg(fech);
+            c.setIdCliente(idCliente);
+            c.setIdTipoCli(1);
+            c.setIdEmpMod(0);
+            c.setCorreo_elect(this.txtCorreoR.getText());
+            c.setTelefono(this.txtTLFR.getText());
+            c.setDireccion(this.txtDirecR.getText());
+            c.setEstado(1);
             Cliente_Persona cp = new Cliente_Persona();
-            this.idCliente = u.idNext("Cliente_Persona", "idCliente");
-            //fech = u.obtenerFecha();
-            //ce.setFecha(fech);
+            
             cp.setIdCliente(idCliente);
             cp.setApell(this.txtApelR.getText());
             cp.setNomb(this.txtNombreR.getText());
@@ -329,8 +371,46 @@ public class FrmRegistrar extends javax.swing.JFrame {
             this.cliPDAO.procesaItem(cp, "insert");
         }  
     }//GEN-LAST:event_btnRegistrarActionPerformed
-   
+
+    private void txtDirecRKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDirecRKeyReleased
+    this.rbEmpresa.setEnabled(true);
+    this.rbNatural.setEnabled(true);
+    }//GEN-LAST:event_txtDirecRKeyReleased
+
+    private void txtDNIRKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDNIRKeyReleased
+        if(valida()==true){
+            this.btnRegistrar.setEnabled(true);
+        }
+    }//GEN-LAST:event_txtDNIRKeyReleased
+
+    private void txtRUCRKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRUCRKeyReleased
+    if(valida()==true){
+            this.btnRegistrar.setEnabled(true);
+        }
+    }//GEN-LAST:event_txtRUCRKeyReleased
+  
+    
+    
+    public boolean valida(){
+       boolean aux= false;
+       if(!this.txtCorreoR.getText().isEmpty()&&!this.txtDirecR.getText().isEmpty()&&!this.txtTLFR.getText().isEmpty()){
+            if(this.rbNatural.isSelected() &&!this.txtNombreR.getText().isEmpty()&&!this.txtApelR.getText().isEmpty()
+                    && !this.txtDNIR.getText().isEmpty()){
+                    aux=true;
+            }else if(this.rbEmpresa.isSelected() && !this.txtRazSocR.getText().isEmpty()&&!this.txtRepreR.getText().isEmpty()
+                    && !this.txtRUCR.getText().isEmpty() ){
+                      aux=true;
+            }
+       }
+       return aux;
+   }
+    
+    
+    
+    
+    
     public void lokeo(){
+        this.txtidClienteR.setEnabled(false);
         this.txtDNIR.setEnabled(false);
         this.txtNombreR.setEnabled(false);
         this.txtApelR.setEnabled(false);
@@ -338,6 +418,9 @@ public class FrmRegistrar extends javax.swing.JFrame {
         this.txtRepreR.setEnabled(false);
         this.txtRUCR.setEnabled(false);
         this.btnRegistrar.setEnabled(false);
+        this.jTabbedPane1.setEnabled(false);
+        this.rbEmpresa.setEnabled(false);
+    this.rbNatural.setEnabled(false);
     }
     /**
      * @param args the command line arguments
