@@ -800,7 +800,6 @@ public class FrmVenta extends javax.swing.JFrame {
                 cv.setFechVenta(fech);
                 cv.setEstado(1);
                 cv.setFechMod(fech);
-                cv.setTotal(Double.parseDouble(this.txtTOTTOTAL.getText()));
                 cv.setIdEmpReg(2);
                 cv.setIdEmpMod(2);
                 if(this.rbEmpresa.isSelected()){
@@ -810,6 +809,11 @@ public class FrmVenta extends javax.swing.JFrame {
                 }
                 cv.setIdTienda(idT);
                 this.cabVDAO.agregaItem(cv, "insert");
+                int idDV = u.id2Exp("SerieDV", "idSerie", "idTienda", idT,"estado","1");
+                if(cv.getIdTipo()==1){
+                    Boleta bole=new Boleta();
+                    bole.setIdBoleta(u.idNext(fech, fech));
+                }
             }
             
             for(int i=0;i<this.tblProdSel.getRowCount();i++){
@@ -821,8 +825,7 @@ public class FrmVenta extends javax.swing.JFrame {
                 this.detVDAO.agregaItem(dv, "insert");
             }
             
-            int idDV = u.id2Exp("SerieDV", "idSerie", "idTienda", idT,"estado","1");
-            
+
             limpiaGen();
         }        
     }//GEN-LAST:event_btnPagarActionPerformed
