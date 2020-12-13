@@ -108,12 +108,15 @@ public class EmpleadoDAO {
 //    }
     
     public Empleado UserLogeado(String usr, String psw){
+        Vector<Empleado> item = new Vector<Empleado>();
         Empleado emp=new Empleado();
 
         String sql = "Select * from empleado where usr='"+usr+"' and pw='"+psw +"'";
         try{
             dbBean con = new dbBean();
+            
             ResultSet resultado = con.execSQL(sql);
+            while(resultado.next()){
             emp.setIdEmpleado(resultado.getInt(1));
             emp.setApellidos(resultado.getString(2));
             emp.setNombres(resultado.getString(3));
@@ -125,6 +128,8 @@ public class EmpleadoDAO {
             emp.setPw(resultado.getString(9));
             emp.setIdTipoEmp(resultado.getInt(10));
             emp.setEstado(resultado.getInt(11));
+            item.add(emp);
+            }
             
         }catch(java.sql.SQLException e){
             e.printStackTrace();

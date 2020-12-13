@@ -22,6 +22,7 @@ public class Escritorio extends javax.swing.JFrame {
         this.loginpanel.setLocation(580, 200);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         e=new EmpleadoDAO();
+        emp=new Empleado();
     }
     
     @SuppressWarnings("unchecked")
@@ -138,16 +139,18 @@ public class Escritorio extends javax.swing.JFrame {
         if(valida(usr,pw) == true){
             //emp = new Empleado();
             emp = e.UserLogeado(usr,pw);
-            idTipoEmpleado= emp.getIdTipoEmp();            
-            //
-            if(idTipoEmpleado==1){
+            idTipoEmpleado= emp.getIdTipoEmp();        
+            System.out.print("gdfh");
+            System.out.print("gdfh");
+            if(this.idTipoEmpleado==1){
                 EscritorioAdmin escr = new EscritorioAdmin();
-                JOptionPane.showMessageDialog(this, "Ingreso correcto administrador.");
+                //JOptionPane.showMessageDialog(this, "Ingreso correcto administrador.");
                 escr.setVisible(true);
+                System.out.print("Probar");
                 //this.dispose();
-            }else if(idTipoEmpleado==2){
+            }else if(this.idTipoEmpleado==2){
                 EscritorioEmpleado escremp = new EscritorioEmpleado();
-                JOptionPane.showMessageDialog(this, "Ingreso correcto empleado.");
+                //JOptionPane.showMessageDialog(this, "Ingreso correcto empleado.");
                 escremp.setVisible(true);
                 //this.dispose();
             }     
@@ -155,7 +158,6 @@ public class Escritorio extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(this, "GGWP: Usted no se encuentra registrado en el sistema.");
         }
-
     }//GEN-LAST:event_btnIngLogActionPerformed
 
     private void cerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cerrarMouseClicked
