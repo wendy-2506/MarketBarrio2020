@@ -1,12 +1,9 @@
 package IU;
 
 import BEAN.*;
-<<<<<<< HEAD
 import REPORTES.Mailer;
-=======
 import DAO.*;
 import UTIL.util;
->>>>>>> 21cb096c9dc92a9940475185d8b5cbdd1c523055
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -781,10 +778,10 @@ public class FrmVenta extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTOTTOTALActionPerformed
 
     private void btnPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagarActionPerformed
-<<<<<<< HEAD
+
         Mailer m = new Mailer();
         m.sendEmail();
-=======
+
         String fech;
         util u = new util();
         if(validaGen()==true){
@@ -820,7 +817,7 @@ public class FrmVenta extends javax.swing.JFrame {
             }
             limpiaGen();
         }        
->>>>>>> 21cb096c9dc92a9940475185d8b5cbdd1c523055
+
     }//GEN-LAST:event_btnPagarActionPerformed
     private void verifPreReg(int idP){
         if(this.tblProdSel.getRowCount()>0){
