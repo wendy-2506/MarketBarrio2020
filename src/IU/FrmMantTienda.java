@@ -7,7 +7,7 @@
     import javax.swing.JOptionPane;
     import javax.swing.table.DefaultTableModel;
 
-    public class FrmMantTienda extends javax.swing.JFrame {
+    public class FrmMantTienda extends javax.swing.JInternalFrame {
     TiendaDAO tienDAO;
         DefaultTableModel dtm;
         int idTiend;
@@ -310,7 +310,7 @@
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
 
-   System.exit(0);            // TODO add your handling code here:
+   dispose();           // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
     
     private void limpia(){
@@ -340,11 +340,11 @@
         }
       
         
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FrmMantTienda().setVisible(true);
-            }
-        });
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new FrmMantTienda().setVisible(true);
+//            }
+//        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
