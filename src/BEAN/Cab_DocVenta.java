@@ -10,12 +10,11 @@ public class Cab_DocVenta {
     private int idTipo;
     private int idTienda;
     private int estado;
-    private double total;
 
     public Cab_DocVenta() {
     }
 
-    public Cab_DocVenta(int idVenta, int idCliente, int idEmpReg, String fechVenta, int idEmpMod, String fechMod, int idTipo, int idTienda, int estado, double total) {
+    public Cab_DocVenta(int idVenta, int idCliente, int idEmpReg, String fechVenta, int idEmpMod, String fechMod, int idTipo, int idTienda, int estado) {
         this.idVenta = idVenta;
         this.idCliente = idCliente;
         this.idEmpReg = idEmpReg;
@@ -25,7 +24,6 @@ public class Cab_DocVenta {
         this.idTipo = idTipo;
         this.idTienda = idTienda;
         this.estado = estado;
-        this.total = total;
     }
 
     public int getIdVenta() {
@@ -99,13 +97,5 @@ public class Cab_DocVenta {
     public void setEstado(int estado) {
         this.estado = estado;
     }
-
-    public double getTotal() {
-        return total;
-    }
-
-    public void setTotal(double total) {
-        this.total = total;
-    }    
     
 }

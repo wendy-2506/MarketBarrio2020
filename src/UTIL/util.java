@@ -197,4 +197,24 @@ public class util {
             return nR;
         }
 
+        
+    public int id2Exp(String nombTbl, String campID, String nomCampBusq, int cad, String camp2, String cad2){
+        int id = 0;
+        dbBean con = new dbBean();
+        try{
+            String sql = "select "+ campID +" from "+ nombTbl +" where "+ nomCampBusq +" = '"+ cad +"' and "+camp2+"='"+cad2+"'";
+            ResultSet result = con.execSQL(sql);
+            if(result.next()){
+                id = result.getInt(1);
+            }else{
+                id = 0;
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        try{
+            con.close();
+        }catch(SQLException e){}
+        return id;
+    }
 }
