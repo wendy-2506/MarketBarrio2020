@@ -85,7 +85,7 @@ public class EscritorioEmpleado extends javax.swing.JFrame {
     }//GEN-LAST:event_cerrarMouseClicked
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-    FrmVenta ven = new FrmVenta();
+         FrmVenta ven = new FrmVenta();
         ven.setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
