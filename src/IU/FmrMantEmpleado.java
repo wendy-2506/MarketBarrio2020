@@ -35,10 +35,6 @@ public class FmrMantEmpleado extends javax.swing.JInternalFrame {
            vecEmp.addElement(listEmp.get(i).getIdEmpleado());
            vecEmp.addElement(listEmp.get(i).getApellidos());
            vecEmp.addElement(listEmp.get(i).getNombres()); 
-           vecEmp.addElement(listEmp.get(i).getIdEmpReg()); 
-           vecEmp.addElement(listEmp.get(i).getFechReg());
-           vecEmp.addElement(listEmp.get(i).getIdEmpMod());
-           vecEmp.addElement(listEmp.get(i).getFechMod());
            vecEmp.addElement(listEmp.get(i).getUsr());
            vecEmp.addElement(listEmp.get(i).getPw());
            vecEmp.addElement(listEmp.get(i).getIdTipoEmp());
@@ -135,7 +131,7 @@ public class FmrMantEmpleado extends javax.swing.JInternalFrame {
         txtEstado = new javax.swing.JTextField();
         btnSalir = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setName(""); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Kristen ITC", 1, 18)); // NOI18N
         jLabel1.setText("MANTENIMIENTO EMPLEADO");
@@ -153,7 +149,7 @@ public class FmrMantEmpleado extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "ID Empleado", "Apellidos", "Nombres", "Fecha de Reg", "Fecha de Mod", "Tipo", "Estado"
+                "ID Empleado", "Apellidos", "Nombres", "Usuario", "Contraseña", "Tipo", "Estado"
             }
         ) {
             Class[] types = new Class [] {
@@ -386,15 +382,14 @@ public class FmrMantEmpleado extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(127, 127, 127)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnSalir)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(168, 168, 168))))
+                        .addGap(564, 564, 564)
+                        .addComponent(btnSalir))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(28, 28, 28)
-                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(173, 173, 173)
+                        .addComponent(jLabel1)))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -459,18 +454,21 @@ public class FmrMantEmpleado extends javax.swing.JInternalFrame {
          this.txtIdEmpleado.setText(dtm.getValueAt(fil, 0).toString());
          this.txtApellidos.setText(dtm.getValueAt(fil, 1).toString());
          this.txtNombres.setText(dtm.getValueAt(fil, 2).toString());
-         this.txtFechReg.setText(dtm.getValueAt(fil, 3).toString());
-         this.txtFechMod.setText(dtm.getValueAt(fil, 5).toString());
-         this.txtUsuario.setText(dtm.getValueAt(fil, 6).toString());
-         this.txtPasword.setText(dtm.getValueAt(fil, 7).toString());
-         this.txtEstado.setText(dtm.getValueAt(fil, 8).toString());
+         this.txtUsuario.setText(dtm.getValueAt(fil, 3).toString());
+         this.txtPasword.setText(dtm.getValueAt(fil, 4).toString());
+         if(Integer.parseInt(dtm.getValueAt(fil, 5).toString())==1){
+             this.btnGerente.setSelected(true);
+         }else{
+             this.btnVendedor.setSelected(true);
+         }
+         this.txtEstado.setText(dtm.getValueAt(fil, 6).toString());
          this.btnGrabar.setText("Actualizar");
          this.jTabbedPane1.setSelectedIndex(1);
          
     }//GEN-LAST:event_tblBuscarMouseClicked
 
     private void btnVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVendedorActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnVendedorActionPerformed
 
     private void btnGerenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerenteActionPerformed

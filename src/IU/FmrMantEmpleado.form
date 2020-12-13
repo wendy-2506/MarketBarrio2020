@@ -5,6 +5,9 @@
     <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
     </Component>
   </NonVisualComponents>
+  <Properties>
+    <Property name="name" type="java.lang.String" value="" noResource="true"/>
+  </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
   </SyntheticProperties>
@@ -26,18 +29,16 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="btnSalir" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <EmptySpace min="-2" pref="564" max="-2" attributes="0"/>
+                      <Component id="btnSalir" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Component id="jTabbedPane1" min="-2" pref="630" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="173" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="32" max="32767" attributes="0"/>
@@ -133,8 +134,8 @@
                         <Column editable="false" title="ID Empleado" type="java.lang.Integer"/>
                         <Column editable="false" title="Apellidos" type="java.lang.String"/>
                         <Column editable="false" title="Nombres" type="java.lang.String"/>
-                        <Column editable="false" title="Fecha de Reg" type="java.lang.String"/>
-                        <Column editable="false" title="Fecha de Mod" type="java.lang.String"/>
+                        <Column editable="false" title="Usuario" type="java.lang.String"/>
+                        <Column editable="false" title="Contrase&#xf1;a" type="java.lang.String"/>
                         <Column editable="false" title="Tipo" type="java.lang.Integer"/>
                         <Column editable="false" title="Estado" type="java.lang.Integer"/>
                       </Table>
