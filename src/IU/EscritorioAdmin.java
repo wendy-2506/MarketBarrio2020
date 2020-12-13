@@ -180,8 +180,10 @@ public class EscritorioAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        FmrMantEmpleado emp = new FmrMantEmpleado();
-        emp.setVisible(true);
+        FmrMantEmpleado femple = new FmrMantEmpleado();
+        this.Escritorio.add(femple);
+        Escritorio.moveToFront(femple);
+        femple.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
@@ -195,8 +197,10 @@ public class EscritorioAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-    FrmMantTienda tien = new FrmMantTienda();
-        tien.setVisible(true);
+        FrmMantTienda ftien = new FrmMantTienda();
+        this.Escritorio.add(ftien);
+        Escritorio.moveToFront(ftien);
+        ftien.setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void reporteempActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reporteempActionPerformed
