@@ -48,7 +48,7 @@ public class ProductoDAO {
             System.out.println("uuuuuuu" + sql);
        }
        if(proc.equals("update")){
-            sql= "UPDATE producto set descripcion = '"+ p.getDescripcion() +"', idCategoria = '"+ p.getIdCategoria() +"', idMarca = '"+ p.getIdMarca() +"', precioUnit = '"+ p.getPrecioUnit() +"', unidMed = '"+ p.getUnidMed() +"', estado '"+ p.getEstado() +"' where idProducto = '"+ p.getIdProducto() +"'";
+            sql= "UPDATE producto set descripcion = '"+ p.getDescripcion() +"', idCategoria = '"+ p.getIdCategoria() +"', idMarca = '"+ p.getIdMarca() +"', precioUnit = '"+ p.getPrecioUnit() +"', unidMed = '"+ p.getUnidMed() +"', estado = '"+ p.getEstado() +"' where idProducto = '"+ p.getIdProducto() +"'";
        }
        System.out.println("Observando el estado de la sentencia sql: "+sql);
 
