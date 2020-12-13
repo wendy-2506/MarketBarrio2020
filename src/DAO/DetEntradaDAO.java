@@ -2,7 +2,7 @@ package DAO;
 
 import BEAN.Cab_Entrada;
 import BEAN.Det_Entrada;
-import UTIL.dbBean;
+import UTIL.DbBean;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
@@ -10,7 +10,7 @@ import java.util.Vector;
 public class DetEntradaDAO {
     public Vector<Det_Entrada> ListaItem(boolean sw, String str){
         Vector<Det_Entrada> item = new Vector<Det_Entrada>();
-        dbBean con = new dbBean();
+        DbBean con = new DbBean();
         String sql = "Select * from Det_Entrada";
         if(sw == true){
             sql = sql + " WHERE (id = '"+ str +"')";
@@ -40,7 +40,7 @@ public class DetEntradaDAO {
     public int procesaItem(Det_Entrada de, String proc){
        int resultado=0;
        String sql= "";
-       dbBean con=new dbBean();
+       DbBean con=new DbBean();
        if(proc.equals("insert")){
             sql="INSERT INTO Cab_Entrada VALUES ('"+ de.getIdEntrada() +"', '"+ de.getIdProducto() +"', '"+ de.getPrecio() +"', '"+ de.getCantidad() +"')";
             System.out.println("uuuuuuu" + sql);

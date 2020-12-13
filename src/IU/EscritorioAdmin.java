@@ -1,7 +1,7 @@
 package IU;
 
 import DAO.EmpleadoDAO;
-import UTIL.dbBean;
+import UTIL.DbBean;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -197,7 +197,7 @@ public class EscritorioAdmin extends javax.swing.JFrame {
     private void reporteempActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reporteempActionPerformed
         try{
             String r="src/REPORTES/repEmpleados.jasper";
-            dbBean db = new dbBean();
+            DbBean db = new DbBean();
             db.connectRep(r, null, false);
         }catch(SQLException ex){
             ex.printStackTrace();        
@@ -209,7 +209,7 @@ public class EscritorioAdmin extends javax.swing.JFrame {
     private void repempresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_repempresaActionPerformed
         try{
             String r="src/REPORTES/repEmpresas.jasper";
-            dbBean db = new dbBean();
+            DbBean db = new DbBean();
             db.connectRep(r, null, false);
         }catch(SQLException ex){
             ex.printStackTrace();        

@@ -1,14 +1,14 @@
 package DAO;
 
 import BEAN.*;
-import UTIL.dbBean;
+import UTIL.DbBean;
 import java.sql.SQLException;
 
 public class SerieDVDAO {
   public int agregaItem(SerieDV sdv, String proc){
        int resultado=0;
        String sql= "";
-       dbBean con=new dbBean();
+       DbBean con=new DbBean();
        
        if(proc.equals("insert")){
             sql="INSERT INTO SerieDV VALUES ('"+ sdv.getIdSerie() +"', '"+ sdv.getIdEmpReg() +"', '"+ sdv.getFechReg() +"', '"+ sdv.getIdTienda() +"',"

@@ -1,7 +1,7 @@
 package DAO;
 
 import BEAN.Cliente_Empresa;
-import UTIL.dbBean;
+import UTIL.DbBean;
 import java.sql.*;
 import java.util.Vector;
 //hace la busqueda por razon social o ruc
@@ -9,7 +9,7 @@ public class CliEmpresaDAO {
 
     public Vector<Cliente_Empresa> ListaItem(boolean sw, String str){
         Vector<Cliente_Empresa> item = new Vector<Cliente_Empresa>();
-        dbBean con = new dbBean();
+        DbBean con = new DbBean();
         String sql = "Select * from Cliente_Empresa";
         if(sw == true){
             sql = sql + " WHERE (razon_Social LIKE '"+ str +"%') OR (ruc LIKE '" + str + "%')";
@@ -38,7 +38,7 @@ public class CliEmpresaDAO {
     public int procesaItem(Cliente_Empresa c, String proc){
        int resultado=0;
        String sql= "";
-       dbBean con=new dbBean();
+       DbBean con=new DbBean();
        if(proc.equals("insert")){
             sql="INSERT INTO cliente_Empresa VALUES ('"+ c.getIdCliente() +"', '"+ c.getRazon_Social() +"', '"+ c.getRepresentante() +"', '"+ c.getRuc() +"')";
             System.out.println("EntroClienteEmpresaDAO:" + sql);

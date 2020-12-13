@@ -1,7 +1,7 @@
 package DAO;
 
 import BEAN.Factura;
-import UTIL.dbBean;
+import UTIL.DbBean;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
@@ -9,7 +9,7 @@ import java.util.Vector;
 public class FacturaDAO {
     public Vector<Factura> ListaItem(boolean sw, String str){
         Vector<Factura> item = new Vector<Factura>();
-        dbBean con = new dbBean();
+        DbBean con = new DbBean();
         String sql = "Select * from factura";
         if(sw == true){
             sql = sql + " WHERE numFac LIKE '"+ str +"%'";
@@ -38,7 +38,7 @@ public class FacturaDAO {
     public int procesaItem(Factura f, String bole){
        int resultado=0;
        String sql= "";
-       dbBean con=new dbBean();
+       DbBean con=new DbBean();
        if(bole.equals("insert")){
             sql="INSERT INTO factura VALUES ('"+ f.getIdFactura()+"', '"+ f.getIdSerie() +"', '"+ f.getNumFac() +"', '"+ f.getIdVenta() +"')";
             System.out.println("uuuuuuu" + sql);

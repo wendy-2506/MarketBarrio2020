@@ -1,7 +1,7 @@
 package DAO;
 
 import BEAN.Producto;
-import UTIL.dbBean;
+import UTIL.DbBean;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
@@ -9,7 +9,7 @@ import java.util.Vector;
 public class ProductoDAO {
     public Vector<Producto> ListaItem(boolean sw, String str){
         Vector<Producto> item = new Vector<Producto>();
-        dbBean con = new dbBean();
+        DbBean con = new DbBean();
         String sql = "Select * from Producto";
         //busca productos segun su descripcion
         if(sw == true){
@@ -42,7 +42,7 @@ public class ProductoDAO {
     public int procesaItem(Producto p, String proc){
        int resultado=0;
        String sql= "";
-       dbBean con=new dbBean();
+       DbBean con=new DbBean();
        if(proc.equals("insert")){
             sql="INSERT INTO producto VALUES ('"+ p.getIdProducto()+"', '"+ p.getDescripcion() +"', '"+ p.getIdCategoria() +"', '"+ p.getIdMarca() +"', '"+  p.getPrecioUnit() +"', '"+ p.getUnidMed() +"', '"+ p.getEstado() +"')";
             System.out.println("uuuuuuu" + sql);

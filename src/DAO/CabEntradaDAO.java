@@ -1,7 +1,7 @@
 package DAO;
 
 import BEAN.Cab_Entrada;
-import UTIL.dbBean;
+import UTIL.DbBean;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
@@ -9,7 +9,7 @@ import java.util.Vector;
 public class CabEntradaDAO {
     public Vector<Cab_Entrada> ListaItem(boolean sw, String str){
         Vector<Cab_Entrada> item = new Vector<Cab_Entrada>();
-        dbBean con = new dbBean();
+        DbBean con = new DbBean();
         String sql = "Select * from Cab_Entrada";
         if(sw == true){
             sql = sql + " WHERE (id = '"+ str +"')";
@@ -41,7 +41,7 @@ public class CabEntradaDAO {
     public int procesaItem(Cab_Entrada ce, String proc){
        int resultado=0;
        String sql= "";
-       dbBean con=new dbBean();
+       DbBean con=new DbBean();
        if(proc.equals("insert")){
             sql="INSERT INTO Cab_Entrada VALUES ('"+ ce.getIdEntrada() +"', '"+ ce.getIdEmpReg() +"', '"+ ce.getFechReg() +"', '"+ ce.getIdTienda() +"', '"+ ce.getIdProveedor() +"', '"+ ce.getIdEmpMod() +"', '"+ ce.getFechMod() +"', '"+ ce.getEstado() +"')";
             System.out.println("uuuuuuu" + sql);

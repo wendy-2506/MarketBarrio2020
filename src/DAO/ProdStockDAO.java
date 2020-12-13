@@ -1,7 +1,7 @@
 package DAO;
 
 import BEAN.ProdStock;
-import UTIL.dbBean;
+import UTIL.DbBean;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
@@ -9,7 +9,7 @@ import java.util.Vector;
 public class ProdStockDAO {
     public Vector<ProdStock> ListaItem(boolean sw, String str){
         Vector<ProdStock> item = new Vector<ProdStock>();
-        dbBean con = new dbBean();
+        DbBean con = new DbBean();
         String sql = "Select * from ProdStock";
         
         if(sw == true){
@@ -38,7 +38,7 @@ public class ProdStockDAO {
     public int procesaItem(ProdStock p, String proc){
        int resultado=0;
        String sql= "";
-       dbBean con=new dbBean();
+       DbBean con=new DbBean();
        if(proc.equals("insert")){
             sql="INSERT INTO ProdStock VALUES ('"+ p.getIdTienda()+"', '"+ p.getIdProducto() +"', '"+ p.getStock() +"')";
             System.out.println("uuuuuuu" + sql);
