@@ -15,7 +15,7 @@ import UTIL.util;
 
 /**
  *
- * @author DANIEL
+ * @author JHOEL XD
  */
 public class FrmRegistrar extends javax.swing.JFrame {
     int idCliente;
