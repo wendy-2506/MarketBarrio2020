@@ -5,16 +5,15 @@ import UTIL.dbBean;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
-
+//busca las boletas segun el numero de boleta
 public class BoletaDAO {
     public Vector<Boleta> ListaItem(boolean sw, String str){
         Vector<Boleta> item = new Vector<Boleta>();
         dbBean con = new dbBean();
         String sql = "Select * from boleta";
         if(sw == true){
-            sql = sql + " WHERE descripcion LIKE '"+ str +"%'";
+            sql = sql + " WHERE numBol LIKE '"+ str +"%'";
         }
-
         
         try{
             ResultSet resultado = con.execSQL(sql);
@@ -45,7 +44,7 @@ public class BoletaDAO {
             System.out.println("uuuuuuu" + sql);
        }
        if(bole.equals("update")){
-            sql= "UPDATE boleta set idSerie = '"+ b.getIdSerie() +"', NumBol = '"+ b.getNumBol() +"', idVenta = '"+ b.getIdVenta() +"' where id_producto = '"+ b.getIdBoleta() +"'";
+            sql= "UPDATE boleta set idSerie = '"+ b.getIdSerie() +"', NumBol = '"+ b.getNumBol() +"', idVenta = '"+ b.getIdVenta() +"' where idBoleta = '"+ b.getIdBoleta() +"'";
        }
        System.out.println("Observando el estado de la sentencia sql: "+sql);
 
