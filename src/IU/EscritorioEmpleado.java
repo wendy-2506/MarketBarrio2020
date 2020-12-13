@@ -85,6 +85,7 @@ public class EscritorioEmpleado extends javax.swing.JFrame {
     }//GEN-LAST:event_cerrarMouseClicked
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+
     FrmVenta fven = new FrmVenta();
     
         this.Escritorio.add(fven);
@@ -92,6 +93,7 @@ public class EscritorioEmpleado extends javax.swing.JFrame {
         Escritorio.moveToFront(fven);
         
         fven.setVisible(true);
+
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void cerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarActionPerformed
