@@ -47,7 +47,7 @@ public class ClienteDAO {
        dbBean con=new dbBean();
        if(proc.equals("insert")){
             sql="INSERT INTO cliente VALUES ('"+ c.getIdCliente() +"', '"+ c.getIdTipoCli() +"', '"+ c.getIdEmpReg() +"', '"+ c.getFechReg() +"', '"+ c.getIdEmpMod() +"', '"+ c.getFechMod() +"', '"+ c.getCorreo_elect() +"', '"+ c.getTelefono() +"', '"+ c.getDireccion() +"', '"+ c.getEstado() +"')";
-            System.out.println("uuuuuuu" + sql);
+            System.out.println("Entro ClienteDAO:" + sql);
        }
        if(proc.equals("update")){
             sql="UPDATE cliente set idTipoCli = '"+ c.getIdTipoCli() +"', idEmpReg = '"+ c.getIdEmpReg() +"', fechReg = '"+ c.getFechReg() +"', idEmpMod = '"+ c.getIdEmpMod() +"', fechMod = '"+ c.getFechMod() +"', correo_elect = '"+ c.getCorreo_elect() +"', telefono = '"+ c.getTelefono() +"', direccion = '"+ c.getDireccion() +"', estado = '"+ c.getEstado() +"' where idCliente = '"+ c.getIdCliente() +"'";

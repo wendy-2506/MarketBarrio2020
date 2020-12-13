@@ -8,6 +8,7 @@ import javax.swing.table.DefaultTableModel;
 public class FrmVenta extends javax.swing.JFrame {
     DefaultTableModel dtm1;
     int idFilProd;
+    double TOTAL;
     public FrmVenta() {
         initComponents();
         dtm1 = (DefaultTableModel)this.tblProdSel.getModel();
@@ -421,6 +422,14 @@ public class FrmVenta extends javax.swing.JFrame {
                 .addGap(14, 14, 14))
         );
 
+        txtTOTTOTAL.setEditable(false);
+        txtTOTTOTAL.setBackground(new java.awt.Color(255, 255, 51));
+        txtTOTTOTAL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTOTTOTALActionPerformed(evt);
+            }
+        });
+
         btnPagar.setText("Pagar");
 
         jLabel16.setFont(new java.awt.Font("Gill Sans Ultra Bold", 3, 14)); // NOI18N
@@ -645,7 +654,8 @@ public class FrmVenta extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSeleccionarActionPerformed
 
     private void rbEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbEmpresaActionPerformed
-    this.tpTipo.setSelectedIndex(1);    // TODO add your handling code here:
+    this.tpTipo.setSelectedIndex(1);  
+    limpia();
     }//GEN-LAST:event_rbEmpresaActionPerformed
     
     
@@ -681,7 +691,8 @@ public class FrmVenta extends javax.swing.JFrame {
     
     }
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-    FrmRegistrar reg = new FrmRegistrar();
+    limpia();
+        FrmRegistrar reg = new FrmRegistrar();
     reg.setVisible(true);
         
     }//GEN-LAST:event_btnRegistrarActionPerformed
@@ -725,6 +736,7 @@ public class FrmVenta extends javax.swing.JFrame {
 
             this.dtm1.addRow(vecP);
             limpiaProd();
+            sacaTotal();
         }        // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -732,6 +744,7 @@ public class FrmVenta extends javax.swing.JFrame {
         if(this.idFilProd>-1){
             dtm1.removeRow(this.idFilProd);
             idFilProd = -1;
+            sacaTotal();
         }else{
             JOptionPane.showMessageDialog(this,"SELECCIONE UN PRODUCTO PARA ELIMINARLO");
         }
@@ -742,6 +755,10 @@ public class FrmVenta extends javax.swing.JFrame {
             this.idFilProd = this.tblProdSel.getSelectedRow();
         }
     }//GEN-LAST:event_tblProdSelMouseClicked
+
+    private void txtTOTTOTALActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTOTTOTALActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTOTTOTALActionPerformed
     private void verifPreReg(int idP){
         if(this.tblProdSel.getRowCount()>0){
             for(int i=0;i<this.tblProdSel.getRowCount();i++){
@@ -760,9 +777,22 @@ public class FrmVenta extends javax.swing.JFrame {
         this.txtMarca.setText("");
         this.txtPrecio.setText("");
         this.txtCantidad.setText("");
-    
-    
     }
+    private void sacaTotal(){
+        if(this.tblProdSel.getRowCount()>0){
+            Double acum=0.0;
+            for(int i=0;i<this.tblProdSel.getRowCount();i++){
+                double p;
+                double c;
+                p=Double.parseDouble(this.dtm1.getValueAt(i, 3).toString());
+                c=Double.parseDouble(this.dtm1.getValueAt(i, 4).toString());
+                acum=acum+(p*c);
+            }
+            TOTAL=acum;
+            this.txtTOTTOTAL.setText(String.valueOf(TOTAL));
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
