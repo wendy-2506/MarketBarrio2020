@@ -50,7 +50,7 @@ public class ClienteDAO {
             System.out.println("Entro ClienteDAO:" + sql);
        }
        if(proc.equals("update")){
-            sql="UPDATE cliente set idTipoCli = '"+ c.getIdTipoCli() +"', idEmpReg = '"+ c.getIdEmpReg() +"', fechReg = '"+ c.getFechReg() +"', idEmpMod = '"+ c.getIdEmpMod() +"', fechMod = '"+ c.getFechMod() +"', correo_elect = '"+ c.getCorreo_elect() +"', telefono = '"+ c.getTelefono() +"', direccion = '"+ c.getDireccion() +"', estado = '"+ c.getEstado() +"' where idCliente = '"+ c.getIdCliente() +"'";
+            sql="UPDATE cliente set idTipoCli = '"+ c.getIdTipoCli() +"', idEmpReg = '"+ c.getIdEmpReg() +"', fechReg = '"+ c.getFechReg() +"', idEmpMod = '"+ c.getIdEmpMod() +"', fechMod = '"+ c.getFechMod() +"', correo_electr = '"+ c.getCorreo_elect() +"', telefono = '"+ c.getTelefono() +"', direccion = '"+ c.getDireccion() +"', estado = '"+ c.getEstado() +"' where idCliente = '"+ c.getIdCliente() +"'";
        }
        System.out.println("Observando el estado de la sentencia sql: "+sql);
 
