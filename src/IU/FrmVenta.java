@@ -1,7 +1,12 @@
 package IU;
 
 import BEAN.*;
+<<<<<<< HEAD
 import REPORTES.Mailer;
+=======
+import DAO.*;
+import UTIL.util;
+>>>>>>> 21cb096c9dc92a9940475185d8b5cbdd1c523055
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -9,11 +14,16 @@ import javax.swing.table.DefaultTableModel;
 public class FrmVenta extends javax.swing.JFrame {
     DefaultTableModel dtm1;
     int idFilProd;
+    CabDocVentaDAO cabVDAO;
+    Det_DocVentaDAO detVDAO;
+    int idVen;
     double TOTAL;
     public FrmVenta() {
         initComponents();
         dtm1 = (DefaultTableModel)this.tblProdSel.getModel();
         lock();
+        cabVDAO=new CabDocVentaDAO();
+        detVDAO=new Det_DocVentaDAO();
         idFilProd = -1;
     }
     private boolean validProd(){
@@ -431,7 +441,11 @@ public class FrmVenta extends javax.swing.JFrame {
             }
         });
 
+<<<<<<< HEAD
         btnPagar.setText("Pagar");
+=======
+        btnPagar.setText("Grabar");
+>>>>>>> 21cb096c9dc92a9940475185d8b5cbdd1c523055
         btnPagar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPagarActionPerformed(evt);
@@ -767,8 +781,46 @@ public class FrmVenta extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTOTTOTALActionPerformed
 
     private void btnPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagarActionPerformed
+<<<<<<< HEAD
         Mailer m = new Mailer();
         m.sendEmail();
+=======
+        String fech;
+        util u = new util();
+        if(validaGen()==true){
+            
+            if(this.btnPagar.getText().equals("Grabar")){
+                Cab_DocVenta cv = new Cab_DocVenta();          
+                this.idVen = u.idNext("Cab_DocVenta", "idVenta");
+                fech = u.obtenerFecha();
+                cv.setIdVenta(idVen);
+                cv.setIdCliente(Integer.parseInt(this.txtIdCliente.getText()));
+                cv.setFechVenta(fech);
+                cv.setEstado(1);
+                cv.setFechMod(fech);
+                cv.setTotal(Double.parseDouble(this.txtTOTTOTAL.getText()));
+                cv.setIdEmpReg(2);
+                cv.setIdEmpMod(2);
+                if(this.rbEmpresa.isSelected()){
+                    cv.setIdTipo(2);
+                }else if(this.rbNatural.isSelected()){
+                    cv.setIdTipo(1);
+                }
+                cv.setIdTienda(1);
+                this.cabVDAO.agregaItem(cv, "insert");
+            }
+            
+            for(int i=0;i<this.tblProdSel.getRowCount();i++){
+                Det_DocVenta dv = new Det_DocVenta();
+                dv.setIdVenta(idVen);
+                dv.setIdProducto(Integer.parseInt(dtm1.getValueAt(i, 0).toString()));
+                dv.setPrecio(Double.parseDouble(dtm1.getValueAt(i, 3).toString()));
+                dv.setCantidad(Integer.parseInt(dtm1.getValueAt(i, 4).toString()));
+                this.detVDAO.agregaItem(dv, "insert");
+            }
+            limpiaGen();
+        }        
+>>>>>>> 21cb096c9dc92a9940475185d8b5cbdd1c523055
     }//GEN-LAST:event_btnPagarActionPerformed
     private void verifPreReg(int idP){
         if(this.tblProdSel.getRowCount()>0){
@@ -780,6 +832,26 @@ public class FrmVenta extends javax.swing.JFrame {
             }
         }
     }
+    
+    private boolean validaGen(){
+        boolean sw = false;
+        if(this.txtIdCliente.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Debe seleccionar cliente");
+        }else{
+            if(this.tblProdSel.getRowCount()==0){
+                JOptionPane.showMessageDialog(this, "Debe seleccionar por lo menos 1 producto");
+            }else{
+                sw = true;
+            }
+        }
+        return sw;
+    }
+    
+    private void limpiaGen(){
+        limpiaProd();
+        limpia();
+    }
+    
     
     private void limpiaProd(){
         this.txtIDProd.setText("");

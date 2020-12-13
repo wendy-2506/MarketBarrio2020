@@ -156,8 +156,7 @@ public class util {
           dbBean con=new dbBean();
           String sql="";
 
-          //sql = "select CONVERT(varchar,getDate(),103) as fecha";
-          sql = "select getdate() as fecha";
+          sql = "select CONVERT(varchar,getDate(),103) as fecha";
 
        try{
             ResultSet resultado=con.execSQL(sql);

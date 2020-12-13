@@ -23,12 +23,12 @@ public class CabDocVentaDAO {
                 Cab_DocVenta cabVenta = new Cab_DocVenta();
                 cabVenta.setIdVenta(resultado.getInt(1));
                 cabVenta.setIdCliente(resultado.getInt(2));
-                cabVenta.setFechVenta(resultado.getString(3));
-                cabVenta.setIdEmpReg(resultado.getInt(4));
-                cabVenta.setIdTipo(resultado.getInt(5));
-                cabVenta.setIdTienda(resultado.getInt(6));
-                cabVenta.setIdEmpMod(resultado.getInt(7));
-                cabVenta.setFechMod(resultado.getString(8));
+                cabVenta.setIdEmpReg(resultado.getInt(3));
+                cabVenta.setFechVenta(resultado.getString(4));
+                cabVenta.setIdEmpMod(resultado.getInt(5));
+                cabVenta.setFechMod(resultado.getString(6));
+                cabVenta.setIdTipo(resultado.getInt(7));
+                cabVenta.setIdTienda(resultado.getInt(8));
                 cabVenta.setEstado(resultado.getInt(9));
                 item.addElement(cabVenta);
             }
@@ -46,8 +46,8 @@ public class CabDocVentaDAO {
        String sql= "";
        dbBean con=new dbBean();
        if(proc.equals("insert")){
-            sql="INSERT INTO cab_docVenta VALUES ('"+ cv.getIdVenta() +"', '"+ cv.getIdCliente() +"', '"+ cv.getFechVenta() +"', '"+ cv.getIdEmpReg() +"',"
-                    + " '"+ cv.getIdTipo() +"', '"+ cv.getIdTienda() +"', '"+ cv.getIdEmpMod() +"', '"+ cv.getFechMod() +"', '"+ cv.getEstado() +"')";
+            sql="INSERT INTO cab_docVenta VALUES ('"+ cv.getIdVenta() +"', '"+ cv.getIdCliente() +"', '"+ cv.getIdEmpReg()+"', '"+ cv.getFechVenta()+"',"
+                    + " '"+ cv.getIdEmpMod()+"', '"+ cv.getFechMod()+"', '"+ cv.getIdTipo()+"', '"+ cv.getIdTienda()+"', '"+ cv.getEstado() +"')";
             
             System.out.println("Sentencia Enviada a Sql: "+sql);
        } 
