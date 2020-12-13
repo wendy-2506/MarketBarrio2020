@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 
 
 public class Mailer{
-    Cliente c = new Cliente();
+   /* Cliente c = new Cliente();
     public void sendEmail(){
         Properties propiedad = new Properties(); 
         propiedad.setProperty("mail.smtp.host","smtp.gmail.com");
@@ -48,5 +48,5 @@ public class Mailer{
         } catch(MessagingException ex) {
             System.out.println("Existe un Error en el mailer:"+ex);
         }    
-    }
+    }*/
 }

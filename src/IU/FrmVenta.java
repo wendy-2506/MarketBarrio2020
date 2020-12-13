@@ -101,7 +101,7 @@ public class FrmVenta extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Kristen ITC", 3, 18)); // NOI18N
         jLabel1.setText("CAJERO \"MARKET BARRIO\"");
@@ -438,11 +438,7 @@ public class FrmVenta extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< HEAD
-        btnPagar.setText("Pagar");
-=======
         btnPagar.setText("Grabar");
->>>>>>> 21cb096c9dc92a9940475185d8b5cbdd1c523055
         btnPagar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPagarActionPerformed(evt);
@@ -781,10 +777,7 @@ public class FrmVenta extends javax.swing.JFrame {
 
         Mailer m = new Mailer();
         m.sendEmail();
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
+        
         String fech;
         util u = new util();
         if(validaGen()==true){
@@ -820,10 +813,6 @@ public class FrmVenta extends javax.swing.JFrame {
             }
             limpiaGen();
         }        
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
     }//GEN-LAST:event_btnPagarActionPerformed
     private void verifPreReg(int idP){
         if(this.tblProdSel.getRowCount()>0){
