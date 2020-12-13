@@ -845,9 +845,10 @@ public class FrmVenta extends javax.swing.JInternalFrame {
                 this.detVDAO.agregaItem(dv, "insert");
             }
             
-
+            
             limpiaGen();
-        }        
+        }
+        
     }//GEN-LAST:event_btnPagarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
