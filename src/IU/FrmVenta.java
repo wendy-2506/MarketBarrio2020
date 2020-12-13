@@ -742,6 +742,7 @@ public class FrmVenta extends javax.swing.JFrame {
         if(this.idFilProd>-1){
             dtm1.removeRow(this.idFilProd);
             idFilProd = -1;
+            sacaTotal();
         }else{
             JOptionPane.showMessageDialog(this,"SELECCIONE UN PRODUCTO PARA ELIMINARLO");
         }
