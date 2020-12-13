@@ -139,7 +139,7 @@ public class Escritorio extends javax.swing.JFrame {
             escP.setSize(1366, 768);
             this.dispose();
         }else{
-            JOptionPane.showMessageDialog(this, "Error: Usted no se encuentra Registrado en el sistema");
+            JOptionPane.showMessageDialog(this, "Error F: Usted no se encuentra registrado en el sistema.");
         }
 
     }//GEN-LAST:event_btnIngLogActionPerformed
