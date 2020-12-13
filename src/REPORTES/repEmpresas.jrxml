@@ -32,10 +32,10 @@ FROM
 	<title>
 		<band height="132" splitType="Stretch">
 			<frame>
-				<reportElement mode="Opaque" x="0" y="0" width="451" height="95" backcolor="#000000" uuid="1992299c-c7b6-4133-b40b-03ea0cab2396"/>
+				<reportElement mode="Opaque" x="0" y="0" width="552" height="95" backcolor="#000000" uuid="1992299c-c7b6-4133-b40b-03ea0cab2396"/>
 				<staticText>
-					<reportElement style="Title" x="0" y="0" width="451" height="66" uuid="7c74c5b1-5819-4823-ac73-a005d82c2f80"/>
-					<textElement>
+					<reportElement style="Title" x="0" y="0" width="552" height="66" uuid="7c74c5b1-5819-4823-ac73-a005d82c2f80"/>
+					<textElement textAlignment="Center">
 						<font fontName="Kristen ITC" size="28" isBold="false"/>
 					</textElement>
 					<text><![CDATA[Clientes Empresa Market Barrio]]></text>
@@ -49,7 +49,7 @@ FROM
 				</staticText>
 			</frame>
 			<frame>
-				<reportElement mode="Opaque" x="0" y="100" width="451" height="32" forecolor="#000000" backcolor="#CC0000" uuid="1c601738-62fc-46b0-a369-d28890992d97"/>
+				<reportElement mode="Opaque" x="0" y="100" width="552" height="32" forecolor="#000000" backcolor="#CC0000" uuid="1c601738-62fc-46b0-a369-d28890992d97"/>
 				<textField pattern="EEEEE dd MMMMM yyyy">
 					<reportElement x="307" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="39de2439-cd4a-4593-9006-9f6f1c6c77e8"/>
 					<textElement textAlignment="Right">
@@ -58,10 +58,6 @@ FROM
 					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 				</textField>
 			</frame>
-			<image>
-				<reportElement x="451" y="0" width="104" height="132" uuid="c4b341df-c435-4954-8593-506c7a7789b1"/>
-				<imageExpression><![CDATA["D:\\Wendy\\Documents\\MARKET FINAL\\MarketBarrio2020\\src\\REPORTES\\POO.jpg"]]></imageExpression>
-			</image>
 		</band>
 	</title>
 	<pageHeader>

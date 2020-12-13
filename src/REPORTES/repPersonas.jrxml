@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2981a859-2283-40fc-8ce9-a03a59e2dc42">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
 	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
 	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
 	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
@@ -28,29 +31,25 @@ FROM
 	</background>
 	<title>
 		<band height="132" splitType="Stretch">
-			<image>
-				<reportElement x="456" y="0" width="99" height="132" uuid="c6307d6e-e5e3-44c2-af3b-85c32e655d7e"/>
-				<imageExpression><![CDATA["cherry.jpg"]]></imageExpression>
-			</image>
 			<frame>
-				<reportElement mode="Opaque" x="0" y="0" width="451" height="95" backcolor="#000000" uuid="7115fdff-f3a0-4c19-951e-fb68eade647f"/>
+				<reportElement mode="Opaque" x="0" y="0" width="552" height="95" backcolor="#000000" uuid="7115fdff-f3a0-4c19-951e-fb68eade647f"/>
 				<staticText>
-					<reportElement style="Title" x="0" y="0" width="370" height="66" uuid="7edd3e9c-9c66-4c0d-93be-e1d912fc303c"/>
-					<textElement>
-						<font isBold="false"/>
+					<reportElement style="Title" x="0" y="0" width="552" height="66" uuid="7edd3e9c-9c66-4c0d-93be-e1d912fc303c"/>
+					<textElement textAlignment="Center">
+						<font fontName="Kristen ITC" size="26" isBold="false"/>
 					</textElement>
-					<text><![CDATA[Cherry Title]]></text>
+					<text><![CDATA[Clientes Persona Natural Market Barrio]]></text>
 				</staticText>
 				<staticText>
 					<reportElement style="SubTitle" x="157" y="66" width="249" height="29" uuid="6cadbb31-2990-4ce5-850a-db2bb36834e0"/>
 					<textElement>
-						<font size="22" isBold="false"/>
+						<font fontName="Kristen ITC" size="16" isBold="false"/>
 					</textElement>
-					<text><![CDATA[Cherry SubTitle]]></text>
+					<text><![CDATA[Los discípulos de Ballón]]></text>
 				</staticText>
 			</frame>
 			<frame>
-				<reportElement mode="Opaque" x="0" y="100" width="451" height="32" forecolor="#000000" backcolor="#CC0000" uuid="530f694a-0073-4325-aec0-d836a9c3cec1"/>
+				<reportElement mode="Opaque" x="0" y="100" width="552" height="32" forecolor="#000000" backcolor="#CC0000" uuid="530f694a-0073-4325-aec0-d836a9c3cec1"/>
 				<textField pattern="EEEEE dd MMMMM yyyy">
 					<reportElement x="307" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="3d1960af-6dfb-4ba0-8144-04d0449ab970"/>
 					<textElement textAlignment="Right">
@@ -71,28 +70,28 @@ FROM
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
-				<text><![CDATA[Cliente_Persona_idCliente]]></text>
+				<text><![CDATA[ID Cliente]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="138" y="7" width="138" height="18" forecolor="#000000" uuid="a89f3560-5747-4ea5-873e-4bb561053965"/>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
-				<text><![CDATA[Cliente_Persona_dni]]></text>
+				<text><![CDATA[DNI]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="276" y="7" width="138" height="18" forecolor="#000000" uuid="84f0b16e-f8e7-4de4-9e4b-341e599429c3"/>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
-				<text><![CDATA[Cliente_Persona_apell]]></text>
+				<text><![CDATA[Apellido]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="414" y="7" width="138" height="18" forecolor="#000000" uuid="eccfa1c1-60bc-4fcb-97c2-dd8e8b5bae95"/>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
-				<text><![CDATA[Cliente_Persona_nomb]]></text>
+				<text><![CDATA[Nombre]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
