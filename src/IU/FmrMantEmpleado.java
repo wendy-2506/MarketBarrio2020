@@ -70,9 +70,9 @@ public class FmrMantEmpleado extends javax.swing.JInternalFrame {
                 }  
             }
         }
-            return sw;
-    }
-    
+      }
+        return sw;
+    } 
     
     
     @SuppressWarnings("unchecked")

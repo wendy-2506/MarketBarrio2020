@@ -52,7 +52,7 @@ public class EmpleadoDAO {
             System.out.println("uuuuuuu" + sql);
        }
        if(proc.equals("update")){
-            sql="UPDATE Empleado set apellidos = '"+ p.getApellidos() +"', nombres = '"+ p.getNombres()+"', idEmpMod = '"+ p.getIdEmpMod() +"', fechMod = '"+ p.getFechMod() +"', usr = '"+ p.getUsr() +"', pw = '"+ p.getPw() +"', idTipoEmp = '"+ p.getIdTipoEmp() +"', estado = '"+ p.getEstado() +"' where this.idEmpleado = '"+ p.getIdEmpleado() +"'";
+            sql="UPDATE Empleado set apellidos = '"+ p.getApellidos() +"', nombres = '"+ p.getNombres() +"', idEmpReg= '"+ p.getIdEmpReg() +"', fechReg = '"+ p.getFechReg() +"', idEmpMod = '"+ p.getIdEmpMod() +"', fechMod = '"+ p.getFechMod() +"', usr = '"+ p.getUsr() +"', pw = '"+ p.getPw() +"', idTipoEmp = '"+ p.getIdTipoEmp() +"', estado = '"+ p.getEstado() +"' where this.idEmpleado = '"+ p.getIdEmpleado() +"'";
        }
        System.out.println("Observando el estado de la sentencia sql: "+sql);
 
