@@ -61,7 +61,7 @@ public class FrmAgClieDe extends javax.swing.JFrame {
 
         jTextField6.setText("jTextField6");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Kristen ITC", 1, 18)); // NOI18N
         jLabel1.setText("APP \"MARKET BARRIO\"");
