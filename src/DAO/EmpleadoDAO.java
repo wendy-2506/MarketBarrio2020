@@ -10,7 +10,7 @@ public class EmpleadoDAO {
     public Vector<Empleado> ListaItem(boolean sw, String str){
         Vector<Empleado> item = new Vector<Empleado>();
         dbBean con = new dbBean();
-        String sql = " Select * from empleado";
+        String sql = "Select * from empleado";
         if(sw == true){
             sql = sql + " WHERE (apellidos LIKE '"+ str +"%') OR (nombres LIKE '" + str + "%')";
         }
@@ -52,10 +52,10 @@ public class EmpleadoDAO {
             System.out.println("uuuuuuu" + sql);
        }
        if(proc.equals("update")){
-            sql="UPDATE Empleado set apellidos = '"+ p.getApellidos() +"', nombres = '"+ p.getNombres() +"', idEmpReg= '"+ p.getIdEmpReg() +"', idEmpMod = '"+ p.getIdEmpMod() +"', fechMod = '"+ p.getFechMod() +"', usr = '"+ p.getUsr() +"', pw = '"+ p.getPw() +"', idTipoEmp = '"+ p.getIdTipoEmp() +"', estado = '"+ p.getEstado() +"' where idEmpleado = '"+ p.getIdEmpleado() +"'";
+            sql="UPDATE Empleado set apellidos = '"+ p.getApellidos() +"', nombres = '"+ p.getNombres() +"', idEmpReg= '"+ p.getIdEmpReg() +"', fechReg = '"+ p.getFechReg() +"', idEmpMod = '"+ p.getIdEmpMod() +"', fechMod = '"+ p.getFechMod() +"', usr = '"+ p.getUsr() +"', pw = '"+ p.getPw() +"', idTipoEmp = '"+ p.getIdTipoEmp() +"', estado = '"+ p.getEstado() +"' where this.idEmpleado = '"+ p.getIdEmpleado() +"'";
        }
        System.out.println("Observando el estado de la sentencia sql: "+sql);
-       
+
        try{
           resultado=con.updateSQL(sql);
         }
